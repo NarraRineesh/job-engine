@@ -256,7 +256,9 @@ def plan_chunks(
     """
     if chunk_size <= 0:
         raise ValueError("chunk_size must be positive")
-    sizes = {ats: len(load_tenants(ats)) for ats in ats_list}
+    sizes = {ats: n for ats in ats_list if (n := len(load_tenants(ats))) > 0}
+    if not sizes:
+        return [{"ats": "_none", "chunk": 0, "chunk_size": chunk_size, "tenant_count": 0}]
     size = _chunk_size_for_max_jobs(
         list(sizes.values()), chunk_size=chunk_size, max_jobs=max_jobs
     )
@@ -268,11 +270,7 @@ def plan_chunks(
             file=sys.stderr,
         )
     matrix: list[dict[str, Any]] = []
-    for ats in ats_list:
-        n = sizes[ats]
-        if n == 0:
-            matrix.append({"ats": ats, "chunk": 0, "chunk_size": size, "tenant_count": 0})
-            continue
+    for ats, n in sizes.items():
         n_chunks = (n + size - 1) // size
         for i in range(n_chunks):
             matrix.append(

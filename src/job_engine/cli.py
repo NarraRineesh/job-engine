@@ -11,7 +11,6 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_CORPUS = ROOT / "data" / "corpus"
 DEFAULT_PUSH_STATE = ROOT / "out" / "push-state.json"
 DEFAULT_TRACK = ROOT / "out" / "track.json"
 
@@ -26,7 +25,12 @@ def main(argv: list[str] | None = None) -> int:
     p_run = sub.add_parser("run", help="Fetch → enrich → push per company")
     p_run.add_argument("--ats", type=str, default="", help="Comma list; empty=all registered")
     p_run.add_argument("--slug", action="append", default=[], help="Limit to board slug(s)")
-    p_run.add_argument("--corpus", type=Path, default=DEFAULT_CORPUS)
+    p_run.add_argument(
+        "--corpus",
+        type=Path,
+        default=None,
+        help="Optional JSONL log dir (omit to skip; GHA should not write this)",
+    )
     p_run.add_argument("--max-tenants", type=int, default=None)
     p_run.add_argument("--chunk-index", type=int, default=0)
     p_run.add_argument("--chunk-size", type=int, default=50)
@@ -66,8 +70,10 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.cmd == "plan-chunks":
         from job_engine.companies import list_registered_ats, plan_chunks
+        from job_engine.fetch.scrapers import ScraperRegistry
 
         only = [a.strip() for a in args.ats.split(",") if a.strip()] or list_registered_ats()
+        only = [a for a in only if ScraperRegistry.has_scraper(a)]
         print(json.dumps(plan_chunks(only, chunk_size=args.chunk_size, max_jobs=args.max_jobs)))
         return 0
 
@@ -98,7 +104,11 @@ def main(argv: list[str] | None = None) -> int:
             f"[run] pushed={summary['pushed']:,} errors={summary['errors']} "
             f"ats={list(summary['ats'])}"
         )
-        return 0 if summary["errors"] == 0 else 1
+        # Per-tenant scrape/push failures are expected; fail the process only if
+        # nothing landed and something went wrong.
+        if summary["errors"] and summary["pushed"] == 0:
+            return 1
+        return 0
 
     return 1
 

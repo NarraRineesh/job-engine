@@ -147,16 +147,16 @@ async def _stream_one(
                 err = f"{type(exc).__name__}: {exc}"
                 async with lock:
                     errors += 1
-                print(f"  [{ats}] {tenant['board_slug']}: {err}")
-                record_tenant(
-                    track_file,
-                    ats=ats,
-                    board_slug=tenant["board_slug"],
-                    company_name=tenant.get("name") or tenant["board_slug"],
-                    jobs_fetched=0,
-                    jobs_pushed=0,
-                    error=err,
-                )
+                    print(f"  [{ats}] {tenant['board_slug']}: {err}")
+                    record_tenant(
+                        track_file,
+                        ats=ats,
+                        board_slug=tenant["board_slug"],
+                        company_name=tenant.get("name") or tenant["board_slug"],
+                        jobs_fetched=0,
+                        jobs_pushed=0,
+                        error=err,
+                    )
                 return
 
         for job in raw_jobs:
@@ -172,8 +172,6 @@ async def _stream_one(
                     mode="python",
                 )
             except Exception as exc:  # noqa: BLE001
-                async with lock:
-                    errors += 1
                 print(f"  [{ats}] parse {tenant['board_slug']}: {exc}")
                 continue
             if country and not matches_country(nested.get("location") or {}, country):
@@ -226,15 +224,16 @@ async def _stream_one(
                         f"pushed/changed={pushed}"
                     )
 
-        record_tenant(
-            track_file,
-            ats=ats,
-            board_slug=tenant["board_slug"],
-            company_name=tenant.get("name") or tenant["board_slug"],
-            jobs_fetched=len(nested_jobs),
-            jobs_pushed=int(pushed or 0),
-            error=err,
-        )
+        async with lock:
+            record_tenant(
+                track_file,
+                ats=ats,
+                board_slug=tenant["board_slug"],
+                company_name=tenant.get("name") or tenant["board_slug"],
+                jobs_fetched=len(nested_jobs),
+                jobs_pushed=int(pushed or 0),
+                error=err,
+            )
 
     try:
         await asyncio.gather(*(one(t) for t in tenants))
@@ -289,7 +288,8 @@ def _append_corpus(path: Path, new_jobs: list[dict[str, Any]]) -> None:
                     j = json.loads(line)
                     existing[j["id"]] = j
     for j in new_jobs:
-        existing[j["id"]] = j
+        slim = {k: v for k, v in j.items() if k not in {"description", "summary"}}
+        existing[j["id"]] = slim
     with path.open("w", encoding="utf-8") as fh:
         for j in existing.values():
             fh.write(json.dumps(j, ensure_ascii=False) + "\n")

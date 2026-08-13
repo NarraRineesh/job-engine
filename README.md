@@ -66,7 +66,8 @@ Inventories: `data/companies/ats-companies/{ats}.json`.
 ## GitHub Actions
 
 `.github/workflows/stream.yml` — ATS × tenant chunks (`max-parallel: 8`).  
-Runs weekly (Monday 02:30 UTC) and on demand. Empty `ats` = all registered; empty `country` = no filter.  
+Runs weekly (Monday 02:30 UTC) and on demand. A new run **cancels** an in-progress stream.  
+Empty `ats` = scrapeable ATS only; empty `country` = no filter. Default enrich is `python` (lexicon skills).  
 GitHub allows 256 matrix jobs; `plan-chunks` raises `--chunk-size` if needed so a full run fits.  
 Push writes companies, locations, jobs, job_analytics, skills, and job_skills. Job **summary** and **description** are not stored (used only locally to extract skills).  
 Secrets: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`. Optional: `CURSOR_API_KEY` for `--enrich both`.

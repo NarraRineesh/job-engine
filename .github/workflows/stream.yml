@@ -14,9 +14,9 @@ on:
         description: "Country filter (empty = no filter)"
         required: false
       enrich:
-        description: "python | cursor | both"
+        description: "python | cursor | both (python = lexicon skills; both = Cursor gaps)"
         required: false
-        default: "both"
+        default: "python"
       concurrency:
         description: "Per-runner company concurrency"
         required: false
@@ -27,7 +27,7 @@ on:
 
 concurrency:
   group: stream
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   plan:

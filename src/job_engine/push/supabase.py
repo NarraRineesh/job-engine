@@ -14,6 +14,7 @@ import json
 import math
 import os
 import re
+import threading
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -32,6 +33,7 @@ from job_engine.enums import (
 )
 
 CHUNK = 200
+_STATE_LOCK = threading.Lock()
 
 
 def push_nested_jobs(
@@ -51,7 +53,9 @@ def push_nested_jobs(
 
     state: dict[str, str] = {}
     if state_path and not full:
-        state = _load_json(state_path, {})
+        with _STATE_LOCK:
+            loaded = _load_json(state_path, {})
+            state = loaded if isinstance(loaded, dict) else {}
     next_state: dict[str, str] = dict(state) if state_path and not full else {}
     changed: list[dict[str, Any]] = []
     changed_jobs: list[dict[str, Any]] = []
@@ -90,7 +94,7 @@ def push_nested_jobs(
                 if not cid:
                     print(f"[push] skip {m['id']}: missing company id for {m['company']['slug']}")
                     continue
-                row = dict(m["job"])
+                row = _omit_none(dict(m["job"]))
                 row["company_id"] = cid
                 row["location_id"] = location_ids.get(m["location"]["location_key"])
                 job_rows.append(row)
@@ -105,12 +109,14 @@ def push_nested_jobs(
                 push_job_skills(client, url, skill_jobs, batch_size)
 
     if state_path:
-        # Merge with previous state so streaming chunks don't wipe other ids
-        merged = dict(state)
-        merged.update(next_state)
-        state_path.parent.mkdir(parents=True, exist_ok=True)
-        state_path.write_text(json.dumps(merged), encoding="utf-8")
-        print(f"[push] state saved ({len(merged):,} ids) → {state_path}")
+        with _STATE_LOCK:
+            prev = _load_json(state_path, {})
+            if not isinstance(prev, dict):
+                prev = {}
+            prev.update(next_state)
+            state_path.parent.mkdir(parents=True, exist_ok=True)
+            state_path.write_text(json.dumps(prev), encoding="utf-8")
+            print(f"[push] state saved ({len(prev):,} ids) → {state_path}")
     print("[push] done")
     return pushed
 
@@ -224,7 +230,7 @@ def upsert_companies(
         slug = c.get("slug")
         if not slug or slug in by_slug:
             continue
-        by_slug[slug] = {
+        by_slug[slug] = _omit_none({
             "slug": slug,
             "name": c.get("name") or slug,
             "logo": c.get("logo"),
@@ -233,7 +239,7 @@ def upsert_companies(
             "size": c.get("size"),
             "type": c.get("type"),
             "updated_at": now,
-        }
+        })
     rows = list(by_slug.values())
     id_by_slug: dict[str, int] = {}
     for i in range(0, len(rows), chunk):
@@ -259,7 +265,7 @@ def upsert_locations(
     for loc in locations:
         key = loc.get("location_key")
         if key and key not in by_key:
-            by_key[key] = loc
+            by_key[key] = _omit_none(dict(loc))
     rows = list(by_key.values())
     id_by_key: dict[str, int] = {}
     for i in range(0, len(rows), chunk):
@@ -298,6 +304,8 @@ def upsert_jobs(
 def seed_analytics(
     client: httpx.Client, base: str, job_ids: list[str], chunk: int
 ) -> None:
+    if not job_ids:
+        return
     rows = [
         {"job_id": jid, "views": 0, "clicks": 0, "applications": 0, "saved": 0}
         for jid in job_ids
@@ -466,6 +474,10 @@ def _raise_http(response: httpx.Response, label: str) -> None:
         return
     print(f"[push] {label} {response.status_code}: {(response.text or '')[:1500]}")
     response.raise_for_status()
+
+
+def _omit_none(row: dict[str, Any]) -> dict[str, Any]:
+    return {k: v for k, v in row.items() if v is not None}
 
 
 def _enum_or_none(value: int | None, lo: int, hi: int) -> int | None:
