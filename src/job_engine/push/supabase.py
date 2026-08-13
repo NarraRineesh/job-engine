@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import os
 import re
 from datetime import UTC, datetime
@@ -94,13 +95,13 @@ def push_nested_jobs(
                 row["location_id"] = location_ids.get(m["location"]["location_key"])
                 job_rows.append(row)
 
-            upsert_jobs(client, url, job_rows, batch_size)
-            seed_analytics(client, url, [r["id"] for r in job_rows], batch_size)
-            pushed = len(job_rows)
+            pushed_ids = upsert_jobs(client, url, job_rows, batch_size)
+            seed_analytics(client, url, pushed_ids, batch_size)
+            pushed = len(pushed_ids)
 
             if push_skills:
-                pushed_ids = {r["id"] for r in job_rows}
-                skill_jobs = [j for j in changed_jobs if j.get("id") in pushed_ids]
+                ok = set(pushed_ids)
+                skill_jobs = [j for j in changed_jobs if j.get("id") in ok]
                 push_job_skills(client, url, skill_jobs, batch_size)
 
     if state_path:
@@ -153,24 +154,21 @@ def map_job(job: dict[str, Any]) -> dict[str, Any] | None:
             "longitude": loc.get("longitude"),
         },
         "job": {
+            # description/summary stay local for skill extract; not stored in Supabase
             "id": job["id"],
             "title": job.get("title") or "",
             "normalized_title": normalize_title(job.get("title")),
             "department": job.get("department"),
             "team": job.get("team"),
-            "summary": job.get("summary"),
-            "description": job.get("description"),
-            "employment_type": to_employment_type(job.get("employmentType")),
-            "work_mode": to_work_mode(job.get("workMode")),
-            "seniority": to_seniority(job.get("seniority")),
+            "employment_type": _enum_or_none(to_employment_type(job.get("employmentType")), 1, 6),
+            "work_mode": _enum_or_none(to_work_mode(job.get("workMode")), 1, 3),
+            "seniority": _enum_or_none(to_seniority(job.get("seniority")), 1, 10),
             "min_experience": _clamp_years(exp.get("min")),
             "max_experience": _clamp_years(exp.get("max")),
-            "salary_currency": (
-                str(salary["currency"])[:3].upper() if salary.get("currency") else None
-            ),
-            "salary_min": _num(salary.get("min")),
-            "salary_max": _num(salary.get("max")),
-            "salary_period": to_salary_period(salary.get("period")),
+            "salary_currency": _currency(salary.get("currency")),
+            "salary_min": _int4(salary.get("min")),
+            "salary_max": _int4(salary.get("max")),
+            "salary_period": _enum_or_none(to_salary_period(salary.get("period")), 1, 3),
             "salary_visible": bool(salary.get("min") is not None or salary.get("max") is not None),
             "vacancies": 1,
             "apply_url": (job.get("source") or {}).get("applyUrl"),
@@ -180,9 +178,9 @@ def map_job(job: dict[str, Any]) -> dict[str, Any] | None:
             "posted_at": _iso_or_null(job.get("postedAt")),
             "updated_at": _iso_or_null(job.get("updatedAt")),
             "last_scraped_at": scraped,
-            "status": status,
+            "status": _enum_or_none(status, 1, 4) or 1,
             "expired": status == 4,
-            "language": job.get("language"),
+            "language": _language(job.get("language")),
         },
     }
 
@@ -245,7 +243,7 @@ def upsert_companies(
             headers={"Prefer": "resolution=merge-duplicates,return=representation"},
             json=batch,
         )
-        r.raise_for_status()
+        _raise_http(r, "companies")
         for row in r.json() or []:
             id_by_slug[row["slug"]] = row["id"]
         print(f"[push] companies: {min(i + chunk, len(rows))}/{len(rows)}")
@@ -271,7 +269,7 @@ def upsert_locations(
             headers={"Prefer": "resolution=merge-duplicates,return=representation"},
             json=batch,
         )
-        r.raise_for_status()
+        _raise_http(r, "locations")
         for row in r.json() or []:
             id_by_key[row["location_key"]] = row["id"]
         print(f"[push] locations: {min(i + chunk, len(rows))}/{len(rows)}")
@@ -282,16 +280,19 @@ def upsert_locations(
 
 def upsert_jobs(
     client: httpx.Client, base: str, job_rows: list[dict[str, Any]], chunk: int
-) -> None:
-    for i in range(0, len(job_rows), chunk):
-        batch = job_rows[i : i + chunk]
-        r = client.post(
-            f"{base}/rest/v1/jobs?on_conflict=id",
-            headers={"Prefer": "resolution=merge-duplicates,return=minimal"},
-            json=batch,
-        )
-        r.raise_for_status()
-        print(f"[push] jobs: {min(i + chunk, len(job_rows))}/{len(job_rows)}")
+) -> list[str]:
+    by_id: dict[str, dict[str, Any]] = {}
+    for row in job_rows:
+        jid = row.get("id")
+        if jid:
+            by_id[str(jid)] = row
+    rows = list(by_id.values())
+    url = f"{base}/rest/v1/jobs?on_conflict=id"
+    ok: list[str] = []
+    for i in range(0, len(rows), chunk):
+        ok.extend(_upsert_job_chunk(client, url, rows[i : i + chunk]))
+        print(f"[push] jobs: {min(i + chunk, len(rows))}/{len(rows)}")
+    return ok
 
 
 def seed_analytics(
@@ -308,7 +309,7 @@ def seed_analytics(
             headers={"Prefer": "resolution=ignore-duplicates,return=minimal"},
             json=batch,
         )
-        r.raise_for_status()
+        _raise_http(r, "job_analytics")
         print(f"[push] job_analytics seed: {min(i + chunk, len(rows))}/{len(rows)}")
 
 
@@ -354,7 +355,7 @@ def push_job_skills(
             headers={"Prefer": "resolution=merge-duplicates,return=minimal"},
             json=batch,
         )
-        r.raise_for_status()
+        _raise_http(r, "job_skills")
         print(f"[push] job_skills: {min(i + chunk, len(uniq))}/{len(uniq)}")
 
 
@@ -374,7 +375,7 @@ def _ensure_skill(
         f"{base}/rest/v1/skills",
         params={"normalized_name": f"eq.{key}", "select": "id", "limit": "1"},
     )
-    r.raise_for_status()
+    _raise_http(r, "skills")
     rows = r.json() or []
     if rows:
         cache[key] = rows[0]["id"]
@@ -384,7 +385,7 @@ def _ensure_skill(
         headers={"Prefer": "resolution=merge-duplicates,return=representation"},
         json=[{"name": key, "normalized_name": key, "last_seen": now}],
     )
-    r.raise_for_status()
+    _raise_http(r, "skills")
     created = r.json() or []
     if created:
         cache[key] = created[0]["id"]
@@ -394,7 +395,7 @@ def _ensure_skill(
         f"{base}/rest/v1/skills",
         params={"normalized_name": f"eq.{key}", "select": "id", "limit": "1"},
     )
-    r.raise_for_status()
+    _raise_http(r, "skills")
     rows = r.json() or []
     if rows:
         cache[key] = rows[0]["id"]
@@ -419,7 +420,7 @@ def _fill_ids(
             f"{base}/rest/v1/{table}",
             params={"select": f"id,{col}", f"{col}": f"in.({filt})"},
         )
-        r.raise_for_status()
+        _raise_http(r, table)
         for row in r.json() or []:
             out[row[col]] = row["id"]
 
@@ -429,6 +430,74 @@ def _load_json(path: Path, fallback: Any) -> Any:
         return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return fallback
+
+
+def _upsert_job_chunk(
+    client: httpx.Client, url: str, batch: list[dict[str, Any]]
+) -> list[str]:
+    """POST a jobs batch. On 400, split until the bad row can be skipped."""
+    if not batch:
+        return []
+    r = client.post(
+        url,
+        headers={"Prefer": "resolution=merge-duplicates,return=minimal"},
+        json=batch,
+    )
+    if r.is_success:
+        return [str(row["id"]) for row in batch]
+    detail = (r.text or "")[:1500]
+    if r.status_code == 400 and len(batch) > 1:
+        print(f"[push] jobs 400 on {len(batch)} rows, splitting: {detail}")
+        mid = max(1, len(batch) // 2)
+        return _upsert_job_chunk(client, url, batch[:mid]) + _upsert_job_chunk(
+            client, url, batch[mid:]
+        )
+    if r.status_code == 400:
+        jid = batch[0].get("id") or "?"
+        print(f"[push] skip jobs {jid}: 400 {detail}")
+        return []
+    print(f"[push] jobs {r.status_code}: {detail}")
+    r.raise_for_status()
+    return []
+
+
+def _raise_http(response: httpx.Response, label: str) -> None:
+    if response.is_success:
+        return
+    print(f"[push] {label} {response.status_code}: {(response.text or '')[:1500]}")
+    response.raise_for_status()
+
+
+def _enum_or_none(value: int | None, lo: int, hi: int) -> int | None:
+    if value is None:
+        return None
+    return value if lo <= value <= hi else None
+
+
+def _currency(value: object) -> str | None:
+    s = re.sub(r"[^A-Za-z]", "", str(value or "")).upper()[:3]
+    return s if len(s) == 3 else None
+
+
+def _language(value: object) -> str | None:
+    s = str(value or "").strip()
+    return s[:10] if s else None
+
+
+def _int4(n: object) -> int | None:
+    """Jobs.salary_* are integer; JSON floats and overflow cause HTTP 400."""
+    if n is None or n == "":
+        return None
+    try:
+        v = float(n)  # type: ignore[arg-type]
+    except (TypeError, ValueError):
+        return None
+    if not math.isfinite(v):
+        return None
+    iv = int(round(v))
+    if iv < 0:
+        return 0
+    return min(iv, 2_147_483_647)
 
 
 def _iso_or_null(value: object) -> str | None:
@@ -448,15 +517,6 @@ def _clamp_years(n: object) -> int | None:
     except (TypeError, ValueError):
         return None
     return max(0, min(50, v))
-
-
-def _num(n: object) -> float | None:
-    if n is None or n == "":
-        return None
-    try:
-        return float(n)  # type: ignore[arg-type]
-    except (TypeError, ValueError):
-        return None
 
 
 def _escape_id(value: str) -> str:

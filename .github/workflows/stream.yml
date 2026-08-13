@@ -87,7 +87,7 @@ jobs:
           enable-cache: true
 
       - name: Sync
-        run: uv sync
+        run: uv sync --extra cursor
 
       - name: Stream chunk
         if: ${{ matrix.tenant_count > 0 }}
