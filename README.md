@@ -143,17 +143,28 @@ Re-run `npm run index` after a stream so Typesense stays current.
 ## Companies
 
 ```bash
-uv run job-engine plan-chunks --ats keka --chunk-size 50
+uv run job-engine plan-chunks --mode multi_tenant
 ```
 
 Inventories: `data/companies/ats-companies/{ats}.json`.
 
 ## GitHub Actions
 
-`.github/workflows/stream.yml` — ATS × tenant chunks (`max-parallel: 8`).  
-Runs weekly (Monday 02:30 UTC) and on demand. A new run **cancels** an in-progress stream.  
-Empty `ats` = scrapeable ATS only; empty `country` = no filter. Default enrich is `python` (lexicon skills).  
-GitHub allows 256 matrix jobs; `plan-chunks` raises `--chunk-size` if needed so a full run fits.  
+Two workflows, separate concurrency groups (one does not cancel the other):
+
+| Workflow | File | What | Schedule |
+|----------|------|------|----------|
+| `stream-multi` | `.github/workflows/stream.yml` | Company boards (Ashby, Greenhouse, …) | Monday 02:30 UTC |
+| `stream-singleton` | `.github/workflows/stream-singleton.yml` | One-board sources (EURES, Apple, Amazon, …) | Tuesday 02:30 UTC |
+
+Both also run on demand. Retriggering a workflow cancels only **that** workflow’s in-progress run.
+
+- **One GitHub job per ATS** (registry order: ADP → Ashby → …). Up to 8 ATS jobs in parallel for multi, 4 for singleton.
+- Inside an ATS job, **8 company boards at a time** (pipelined: when one finishes, the next starts).
+- Weekly singleton **skips EURES and Bundesagentur** (`"stream": false`). Run them on purpose: `uv run job-engine run --ats eures`.
+
+Empty `ats` = streamable ATS of that mode; empty `country` = no filter. Default enrich is `python`.  
+Local: `uv run job-engine plan-chunks --mode multi_tenant`.  
 Push writes companies, locations, jobs, job_analytics, skills, and job_skills. Job **summary** and **description** are not stored (used only locally to extract skills).  
 Secrets: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`. Optional: `CURSOR_API_KEY` for `--enrich both`.
 

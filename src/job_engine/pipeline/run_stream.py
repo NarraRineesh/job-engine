@@ -100,10 +100,12 @@ async def _stream_one(
     cfg = ats_config(ats)
     conc = int(concurrency if concurrency is not None else cfg.get("concurrency") or 8)
     to = float(timeout if timeout is not None else cfg.get("timeout") or 45.0)
-    size = int(chunk_size if chunk_size is not None else 50)
-
     tenants = load_tenants(ats, only_slugs=only_slugs, max_tenants=max_tenants)
-    tenants = chunk_tenants(tenants, chunk_index=chunk_index, chunk_size=size)
+    if chunk_size is not None:
+        size = int(chunk_size)
+        tenants = chunk_tenants(tenants, chunk_index=chunk_index, chunk_size=size)
+    else:
+        size = len(tenants)
     if not tenants:
         print(f"[stream] {ats}: no tenants in chunk {chunk_index}")
         return {"tenants": 0, "jobs": 0, "pushed": 0, "errors": 0}

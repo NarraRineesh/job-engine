@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 import re
-import sys
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -26,9 +25,23 @@ def load_registry() -> dict[str, Any]:
     return json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
 
 
-def list_registered_ats() -> list[str]:
-    reg = load_registry()
-    return sorted((reg.get("ats") or {}).keys())
+def list_registered_ats(*, mode: str | None = None, include_opt_out: bool = False) -> list[str]:
+    """ATS names in ``ats_registry.json`` order.
+
+    ``mode`` is ``multi_tenant`` or ``singleton``. Names with ``"stream": false``
+    (EURES, Bundesagentur) are omitted unless ``include_opt_out`` is true.
+    """
+    wanted = mode.strip().lower() if mode else None
+    names: list[str] = []
+    for name, cfg in (load_registry().get("ats") or {}).items():
+        if not isinstance(cfg, dict):
+            cfg = {}
+        if wanted and (cfg.get("mode") or "multi_tenant") != wanted:
+            continue
+        if not include_opt_out and cfg.get("stream") is False:
+            continue
+        names.append(name)
+    return names
 
 
 def ats_config(ats: str) -> dict[str, Any]:
@@ -209,76 +222,26 @@ def chunk_tenants(
     return tenants[start : start + chunk_size]
 
 
-def _chunk_job_count(tenant_counts: list[int], chunk_size: int) -> int:
-    total = 0
-    for n in tenant_counts:
-        total += 1 if n == 0 else (n + chunk_size - 1) // chunk_size
-    return total
-
-
-def _chunk_size_for_max_jobs(
-    tenant_counts: list[int],
-    *,
-    chunk_size: int,
-    max_jobs: int,
-) -> int:
-    """Smallest chunk_size >= requested that yields <= max_jobs matrix rows."""
-    if max_jobs <= 0:
-        return chunk_size
-    if _chunk_job_count(tenant_counts, chunk_size) <= max_jobs:
-        return chunk_size
-    hi = max(tenant_counts, default=chunk_size)
-    if _chunk_job_count(tenant_counts, hi) > max_jobs:
-        raise ValueError(
-            f"Cannot fit {len(tenant_counts)} ATS into {max_jobs} GitHub matrix jobs "
-            "(limit is 256). Pass a smaller --ats allowlist."
-        )
-    lo = chunk_size
-    while lo < hi:
-        mid = (lo + hi) // 2
-        if _chunk_job_count(tenant_counts, mid) <= max_jobs:
-            hi = mid
-        else:
-            lo = mid + 1
-    return lo
-
-
 def plan_chunks(
     ats_list: list[str],
     *,
-    chunk_size: int = 50,
     max_jobs: int = 256,
 ) -> list[dict[str, Any]]:
-    """Build GHA matrix entries: {ats, chunk, chunk_size, tenant_count}.
-
-    GitHub Actions allows at most 256 matrix configurations. When the requested
-    chunk_size would exceed that, chunk_size is raised just enough to fit.
-    """
-    if chunk_size <= 0:
-        raise ValueError("chunk_size must be positive")
+    """One GHA matrix row per ATS (all companies), in ``ats_list`` order."""
     sizes = {ats: n for ats in ats_list if (n := len(load_tenants(ats))) > 0}
     if not sizes:
-        return [{"ats": "_none", "chunk": 0, "chunk_size": chunk_size, "tenant_count": 0}]
-    size = _chunk_size_for_max_jobs(
-        list(sizes.values()), chunk_size=chunk_size, max_jobs=max_jobs
-    )
-    if size != chunk_size:
-        n_before = _chunk_job_count(list(sizes.values()), chunk_size)
-        print(
-            f"[plan-chunks] raised chunk_size {chunk_size} → {size} "
-            f"to fit {max_jobs} GitHub matrix jobs (was {n_before})",
-            file=sys.stderr,
+        return [{"ats": "_none", "chunk": 0, "chunk_size": 1, "tenant_count": 0}]
+    if max_jobs > 0 and len(sizes) > max_jobs:
+        raise ValueError(
+            f"Cannot fit {len(sizes)} ATS into {max_jobs} GitHub matrix jobs "
+            "(limit is 256). Pass a smaller --ats allowlist."
         )
-    matrix: list[dict[str, Any]] = []
-    for ats, n in sizes.items():
-        n_chunks = (n + size - 1) // size
-        for i in range(n_chunks):
-            matrix.append(
-                {
-                    "ats": ats,
-                    "chunk": i,
-                    "chunk_size": size,
-                    "tenant_count": min(size, n - i * size),
-                }
-            )
-    return matrix
+    return [
+        {
+            "ats": ats,
+            "chunk": 0,
+            "chunk_size": n,
+            "tenant_count": n,
+        }
+        for ats, n in sizes.items()
+    ]
