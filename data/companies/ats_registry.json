@@ -1,0 +1,245 @@
+{
+  "defaults": {
+    "concurrency": 8,
+    "timeout": 45.0
+  },
+  "slug_from": {
+    "workday": "url",
+    "phenom": "url",
+    "taleo": "url",
+    "oracle": "url",
+    "successfactors": "url",
+    "icims": "url"
+  },
+  "ats": {
+    "adp": {
+      "mode": "multi_tenant"
+    },
+    "ashby": {
+      "mode": "multi_tenant"
+    },
+    "avature": {
+      "mode": "multi_tenant"
+    },
+    "bamboohr": {
+      "mode": "multi_tenant"
+    },
+    "beisen": {
+      "mode": "multi_tenant"
+    },
+    "beisen_legacy": {
+      "mode": "multi_tenant"
+    },
+    "breezy": {
+      "mode": "multi_tenant"
+    },
+    "cornerstone": {
+      "mode": "multi_tenant"
+    },
+    "darwinbox": {
+      "mode": "multi_tenant"
+    },
+    "keka": {
+      "mode": "multi_tenant"
+    },
+    "dayforce": {
+      "mode": "multi_tenant"
+    },
+    "eightfold": {
+      "mode": "multi_tenant"
+    },
+    "gem": {
+      "mode": "multi_tenant"
+    },
+    "greenhouse": {
+      "mode": "multi_tenant"
+    },
+    "gupy": {
+      "mode": "multi_tenant"
+    },
+    "herp": {
+      "mode": "multi_tenant"
+    },
+    "hrmos": {
+      "mode": "multi_tenant"
+    },
+    "icims": {
+      "mode": "multi_tenant"
+    },
+    "jazzhr": {
+      "mode": "multi_tenant"
+    },
+    "jobvite": {
+      "mode": "multi_tenant"
+    },
+    "join_com": {
+      "mode": "multi_tenant"
+    },
+    "lever": {
+      "mode": "multi_tenant"
+    },
+    "mercor": {
+      "mode": "multi_tenant"
+    },
+    "moka": {
+      "mode": "multi_tenant"
+    },
+    "oracle": {
+      "mode": "multi_tenant"
+    },
+    "pageup": {
+      "mode": "multi_tenant"
+    },
+    "paycom": {
+      "mode": "multi_tenant"
+    },
+    "paylocity": {
+      "mode": "multi_tenant"
+    },
+    "personio": {
+      "mode": "multi_tenant"
+    },
+    "phenom": {
+      "mode": "multi_tenant"
+    },
+    "pinpoint": {
+      "mode": "multi_tenant"
+    },
+    "recruitee": {
+      "mode": "multi_tenant"
+    },
+    "recruiterbox": {
+      "mode": "multi_tenant"
+    },
+    "rippling": {
+      "mode": "multi_tenant"
+    },
+    "seek": {
+      "mode": "multi_tenant"
+    },
+    "smartrecruiters": {
+      "mode": "multi_tenant"
+    },
+    "softgarden": {
+      "mode": "multi_tenant"
+    },
+    "successfactors": {
+      "mode": "multi_tenant"
+    },
+    "taleo": {
+      "mode": "multi_tenant"
+    },
+    "teamtailor": {
+      "mode": "multi_tenant"
+    },
+    "ukg": {
+      "mode": "multi_tenant"
+    },
+    "workable": {
+      "mode": "multi_tenant"
+    },
+    "workday": {
+      "mode": "multi_tenant"
+    },
+    "amazon": {
+      "mode": "singleton",
+      "slug": "amazon"
+    },
+    "apple": {
+      "mode": "singleton",
+      "slug": "apple"
+    },
+    "arbetsformedlingen": {
+      "mode": "singleton",
+      "slug": "arbetsformedlingen"
+    },
+    "builtin": {
+      "mode": "singleton",
+      "slug": "builtin"
+    },
+    "bundesagentur": {
+      "mode": "singleton",
+      "slug": "bundesagentur"
+    },
+    "bytedance": {
+      "mode": "singleton",
+      "slug": "bytedance"
+    },
+    "eures": {
+      "mode": "singleton",
+      "slug": "eures"
+    },
+    "getonbrd": {
+      "mode": "singleton",
+      "slug": "getonbrd"
+    },
+    "google": {
+      "mode": "singleton",
+      "slug": "google"
+    },
+    "infojobs_es": {
+      "mode": "singleton",
+      "slug": "infojobs_es"
+    },
+    "jobbankca": {
+      "mode": "singleton",
+      "slug": "jobbankca"
+    },
+    "jobs_cz": {
+      "mode": "singleton",
+      "slug": "jobs_cz"
+    },
+    "jobsch": {
+      "mode": "singleton",
+      "slug": "jobsch"
+    },
+    "manfred": {
+      "mode": "singleton",
+      "slug": "manfred"
+    },
+    "meta": {
+      "mode": "singleton",
+      "slug": "meta"
+    },
+    "programathor": {
+      "mode": "singleton",
+      "slug": "programathor"
+    },
+    "remoteok": {
+      "mode": "singleton",
+      "slug": "remoteok"
+    },
+    "tesla": {
+      "mode": "singleton",
+      "slug": "tesla"
+    },
+    "thehub": {
+      "mode": "singleton",
+      "slug": "thehub"
+    },
+    "tiktok": {
+      "mode": "singleton",
+      "slug": "tiktok"
+    },
+    "uber": {
+      "mode": "singleton",
+      "slug": "uber"
+    },
+    "wanted": {
+      "mode": "singleton",
+      "slug": "wanted"
+    },
+    "wellfound": {
+      "mode": "singleton",
+      "slug": "wellfound"
+    },
+    "weworkremotely": {
+      "mode": "singleton",
+      "slug": "weworkremotely"
+    },
+    "ycombinator": {
+      "mode": "singleton",
+      "slug": "ycombinator"
+    }
+  }
+}

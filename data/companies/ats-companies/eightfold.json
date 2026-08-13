@@ -1,0 +1,441 @@
+[
+  {
+    "name": "10x Genomics",
+    "slug": "10xgenomics",
+    "url": "https://10xgenomics.eightfold.ai/careers"
+  },
+  {
+    "name": "Albemarle",
+    "slug": "albemarle",
+    "url": "https://albemarle.eightfold.ai/careers",
+    "domain": "albemarle.com"
+  },
+  {
+    "name": "Alnylam Pharmaceuticals",
+    "slug": "alnylam",
+    "url": "https://alnylam.eightfold.ai/careers",
+    "domain": "alnylam.com"
+  },
+  {
+    "name": "Amdocs",
+    "slug": "amdocs",
+    "url": "https://amdocs.eightfold.ai/careers"
+  },
+  {
+    "name": "Applied Materials",
+    "slug": "appliedmaterials",
+    "url": "https://appliedmaterials.eightfold.ai/careers"
+  },
+  {
+    "name": "Arcadis",
+    "slug": "arcadis",
+    "url": "https://arcadis.eightfold.ai/careers"
+  },
+  {
+    "name": "AstraZeneca",
+    "slug": "astrazeneca",
+    "url": "https://astrazeneca.eightfold.ai/careers",
+    "domain": "astrazeneca.com"
+  },
+  {
+    "name": "ATB Financial",
+    "slug": "atb",
+    "url": "https://atb.eightfold.ai/careers",
+    "domain": "atb.com"
+  },
+  {
+    "name": "Bayer",
+    "slug": "bayer",
+    "url": "https://bayer.eightfold.ai/careers"
+  },
+  {
+    "name": "Bimbo Bakeries USA",
+    "slug": "grupobimbo",
+    "url": "https://grupobimbo.eightfold.ai/careers"
+  },
+  {
+    "name": "Boston Scientific",
+    "slug": "bostonscientific",
+    "url": "https://bostonscientific.eightfold.ai/careers"
+  },
+  {
+    "name": "Bristol Myers Squibb",
+    "slug": "bms",
+    "url": "https://bms.eightfold.ai/careers",
+    "domain": "bms.com"
+  },
+  {
+    "name": "British Council",
+    "slug": "britishcouncil",
+    "url": "https://britishcouncil.eightfold.ai/careers",
+    "domain": "britishcouncil.org"
+  },
+  {
+    "name": "CACI",
+    "slug": "caci",
+    "url": "https://caci.eightfold.ai/careers"
+  },
+  {
+    "name": "Citi",
+    "slug": "citi",
+    "url": "https://citi.eightfold.ai/careers"
+  },
+  {
+    "name": "Coca-Cola Europacific Partners",
+    "slug": "ccep",
+    "url": "https://ccep.eightfold.ai/careers"
+  },
+  {
+    "name": "Corteva Agriscience",
+    "slug": "corteva",
+    "url": "https://corteva.eightfold.ai/careers"
+  },
+  {
+    "name": "CoStar Group",
+    "slug": "costar",
+    "url": "https://costar.eightfold.ai/careers"
+  },
+  {
+    "name": "Deloitte",
+    "slug": "deloitte",
+    "url": "https://deloitte.eightfold.ai/careers",
+    "domain": "deloitte.de"
+  },
+  {
+    "name": "Deutsche Telekom",
+    "slug": "telekom-growthhub",
+    "url": "https://telekom-growthhub.eightfold.ai/careers"
+  },
+  {
+    "name": "Dexcom",
+    "slug": "dexcom",
+    "url": "https://dexcom.eightfold.ai/careers"
+  },
+  {
+    "name": "Dolby",
+    "slug": "dolby",
+    "url": "https://dolby.eightfold.ai/careers"
+  },
+  {
+    "name": "dsm-firmenich",
+    "slug": "dsm",
+    "url": "https://dsm.eightfold.ai/careers"
+  },
+  {
+    "name": "Eaton",
+    "slug": "eaton",
+    "url": "https://eaton.eightfold.ai/careers"
+  },
+  {
+    "name": "Eightfold",
+    "slug": "app",
+    "url": "https://app.eightfold.ai/careers",
+    "domain": "eightfold.ai"
+  },
+  {
+    "name": "Ericsson",
+    "slug": "ericsson",
+    "url": "https://ericsson.eightfold.ai/careers"
+  },
+  {
+    "name": "Estée Lauder Companies",
+    "slug": "elcompanies",
+    "url": "https://elcompanies.eightfold.ai/careers"
+  },
+  {
+    "name": "Ford",
+    "slug": "ford",
+    "url": "https://ford.eightfold.ai/careers"
+  },
+  {
+    "name": "Fortive",
+    "slug": "fortive",
+    "url": "https://fortive.eightfold.ai/careers"
+  },
+  {
+    "name": "Forvia",
+    "slug": "faurecia",
+    "url": "https://faurecia.eightfold.ai/careers"
+  },
+  {
+    "name": "Freeport-McMoRan",
+    "slug": "fcx",
+    "url": "https://fcx.eightfold.ai/careers",
+    "domain": "fcx.com"
+  },
+  {
+    "name": "Frontier Communications",
+    "slug": "ftr",
+    "url": "https://ftr.eightfold.ai/careers",
+    "domain": "ftr.com"
+  },
+  {
+    "name": "GlobalFoundries",
+    "slug": "globalfoundries",
+    "url": "https://globalfoundries.eightfold.ai/careers",
+    "domain": "globalfoundries.com"
+  },
+  {
+    "name": "Haleon",
+    "slug": "haleon",
+    "url": "https://haleon.eightfold.ai/careers"
+  },
+  {
+    "name": "Hasbro",
+    "slug": "hasbro",
+    "url": "https://hasbro.eightfold.ai/careers"
+  },
+  {
+    "name": "Houston ISD",
+    "slug": "houstonisd",
+    "url": "https://apply.houstonisd.org/careers",
+    "domain": "houstonisd.org"
+  },
+  {
+    "name": "HP",
+    "slug": "hp",
+    "url": "https://hp.eightfold.ai/careers",
+    "domain": "hp.com"
+  },
+  {
+    "name": "HSBC",
+    "slug": "hsbc",
+    "url": "https://hsbc.eightfold.ai/careers"
+  },
+  {
+    "name": "Infineon Technologies",
+    "slug": "infineon",
+    "url": "https://infineon.eightfold.ai/careers",
+    "domain": "infineon.com"
+  },
+  {
+    "name": "Insight",
+    "slug": "insight",
+    "url": "https://insight.eightfold.ai/careers"
+  },
+  {
+    "name": "John Deere",
+    "slug": "deere",
+    "url": "https://careers.deere.com/careers",
+    "domain": "johndeere.com"
+  },
+  {
+    "name": "Johns Hopkins University",
+    "slug": "jhu",
+    "url": "https://jhu.eightfold.ai/careers",
+    "domain": "jhu.edu"
+  },
+  {
+    "name": "Kering",
+    "slug": "kering",
+    "url": "https://kering.eightfold.ai/careers"
+  },
+  {
+    "name": "Kraft Heinz",
+    "slug": "kraftheinz",
+    "url": "https://kraftheinz.eightfold.ai/careers"
+  },
+  {
+    "name": "Lam Research",
+    "slug": "lamresearch",
+    "url": "https://lamresearch.eightfold.ai/careers"
+  },
+  {
+    "name": "LG CNS",
+    "slug": "lgcns",
+    "url": "https://lgcns.eightfold.ai/careers",
+    "domain": "lgcns.com"
+  },
+  {
+    "name": "Liberty Mutual Insurance",
+    "slug": "libertymutual",
+    "url": "https://libertymutual.eightfold.ai/careers"
+  },
+  {
+    "name": "Match Group",
+    "slug": "gotinder",
+    "url": "https://gotinder.eightfold.ai/careers"
+  },
+  {
+    "name": "MercadoLibre",
+    "slug": "mercadolibre",
+    "url": "https://mercadolibre.eightfold.ai/careers"
+  },
+  {
+    "name": "Micron Technology",
+    "slug": "micron",
+    "url": "https://micron.eightfold.ai/careers"
+  },
+  {
+    "name": "Microsoft",
+    "slug": "microsoft",
+    "url": "https://microsoft.eightfold.ai/careers"
+  },
+  {
+    "name": "Modern Technology Solutions Inc",
+    "slug": "mtsi-va",
+    "url": "https://mtsi-va.eightfold.ai/careers"
+  },
+  {
+    "name": "Morgan Stanley",
+    "slug": "morganstanley",
+    "url": "https://morganstanley.eightfold.ai/careers"
+  },
+  {
+    "name": "NetApp",
+    "slug": "netapp",
+    "url": "https://netapp.eightfold.ai/careers",
+    "domain": "netapp.com"
+  },
+  {
+    "name": "New York Life",
+    "slug": "newyorklife",
+    "url": "https://newyorklife.eightfold.ai/careers"
+  },
+  {
+    "name": "nformal",
+    "slug": "nformal",
+    "url": "https://nformal.eightfold.ai/careers",
+    "domain": "nformal.com"
+  },
+  {
+    "name": "Northrop Grumman",
+    "slug": "ngc",
+    "url": "https://ngc.eightfold.ai/careers"
+  },
+  {
+    "name": "NTT DATA",
+    "slug": "nttdata",
+    "url": "https://nttdata.eightfold.ai/careers"
+  },
+  {
+    "name": "NVIDIA Corporation",
+    "slug": "nvidia",
+    "url": "https://nvidia.eightfold.ai/careers"
+  },
+  {
+    "name": "OATRH",
+    "slug": "puertoricogov",
+    "url": "https://puertoricogov.eightfold.ai/careers"
+  },
+  {
+    "name": "PayPal",
+    "slug": "paypal",
+    "url": "https://paypal.eightfold.ai/careers"
+  },
+  {
+    "name": "Plexus",
+    "slug": "plexus",
+    "url": "https://plexus.eightfold.ai/careers",
+    "domain": "plexus.com"
+  },
+  {
+    "name": "PTC",
+    "slug": "ptc",
+    "url": "https://ptc.eightfold.ai/careers"
+  },
+  {
+    "name": "Qualcomm",
+    "slug": "qualcomm",
+    "url": "https://qualcomm.eightfold.ai/careers"
+  },
+  {
+    "name": "Ralliant",
+    "slug": "ralliant",
+    "url": "https://ralliant.eightfold.ai/careers"
+  },
+  {
+    "name": "SLB",
+    "slug": "slb",
+    "url": "https://slb.eightfold.ai/careers"
+  },
+  {
+    "name": "Softtek",
+    "slug": "softtek",
+    "url": "https://softtek.eightfold.ai/careers"
+  },
+  {
+    "name": "Starbucks",
+    "slug": "starbucks",
+    "url": "https://starbucks.eightfold.ai/careers"
+  },
+  {
+    "name": "STMicroelectronics",
+    "slug": "stmicroelectronics",
+    "url": "https://stmicroelectronics.eightfold.ai/careers",
+    "domain": "stmicroelectronics.com"
+  },
+  {
+    "name": "Symetra",
+    "slug": "symetra",
+    "url": "https://symetra.eightfold.ai/careers"
+  },
+  {
+    "name": "Tailored Brands",
+    "slug": "tailoredbrands",
+    "url": "https://tailoredbrands.eightfold.ai/careers"
+  },
+  {
+    "name": "Trimble",
+    "slug": "trimble",
+    "url": "https://trimble.eightfold.ai/careers"
+  },
+  {
+    "name": "TriNet",
+    "slug": "trinet",
+    "url": "https://trinet.eightfold.ai/careers"
+  },
+  {
+    "name": "Twilio",
+    "slug": "twilio",
+    "url": "https://twilio.eightfold.ai/careers"
+  },
+  {
+    "name": "UKG",
+    "slug": "ukg",
+    "url": "https://ukg.eightfold.ai/careers"
+  },
+  {
+    "name": "Vale",
+    "slug": "vale",
+    "url": "https://vale.eightfold.ai/careers",
+    "domain": "vale.com"
+  },
+  {
+    "name": "Vialto Partners",
+    "slug": "vialto",
+    "url": "https://vialto.eightfold.ai/careers"
+  },
+  {
+    "name": "Vodafone",
+    "slug": "vodafone",
+    "url": "https://vodafone.eightfold.ai/careers"
+  },
+  {
+    "name": "Whirlpool",
+    "slug": "whirlpool",
+    "url": "https://whirlpool.eightfold.ai/careers"
+  },
+  {
+    "name": "Worley",
+    "slug": "worley",
+    "url": "https://worley.eightfold.ai/careers"
+  },
+  {
+    "name": "MM Group",
+    "slug": "mm-group",
+    "url": "https://mm-group.eightfold.ai/careers"
+  },
+  {
+    "name": "Millennium",
+    "slug": "mlp",
+    "url": "https://career.mlp.com/careers",
+    "domain": "mlp.com"
+  },
+  {
+    "name": "Netflix",
+    "slug": "netflix",
+    "url": "https://explore.jobs.netflix.net/careers",
+    "domain": "netflix.com"
+  }
+]

@@ -1,0 +1,992 @@
+[
+  {
+    "name": "Trip.com Group",
+    "slug": "trip/70415",
+    "url": "https://app.mokahr.com/social-recruitment/trip/70415"
+  },
+  {
+    "name": "BIGO",
+    "slug": "bigo/37723",
+    "url": "https://app.mokahr.com/social-recruitment/bigo/37723"
+  },
+  {
+    "name": "SHEIN",
+    "slug": "shein/2933",
+    "url": "https://app.mokahr.com/social-recruitment/shein/2933"
+  },
+  {
+    "name": "Zhihu",
+    "slug": "zhihu/78336",
+    "url": "https://app.mokahr.com/social-recruitment/zhihu/78336"
+  },
+  {
+    "name": "Geely Holding Group",
+    "slug": "geely/96123",
+    "url": "https://app.mokahr.com/social-recruitment/geely/96123"
+  },
+  {
+    "name": "Huya",
+    "slug": "huya/4111",
+    "url": "https://app.mokahr.com/social-recruitment/huya/4111"
+  },
+  {
+    "name": "CloudWalk",
+    "slug": "cloudwalk/4871",
+    "url": "https://app.mokahr.com/social-recruitment/cloudwalk/4871"
+  },
+  {
+    "name": "Tongdun Technology",
+    "slug": "tongdun/29005",
+    "url": "https://app.mokahr.com/social-recruitment/tongdun/29005"
+  },
+  {
+    "name": "Audi China",
+    "slug": "audi/147989",
+    "url": "https://app.mokahr.com/social-recruitment/audi/147989"
+  },
+  {
+    "name": "Manbang Group",
+    "slug": "manbang/46269",
+    "url": "https://app.mokahr.com/social-recruitment/manbang/46269"
+  },
+  {
+    "name": "XPeng (Huitian)",
+    "slug": "xiaopeng/67918",
+    "url": "https://app.mokahr.com/social-recruitment/xiaopeng/67918"
+  },
+  {
+    "name": "Ninebot",
+    "slug": "ninebot/45626",
+    "url": "https://app.mokahr.com/social-recruitment/ninebot/45626"
+  },
+  {
+    "name": "Marriott International",
+    "slug": "marriott/141002",
+    "url": "https://app.mokahr.com/social-recruitment/marriott/141002"
+  },
+  {
+    "name": "Shopee",
+    "slug": "shopee/2963",
+    "url": "https://app.mokahr.com/social-recruitment/shopee/2963"
+  },
+  {
+    "name": "4Paradigm",
+    "slug": "4paradigm/102013",
+    "url": "https://app.mokahr.com/social-recruitment/4paradigm/102013"
+  },
+  {
+    "name": "ZTE",
+    "slug": "zte/47588",
+    "url": "https://app.mokahr.com/social-recruitment/zte/47588"
+  },
+  {
+    "name": "Baicizhan",
+    "slug": "baicizhan/121",
+    "url": "https://app.mokahr.com/social-recruitment/baicizhan/121"
+  },
+  {
+    "name": "VIPKid",
+    "slug": "vipkid/147402",
+    "url": "https://app.mokahr.com/social-recruitment/vipkid/147402"
+  },
+  {
+    "name": "East Money",
+    "slug": "eastmoney/57970",
+    "url": "https://app.mokahr.com/social-recruitment/eastmoney/57970"
+  },
+  {
+    "name": "Panasonic Group",
+    "slug": "panasonic/5215",
+    "url": "https://app.mokahr.com/social-recruitment/panasonic/5215"
+  },
+  {
+    "name": "Ford China",
+    "slug": "ford/38867",
+    "url": "https://app.mokahr.com/social-recruitment/ford/38867"
+  },
+  {
+    "name": "GM China",
+    "slug": "gm/123968",
+    "url": "https://app.mokahr.com/social-recruitment/gm/123968"
+  },
+  {
+    "name": "Rakuten R&D China",
+    "slug": "rakuten/47725",
+    "url": "https://app.mokahr.com/social-recruitment/rakuten/47725"
+  },
+  {
+    "name": "ZhongAn Insurance",
+    "slug": "zhongan/102015",
+    "url": "https://app.mokahr.com/social-recruitment/zhongan/102015"
+  },
+  {
+    "name": "DeepRoute.ai",
+    "slug": "deeproute/143885",
+    "url": "https://app.mokahr.com/social-recruitment/deeproute/143885"
+  },
+  {
+    "name": "Klook",
+    "slug": "hire-r1/klookcareers/100008011",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/klookcareers/100008011"
+  },
+  {
+    "name": "OSL",
+    "slug": "hire-r1/osl/100008006",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/osl/100008006"
+  },
+  {
+    "name": "Tesla APAC",
+    "slug": "hire-r1/tesla/100004142",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/tesla/100004142"
+  },
+  {
+    "name": "Traveloka",
+    "slug": "hire-r1/traveloka/100008526",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/traveloka/100008526"
+  },
+  {
+    "name": "51Talk",
+    "slug": "51talk/25906",
+    "url": "https://app.mokahr.com/social-recruitment/51talk/25906"
+  },
+  {
+    "name": "58 Group",
+    "slug": "58/150952",
+    "url": "https://app.mokahr.com/social-recruitment/58/150952"
+  },
+  {
+    "name": "Adidas",
+    "slug": "adidas/140456",
+    "url": "https://app.mokahr.com/social-recruitment/adidas/140456"
+  },
+  {
+    "name": "Agora",
+    "slug": "agora/6334",
+    "url": "https://app.mokahr.com/social-recruitment/agora/6334"
+  },
+  {
+    "name": "AMEC",
+    "slug": "amec/28371",
+    "url": "https://app.mokahr.com/social-recruitment/amec/28371"
+  },
+  {
+    "name": "Ant Group",
+    "slug": "antgroup/47145",
+    "url": "https://app.mokahr.com/social-recruitment/antgroup/47145"
+  },
+  {
+    "name": "Appotronics",
+    "slug": "ylxinc/140729",
+    "url": "https://app.mokahr.com/social-recruitment/ylxinc/140729"
+  },
+  {
+    "name": "AutoX",
+    "slug": "autox/6312",
+    "url": "https://app.mokahr.com/social-recruitment/autox/6312"
+  },
+  {
+    "name": "BAAI",
+    "slug": "baai/42173",
+    "url": "https://app.mokahr.com/social-recruitment/baai/42173"
+  },
+  {
+    "name": "Bairong Inc",
+    "slug": "100credit/92460",
+    "url": "https://app.mokahr.com/social-recruitment/100credit/92460"
+  },
+  {
+    "name": "BATF Group Campus",
+    "slug": "batf/144997/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/batf/144997"
+  },
+  {
+    "name": "Bayer",
+    "slug": "bayer/148387",
+    "url": "https://app.mokahr.com/social-recruitment/bayer/148387"
+  },
+  {
+    "name": "BeiGene",
+    "slug": "beigene/98934",
+    "url": "https://app.mokahr.com/social-recruitment/beigene/98934"
+  },
+  {
+    "name": "Beijing Bole Technology",
+    "slug": "bolegames/37642",
+    "url": "https://app.mokahr.com/social-recruitment/bolegames/37642"
+  },
+  {
+    "name": "Beijing Institute for General AI",
+    "slug": "bigai-ai/102639",
+    "url": "https://app.mokahr.com/social-recruitment/bigai-ai/102639"
+  },
+  {
+    "name": "Biren Technology",
+    "slug": "biren/44726",
+    "url": "https://app.mokahr.com/social-recruitment/biren/44726"
+  },
+  {
+    "name": "Bitget",
+    "slug": "hire-r1/bitget/100000079",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/bitget/100000079"
+  },
+  {
+    "name": "BYD",
+    "slug": "byd/40205",
+    "url": "https://app.mokahr.com/social-recruitment/byd/40205"
+  },
+  {
+    "name": "Cambricon",
+    "slug": "cambricon/1113",
+    "url": "https://app.mokahr.com/social-recruitment/cambricon/1113"
+  },
+  {
+    "name": "Cambricon Campus",
+    "slug": "cambricon/44201/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/cambricon/44201"
+  },
+  {
+    "name": "Carlsberg China",
+    "slug": "carlsberg/6730",
+    "url": "https://app.mokahr.com/social-recruitment/carlsberg/6730"
+  },
+  {
+    "name": "CCTV",
+    "slug": "cctv/19935",
+    "url": "https://app.mokahr.com/social-recruitment/cctv/19935"
+  },
+  {
+    "name": "Chaitin Tech",
+    "slug": "chaitin/118126",
+    "url": "https://app.mokahr.com/social-recruitment/chaitin/118126"
+  },
+  {
+    "name": "Changyou Campus",
+    "slug": "cyou-inc/42233/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/cyou-inc/42233"
+  },
+  {
+    "name": "China Datang",
+    "slug": "datang/29343",
+    "url": "https://app.mokahr.com/social-recruitment/datang/29343"
+  },
+  {
+    "name": "China Telecom",
+    "slug": "chinatelecom/71984",
+    "url": "https://app.mokahr.com/social-recruitment/chinatelecom/71984"
+  },
+  {
+    "name": "China Vanke",
+    "slug": "vanke/36266",
+    "url": "https://app.mokahr.com/social-recruitment/vanke/36266"
+  },
+  {
+    "name": "CloudWalk Campus",
+    "slug": "cloudwalk/4872/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/cloudwalk/4872"
+  },
+  {
+    "name": "Columbia Sportswear",
+    "slug": "columbia/57872",
+    "url": "https://app.mokahr.com/social-recruitment/columbia/57872"
+  },
+  {
+    "name": "Comau",
+    "slug": "comau/98393",
+    "url": "https://app.mokahr.com/social-recruitment/comau/98393"
+  },
+  {
+    "name": "Costa Coffee",
+    "slug": "costa/92534",
+    "url": "https://app.mokahr.com/social-recruitment/costa/92534"
+  },
+  {
+    "name": "Dahua Technology",
+    "slug": "dahua/55997",
+    "url": "https://app.mokahr.com/social-recruitment/dahua/55997"
+  },
+  {
+    "name": "DeepSeek",
+    "slug": "high-flyer/140576",
+    "url": "https://app.mokahr.com/social-recruitment/high-flyer/140576"
+  },
+  {
+    "name": "Dianhun Campus",
+    "slug": "dianhun/55953/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/dianhun/55953"
+  },
+  {
+    "name": "DiDi Global",
+    "slug": "didiglobal/6222",
+    "url": "https://app.mokahr.com/social-recruitment/didiglobal/6222"
+  },
+  {
+    "name": "DolphinDB",
+    "slug": "dolphindb/37785",
+    "url": "https://app.mokahr.com/social-recruitment/dolphindb/37785"
+  },
+  {
+    "name": "Douyu",
+    "slug": "douyu/7622",
+    "url": "https://app.mokahr.com/social-recruitment/douyu/7622"
+  },
+  {
+    "name": "DXY (Dingxiang Yuan)",
+    "slug": "dxy/1489",
+    "url": "https://app.mokahr.com/social-recruitment/dxy/1489"
+  },
+  {
+    "name": "EY (Ernst & Young)",
+    "slug": "ey/47410",
+    "url": "https://app.mokahr.com/social-recruitment/ey/47410"
+  },
+  {
+    "name": "Fapon Biotech",
+    "slug": "fapon/368",
+    "url": "https://app.mokahr.com/social-recruitment/fapon/368"
+  },
+  {
+    "name": "Fenbi",
+    "slug": "fenbi/45505",
+    "url": "https://app.mokahr.com/social-recruitment/fenbi/45505"
+  },
+  {
+    "name": "Fiberhome Telecommunication",
+    "slug": "whfhtx/73921",
+    "url": "https://app.mokahr.com/social-recruitment/whfhtx/73921"
+  },
+  {
+    "name": "First Fun",
+    "slug": "hire-r1/firstfun/100000617",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/firstfun/100000617"
+  },
+  {
+    "name": "Fourier Intelligence Campus",
+    "slug": "fftai/147078/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/fftai/147078"
+  },
+  {
+    "name": "Foxconn",
+    "slug": "foxconn/101965",
+    "url": "https://app.mokahr.com/social-recruitment/foxconn/101965"
+  },
+  {
+    "name": "Fujian Boss Software",
+    "slug": "bosssoft/68369",
+    "url": "https://app.mokahr.com/social-recruitment/bosssoft/68369"
+  },
+  {
+    "name": "Gaoji Health",
+    "slug": "gaojihealth/94889",
+    "url": "https://app.mokahr.com/social-recruitment/gaojihealth/94889"
+  },
+  {
+    "name": "Gaotu Techedu",
+    "slug": "bjhl/92093",
+    "url": "https://app.mokahr.com/social-recruitment/bjhl/92093"
+  },
+  {
+    "name": "Gap China",
+    "slug": "gap/142160",
+    "url": "https://app.mokahr.com/social-recruitment/gap/142160"
+  },
+  {
+    "name": "GE HealthCare",
+    "slug": "gehc/142249",
+    "url": "https://app.mokahr.com/social-recruitment/gehc/142249"
+  },
+  {
+    "name": "GenScript",
+    "slug": "genscript/4000",
+    "url": "https://app.mokahr.com/social-recruitment/genscript/4000"
+  },
+  {
+    "name": "Giant Network Campus",
+    "slug": "ztgame/92438/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/ztgame/92438"
+  },
+  {
+    "name": "GigaDevice",
+    "slug": "gigadevice/100227",
+    "url": "https://app.mokahr.com/social-recruitment/gigadevice/100227"
+  },
+  {
+    "name": "Glodon",
+    "slug": "glodon/1751",
+    "url": "https://app.mokahr.com/social-recruitment/glodon/1751"
+  },
+  {
+    "name": "GSK",
+    "slug": "gsk/148067",
+    "url": "https://app.mokahr.com/social-recruitment/gsk/148067"
+  },
+  {
+    "name": "Guming",
+    "slug": "guming/39376",
+    "url": "https://app.mokahr.com/social-recruitment/guming/39376"
+  },
+  {
+    "name": "Han's CNC",
+    "slug": "hanscnc/118576",
+    "url": "https://app.mokahr.com/social-recruitment/hanscnc/118576"
+  },
+  {
+    "name": "Han's Laser",
+    "slug": "hanslaser/46382",
+    "url": "https://app.mokahr.com/social-recruitment/hanslaser/46382"
+  },
+  {
+    "name": "Hangyin Consumer Finance",
+    "slug": "hyxj/102160",
+    "url": "https://app.mokahr.com/social-recruitment/hyxj/102160"
+  },
+  {
+    "name": "Hansoh Pharmaceutical",
+    "slug": "hansoh/44933",
+    "url": "https://app.mokahr.com/social-recruitment/hansoh/44933"
+  },
+  {
+    "name": "Harbour BioMed",
+    "slug": "harbourbiomed/43014",
+    "url": "https://app.mokahr.com/social-recruitment/harbourbiomed/43014"
+  },
+  {
+    "name": "Hefeng Foods",
+    "slug": "hfsp/37148",
+    "url": "https://app.mokahr.com/social-recruitment/hfsp/37148"
+  },
+  {
+    "name": "Hengrui Pharmaceuticals",
+    "slug": "hengrui/145996",
+    "url": "https://app.mokahr.com/social-recruitment/hengrui/145996"
+  },
+  {
+    "name": "HEYTEA",
+    "slug": "hire-r1/heytea/100000206",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/heytea/100000206"
+  },
+  {
+    "name": "High-Flyer Quant",
+    "slug": "high-flyer/4604",
+    "url": "https://app.mokahr.com/social-recruitment/high-flyer/4604"
+  },
+  {
+    "name": "Hikvision",
+    "slug": "hikvision/58021",
+    "url": "https://app.mokahr.com/social-recruitment/hikvision/58021"
+  },
+  {
+    "name": "Huaqin Technology",
+    "slug": "huaqin/41745",
+    "url": "https://app.mokahr.com/social-recruitment/huaqin/41745"
+  },
+  {
+    "name": "Huaqin Technology Campus",
+    "slug": "hq/44757/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/hq/44757"
+  },
+  {
+    "name": "HUTCHMED",
+    "slug": "hutchmed/140975",
+    "url": "https://app.mokahr.com/social-recruitment/hutchmed/140975"
+  },
+  {
+    "name": "Huxiu",
+    "slug": "huxiu/40603",
+    "url": "https://app.mokahr.com/social-recruitment/huxiu/40603"
+  },
+  {
+    "name": "Hytech",
+    "slug": "hire-r1/hytech/100008074",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/hytech/100008074"
+  },
+  {
+    "name": "Hytera",
+    "slug": "hytera/27049",
+    "url": "https://app.mokahr.com/social-recruitment/hytera/27049"
+  },
+  {
+    "name": "Iluvatar CoreX",
+    "slug": "iluvatar/98705",
+    "url": "https://app.mokahr.com/social-recruitment/iluvatar/98705"
+  },
+  {
+    "name": "Inoherb",
+    "slug": "inoherb/37122",
+    "url": "https://app.mokahr.com/social-recruitment/inoherb/37122"
+  },
+  {
+    "name": "Inspire Games",
+    "slug": "inspiregames/144680",
+    "url": "https://app.mokahr.com/social-recruitment/inspiregames/144680"
+  },
+  {
+    "name": "Insta360",
+    "slug": "insta360/41057",
+    "url": "https://app.mokahr.com/social-recruitment/insta360/41057"
+  },
+  {
+    "name": "JD.com",
+    "slug": "jd/57929",
+    "url": "https://app.mokahr.com/social-recruitment/jd/57929"
+  },
+  {
+    "name": "JD.com (alt)",
+    "slug": "jingdong/24779",
+    "url": "https://app.mokahr.com/social-recruitment/jingdong/24779"
+  },
+  {
+    "name": "JHL Fund",
+    "slug": "jhlfund/46283",
+    "url": "https://app.mokahr.com/social-recruitment/jhlfund/46283"
+  },
+  {
+    "name": "Jiahui Medical",
+    "slug": "jiahui/2126",
+    "url": "https://app.mokahr.com/social-recruitment/jiahui/2126"
+  },
+  {
+    "name": "Joyson",
+    "slug": "joyson/94310",
+    "url": "https://app.mokahr.com/social-recruitment/joyson/94310"
+  },
+  {
+    "name": "KCareers",
+    "slug": "hire-r1/kcareers/100000192",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/kcareers/100000192"
+  },
+  {
+    "name": "KEENON Robotics",
+    "slug": "keenon/24672",
+    "url": "https://app.mokahr.com/social-recruitment/keenon/24672"
+  },
+  {
+    "name": "Kering",
+    "slug": "kering/144484",
+    "url": "https://app.mokahr.com/social-recruitment/kering/144484"
+  },
+  {
+    "name": "Kingnet",
+    "slug": "kingnet/2247",
+    "url": "https://app.mokahr.com/social-recruitment/kingnet/2247"
+  },
+  {
+    "name": "Kingsoft Office Campus",
+    "slug": "wps/41436/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/wps/41436"
+  },
+  {
+    "name": "KORRUN Group",
+    "slug": "korrun/147968",
+    "url": "https://app.mokahr.com/social-recruitment/korrun/147968"
+  },
+  {
+    "name": "KPMG",
+    "slug": "kpmg/74216",
+    "url": "https://app.mokahr.com/social-recruitment/kpmg/74216"
+  },
+  {
+    "name": "Li-Ning",
+    "slug": "lining/166080",
+    "url": "https://app.mokahr.com/social-recruitment/lining/166080"
+  },
+  {
+    "name": "Mammotion Technology",
+    "slug": "hire-r1/inter-mammotion/100008071",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/inter-mammotion/100008071"
+  },
+  {
+    "name": "Master Kong (Tingyi)",
+    "slug": "masterkong/25435",
+    "url": "https://app.mokahr.com/social-recruitment/masterkong/25435"
+  },
+  {
+    "name": "Medbanks",
+    "slug": "medbanks/150528",
+    "url": "https://app.mokahr.com/social-recruitment/medbanks/150528"
+  },
+  {
+    "name": "MEGVII Campus",
+    "slug": "megviihr/38642/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/megviihr/38642"
+  },
+  {
+    "name": "MGCC",
+    "slug": "mgcc/37697",
+    "url": "https://app.mokahr.com/social-recruitment/mgcc/37697"
+  },
+  {
+    "name": "Michael Kors China",
+    "slug": "mk/148379",
+    "url": "https://app.mokahr.com/social-recruitment/mk/148379"
+  },
+  {
+    "name": "Mindray",
+    "slug": "mindray/44475",
+    "url": "https://app.mokahr.com/social-recruitment/mindray/44475"
+  },
+  {
+    "name": "MINIEYE",
+    "slug": "minieye/118570",
+    "url": "https://app.mokahr.com/social-recruitment/minieye/118570"
+  },
+  {
+    "name": "MiraclePlus",
+    "slug": "miracleplus/55973",
+    "url": "https://app.mokahr.com/social-recruitment/miracleplus/55973"
+  },
+  {
+    "name": "Moka HR",
+    "slug": "moka/118263",
+    "url": "https://app.mokahr.com/social-recruitment/moka/118263"
+  },
+  {
+    "name": "Moonshot AI",
+    "slug": "moonshot/148506",
+    "url": "https://app.mokahr.com/social-recruitment/moonshot/148506"
+  },
+  {
+    "name": "Muyuan Foods",
+    "slug": "muyuan/70115",
+    "url": "https://app.mokahr.com/social-recruitment/muyuan/70115"
+  },
+  {
+    "name": "Mycos Data",
+    "slug": "mycos/91983",
+    "url": "https://app.mokahr.com/social-recruitment/mycos/91983"
+  },
+  {
+    "name": "NSFOCUS",
+    "slug": "nsfocus/29117",
+    "url": "https://app.mokahr.com/social-recruitment/nsfocus/29117"
+  },
+  {
+    "name": "OOCL",
+    "slug": "oocl/44732",
+    "url": "https://app.mokahr.com/social-recruitment/oocl/44732"
+  },
+  {
+    "name": "Oray",
+    "slug": "oray/42974",
+    "url": "https://app.mokahr.com/social-recruitment/oray/42974"
+  },
+  {
+    "name": "Parkway Health",
+    "slug": "parkway/142499",
+    "url": "https://app.mokahr.com/social-recruitment/parkway/142499"
+  },
+  {
+    "name": "Phoenix New Media",
+    "slug": "ifeng/7541",
+    "url": "https://app.mokahr.com/social-recruitment/ifeng/7541"
+  },
+  {
+    "name": "Polestar",
+    "slug": "polestar/76244",
+    "url": "https://app.mokahr.com/social-recruitment/polestar/76244"
+  },
+  {
+    "name": "Procter & Gamble China",
+    "slug": "pg/91934",
+    "url": "https://app.mokahr.com/social-recruitment/pg/91934"
+  },
+  {
+    "name": "PwC China",
+    "slug": "pwc/140014",
+    "url": "https://app.mokahr.com/social-recruitment/pwc/140014"
+  },
+  {
+    "name": "Quwan Technology",
+    "slug": "52tt/45125",
+    "url": "https://app.mokahr.com/social-recruitment/52tt/45125"
+  },
+  {
+    "name": "Relin Pharma",
+    "slug": "relin/146755",
+    "url": "https://app.mokahr.com/social-recruitment/relin/146755"
+  },
+  {
+    "name": "Sangfor",
+    "slug": "sangfor/5367",
+    "url": "https://app.mokahr.com/social-recruitment/sangfor/5367"
+  },
+  {
+    "name": "SANY Group",
+    "slug": "sany/7588",
+    "url": "https://app.mokahr.com/social-recruitment/sany/7588"
+  },
+  {
+    "name": "Sanyuan Foods",
+    "slug": "sanyuan/73995",
+    "url": "https://app.mokahr.com/social-recruitment/sanyuan/73995"
+  },
+  {
+    "name": "SEER Robotics",
+    "slug": "seer/41526",
+    "url": "https://app.mokahr.com/social-recruitment/seer/41526"
+  },
+  {
+    "name": "Servyou Software",
+    "slug": "servyou/42864",
+    "url": "https://app.mokahr.com/social-recruitment/servyou/42864"
+  },
+  {
+    "name": "Shanghai Integrated Circuit R&D Center Campus",
+    "slug": "icrd/126587/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/icrd/126587"
+  },
+  {
+    "name": "SHEIN Campus",
+    "slug": "shein/2932/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/shein/2932"
+  },
+  {
+    "name": "Shiyue Network",
+    "slug": "shiyuehr/72054",
+    "url": "https://app.mokahr.com/social-recruitment/shiyuehr/72054"
+  },
+  {
+    "name": "Shokz",
+    "slug": "aftershokzhr/40779",
+    "url": "https://app.mokahr.com/social-recruitment/aftershokzhr/40779"
+  },
+  {
+    "name": "Shokz Campus",
+    "slug": "aftershokzhr/36940/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/aftershokzhr/36940"
+  },
+  {
+    "name": "Shuqu Huyu",
+    "slug": "shuquhuyu/146521",
+    "url": "https://app.mokahr.com/social-recruitment/shuquhuyu/146521"
+  },
+  {
+    "name": "Sigma",
+    "slug": "sigma/24905",
+    "url": "https://app.mokahr.com/social-recruitment/sigma/24905"
+  },
+  {
+    "name": "Sina",
+    "slug": "sina/43535",
+    "url": "https://app.mokahr.com/social-recruitment/sina/43535"
+  },
+  {
+    "name": "Sina Campus",
+    "slug": "sina/43536/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/sina/43536"
+  },
+  {
+    "name": "Sinopharm",
+    "slug": "sinopharm/56224",
+    "url": "https://app.mokahr.com/social-recruitment/sinopharm/56224"
+  },
+  {
+    "name": "Sinovac",
+    "slug": "sinovac/4915",
+    "url": "https://app.mokahr.com/social-recruitment/sinovac/4915"
+  },
+  {
+    "name": "SmartMore",
+    "slug": "smartmore/40505",
+    "url": "https://app.mokahr.com/social-recruitment/smartmore/40505"
+  },
+  {
+    "name": "Smoore International",
+    "slug": "smoore/126055",
+    "url": "https://app.mokahr.com/social-recruitment/smoore/126055"
+  },
+  {
+    "name": "Sohu",
+    "slug": "sohu/43256",
+    "url": "https://app.mokahr.com/social-recruitment/sohu/43256"
+  },
+  {
+    "name": "SolaX Power",
+    "slug": "solaxpower/151400",
+    "url": "https://app.mokahr.com/social-recruitment/solaxpower/151400"
+  },
+  {
+    "name": "SpacemiT",
+    "slug": "space-t1/67915",
+    "url": "https://app.mokahr.com/social-recruitment/space-t1/67915"
+  },
+  {
+    "name": "State Power Investment Corporation",
+    "slug": "spic/45565",
+    "url": "https://app.mokahr.com/social-recruitment/spic/45565"
+  },
+  {
+    "name": "StepFun (Jieyue Xingchen)",
+    "slug": "step/94904",
+    "url": "https://app.mokahr.com/social-recruitment/step/94904"
+  },
+  {
+    "name": "StepFun Campus",
+    "slug": "step/141903/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/step/141903"
+  },
+  {
+    "name": "STO Express",
+    "slug": "sto/42337",
+    "url": "https://app.mokahr.com/social-recruitment/sto/42337"
+  },
+  {
+    "name": "SUNDA International",
+    "slug": "hire-r1/sunda/100000130",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/sunda/100000130"
+  },
+  {
+    "name": "Sungrow Campus",
+    "slug": "sungrow/94416/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/sungrow/94416"
+  },
+  {
+    "name": "Tengden",
+    "slug": "tengden/45126",
+    "url": "https://app.mokahr.com/social-recruitment/tengden/45126"
+  },
+  {
+    "name": "Tesla China",
+    "slug": "tesla/46129",
+    "url": "https://app.mokahr.com/social-recruitment/tesla/46129"
+  },
+  {
+    "name": "Tesla China Campus",
+    "slug": "tesla/41460/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/tesla/41460"
+  },
+  {
+    "name": "Tesla Japan",
+    "slug": "hire-r1/tesla/100004135",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/tesla/100004135"
+  },
+  {
+    "name": "Texas Instruments",
+    "slug": "ti/143985",
+    "url": "https://app.mokahr.com/social-recruitment/ti/143985"
+  },
+  {
+    "name": "Tianma Microelectronics",
+    "slug": "tianma/143383",
+    "url": "https://app.mokahr.com/social-recruitment/tianma/143383"
+  },
+  {
+    "name": "Tianyan Capital",
+    "slug": "tianyancapital/98901",
+    "url": "https://app.mokahr.com/social-recruitment/tianyancapital/98901"
+  },
+  {
+    "name": "Tigermed",
+    "slug": "hire-r1/tigermed/100004122",
+    "url": "https://hire-r1.mokahr.com/social-recruitment/tigermed/100004122"
+  },
+  {
+    "name": "Topsec",
+    "slug": "topsec/24131",
+    "url": "https://app.mokahr.com/social-recruitment/topsec/24131"
+  },
+  {
+    "name": "TotalEnergies",
+    "slug": "totalenergies/100441",
+    "url": "https://app.mokahr.com/social-recruitment/totalenergies/100441"
+  },
+  {
+    "name": "Tsinghua Unigroup Tongxin",
+    "slug": "tsinghuaic/39655",
+    "url": "https://app.mokahr.com/social-recruitment/tsinghuaic/39655"
+  },
+  {
+    "name": "UNISOC",
+    "slug": "unisoc/42760",
+    "url": "https://app.mokahr.com/social-recruitment/unisoc/42760"
+  },
+  {
+    "name": "VOYAH",
+    "slug": "voyah/146292",
+    "url": "https://app.mokahr.com/social-recruitment/voyah/146292"
+  },
+  {
+    "name": "Wens Foodstuff",
+    "slug": "wens/92365",
+    "url": "https://app.mokahr.com/social-recruitment/wens/92365"
+  },
+  {
+    "name": "Westone",
+    "slug": "westone/26995",
+    "url": "https://app.mokahr.com/social-recruitment/westone/26995"
+  },
+  {
+    "name": "WuXi Biologics",
+    "slug": "wuxibiologics/99960",
+    "url": "https://app.mokahr.com/social-recruitment/wuxibiologics/99960"
+  },
+  {
+    "name": "XCMG",
+    "slug": "xcmg/148090",
+    "url": "https://app.mokahr.com/social-recruitment/xcmg/148090"
+  },
+  {
+    "name": "Xiaochuan Keji",
+    "slug": "xiaochuankeji/116068",
+    "url": "https://app.mokahr.com/social-recruitment/xiaochuankeji/116068"
+  },
+  {
+    "name": "Xtep",
+    "slug": "xtep/148870",
+    "url": "https://app.mokahr.com/social-recruitment/xtep/148870"
+  },
+  {
+    "name": "Xueqiu (Snowball)",
+    "slug": "xueqiu/3591",
+    "url": "https://app.mokahr.com/social-recruitment/xueqiu/3591"
+  },
+  {
+    "name": "Xunlei",
+    "slug": "xunlei/26599",
+    "url": "https://app.mokahr.com/social-recruitment/xunlei/26599"
+  },
+  {
+    "name": "YITU Technology",
+    "slug": "yitu-inc/3701",
+    "url": "https://app.mokahr.com/social-recruitment/yitu-inc/3701"
+  },
+  {
+    "name": "Yoka Games",
+    "slug": "yokagames/41939",
+    "url": "https://app.mokahr.com/social-recruitment/yokagames/41939"
+  },
+  {
+    "name": "Yoozoo Games",
+    "slug": "yoozoo/91950",
+    "url": "https://app.mokahr.com/social-recruitment/yoozoo/91950"
+  },
+  {
+    "name": "Zhihu Campus",
+    "slug": "zhihu/68321/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/zhihu/68321"
+  },
+  {
+    "name": "Zijin Mining Group",
+    "slug": "zijinmining/72010",
+    "url": "https://app.mokahr.com/social-recruitment/zijinmining/72010"
+  },
+  {
+    "name": "Zijin Mining Group (alt)",
+    "slug": "zijin/47703",
+    "url": "https://app.mokahr.com/social-recruitment/zijin/47703"
+  },
+  {
+    "name": "Zoomlion",
+    "slug": "zoomlion/38183",
+    "url": "https://app.mokahr.com/social-recruitment/zoomlion/38183"
+  },
+  {
+    "name": "ZTE Campus",
+    "slug": "zte/46903/campus",
+    "url": "https://app.mokahr.com/campus-recruitment/zte/46903"
+  },
+  {
+    "name": "Zuoyebang",
+    "slug": "zuoyebang/41328",
+    "url": "https://app.mokahr.com/social-recruitment/zuoyebang/41328"
+  }
+]

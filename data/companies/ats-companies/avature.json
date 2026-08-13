@@ -1,0 +1,632 @@
+[
+  {
+    "name": "Adecco Recruiting",
+    "slug": "adeccorecruiting",
+    "url": "https://adeccorecruiting.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "AESC",
+    "slug": "aesc",
+    "url": "https://aesc.avature.net"
+  },
+  {
+    "name": "Advocate Health",
+    "slug": "advocateaurorahealth",
+    "url": "https://advocateaurorahealth.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Ally Financial",
+    "slug": "ally",
+    "url": "https://ally.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "AMS PSR",
+    "slug": "amspsr",
+    "url": "https://amspsr.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Ashfield Healthcare",
+    "slug": "ashfieldhealthcare",
+    "url": "https://ashfieldhealthcare.avature.net"
+  },
+  {
+    "name": "Astellas Pharma Inc.",
+    "slug": "astellas",
+    "url": "https://astellas.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Astellas Pharma Japan",
+    "slug": "astellasjapan",
+    "url": "https://astellasjapan.avature.net/ja_JP/careers/SearchJobs"
+  },
+  {
+    "name": "Australia Post",
+    "slug": "https://jobs.auspost.com.au/en_GB",
+    "url": "https://jobs.auspost.com.au/en_GB/careers/SearchJobs"
+  },
+  {
+    "name": "Avature",
+    "slug": "avature",
+    "url": "https://careers.avature.net/en_US/main/SearchJobs"
+  },
+  {
+    "name": "BCG Platinion",
+    "slug": "platinion",
+    "url": "https://platinion.avature.net/CareersDeEn/SearchJobs"
+  },
+  {
+    "name": "Baufest",
+    "slug": "baufest",
+    "url": "https://baufest.avature.net/jobs/SearchJobs"
+  },
+  {
+    "name": "avanade",
+    "slug": "avanade",
+    "url": "https://avanade.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Berenberg",
+    "slug": "berenberg",
+    "url": "https://berenberg.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Bloomberg",
+    "slug": "bloomberg",
+    "url": "https://bloomberg.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "BMC",
+    "slug": "bmcrecruit",
+    "url": "https://bmcrecruit.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Booz Allen Hamilton",
+    "slug": "boozallen",
+    "url": "https://boozallen.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "BradyPLUS",
+    "slug": "bradyplus",
+    "url": "https://bradyplus.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Bravura Solutions Limited",
+    "slug": "bravura",
+    "url": "https://bravura.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Broad Institute",
+    "slug": "broadinstitute",
+    "url": "https://broadinstitute.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Bupa ANZ",
+    "slug": "bupaanz",
+    "url": "https://bupaanz.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "CBRE",
+    "slug": "cbreglobal",
+    "url": "https://cbreglobal.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Cicor",
+    "slug": "cicor",
+    "url": "https://cicor.avature.net"
+  },
+  {
+    "name": "CIUSSS-du-Centre-Ouest-de-l’Île-de-Montréal",
+    "slug": "ciusss",
+    "url": "https://ciusss.avature.net/fr_CA/careers/SearchJobs"
+  },
+  {
+    "name": "Coca-Cola HBC",
+    "slug": "cchbc",
+    "url": "https://cchbc.avature.net"
+  },
+  {
+    "name": "Consumer Direct Care Network",
+    "slug": "cdcn",
+    "url": "https://cdcn.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Cycle & Carriage",
+    "slug": "cyclecarriage",
+    "url": "https://cyclecarriage.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "DB Group",
+    "slug": "dbgroup",
+    "url": "https://dbgroup.avature.net/jobs/SearchJobs"
+  },
+  {
+    "name": "Deloitte Belgium",
+    "slug": "deloittebe",
+    "url": "https://deloittebe.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Deloitte Central Europe",
+    "slug": "deloittece",
+    "url": "https://deloittece.avature.net"
+  },
+  {
+    "name": "Deloitte Central Mediterranean",
+    "slug": "deloittecm",
+    "url": "https://deloittecm.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Deloitte PNG",
+    "slug": "deloittepng",
+    "url": "https://deloittepng.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Deloitte US",
+    "slug": "deloitteus",
+    "url": "https://deloitteus.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Delta",
+    "slug": "delta",
+    "url": "https://delta.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Delta Air Lines",
+    "slug": "dth",
+    "url": "https://dth.avature.net"
+  },
+  {
+    "name": "DFI Retail Group",
+    "slug": "dfiretailgroup",
+    "url": "https://dfiretailgroup.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "DHL Consulting",
+    "slug": "dhlconsulting",
+    "url": "https://dhlconsulting.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "DHL Group",
+    "slug": "dpdhlgroup",
+    "url": "https://dpdhlgroup.avature.net/jobs/SearchJobs"
+  },
+  {
+    "name": "Dubai Holding",
+    "slug": "dhcareers",
+    "url": "https://dhcareers.avature.net/en_US/jumeirahmarketplace/SearchJobs"
+  },
+  {
+    "name": "Electronic Arts",
+    "slug": "ea",
+    "url": "https://ea.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "epic",
+    "slug": "epic",
+    "url": "https://epic.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Fletcher Building",
+    "slug": "fb",
+    "url": "https://fb.avature.net"
+  },
+  {
+    "name": "FM Logistic",
+    "slug": "fmlogistic",
+    "url": "https://fmlogistic.avature.net/fr_FR/careers/SearchJobs"
+  },
+  {
+    "name": "Fonterra",
+    "slug": "fonterrakf",
+    "url": "https://fonterrakf.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Fortress",
+    "slug": "fortress",
+    "url": "https://fortress.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Forvis Mazars",
+    "slug": "forvis",
+    "url": "https://forvis.avature.net/campuscareers/SearchJobs"
+  },
+  {
+    "name": "Frequentis",
+    "slug": "frequentis",
+    "url": "https://frequentis.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Genpact",
+    "slug": "genpact",
+    "url": "https://genpact.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "giffgaff",
+    "slug": "virginmediao2",
+    "url": "https://virginmediao2.avature.net/en_US/giffgaffcareers/SearchJobs"
+  },
+  {
+    "name": "GPS Hospitality",
+    "slug": "gpshospitality",
+    "url": "https://gpshospitality.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "HARMAN",
+    "slug": "harmanglobal",
+    "url": "https://harmanglobal.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Healthfirst",
+    "slug": "healthfirst",
+    "url": "https://healthfirst.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "In-N-Out Burger",
+    "slug": "ino",
+    "url": "https://ino.avature.net"
+  },
+  {
+    "name": "infor",
+    "slug": "infor",
+    "url": "https://infor.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Insperity",
+    "slug": "insperity",
+    "url": "https://insperity.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Intercare Therapy",
+    "slug": "intercaretherapy",
+    "url": "https://intercaretherapy.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Jack Henry",
+    "slug": "jackhenry",
+    "url": "https://jackhenry.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Jakala",
+    "slug": "jakala",
+    "url": "https://jakala.avature.net"
+  },
+  {
+    "name": "Jardine Matheson",
+    "slug": "jardinematheson",
+    "url": "https://jardinematheson.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "JRG",
+    "slug": "jrg",
+    "url": "https://jrg.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "KPMG Ireland",
+    "slug": "kpmgireland",
+    "url": "https://kpmgireland.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Koch",
+    "slug": "koch",
+    "url": "https://koch.avature.net"
+  },
+  {
+    "name": "L'Oreal",
+    "slug": "loa",
+    "url": "https://loa.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Land O'Lakes Venture37",
+    "slug": "lol",
+    "url": "https://lol.avature.net"
+  },
+  {
+    "name": "LaplandUK",
+    "slug": "laplanduk",
+    "url": "https://laplanduk.avature.net/careersmarketplace/SearchJobs"
+  },
+  {
+    "name": "Lawson Products",
+    "slug": "lawson",
+    "url": "https://lawson.avature.net/en_US/KentCareers/SearchJobs"
+  },
+  {
+    "name": "Lenovo",
+    "slug": "lenovo",
+    "url": "https://lenovo.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Leonard Cheshire",
+    "slug": "leonardcheshire",
+    "url": "https://leonardcheshire.avature.net/en_GB/careersmarketplace/SearchJobs"
+  },
+  {
+    "name": "Lindner Group",
+    "slug": "lindner",
+    "url": "https://lindner.avature.net"
+  },
+  {
+    "name": "lululemon",
+    "slug": "lululemoninc",
+    "url": "https://lululemoninc.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "ManpowerGroup Colombia",
+    "slug": "manpowergroupco",
+    "url": "https://manpowergroupco.avature.net/es_CO/careers/SearchJobs"
+  },
+  {
+    "name": "ManpowerGroup Talent Solutions",
+    "slug": "workmyway",
+    "url": "https://workmyway.avature.net"
+  },
+  {
+    "name": "ManTech",
+    "slug": "mantech",
+    "url": "https://mantech.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Maximus",
+    "slug": "maximus",
+    "url": "https://maximus.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "McLaren",
+    "slug": "mclaren",
+    "url": "https://mclaren.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Mercadona",
+    "slug": "mercadona",
+    "url": "https://mercadona.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Metrobank",
+    "slug": "metrobank",
+    "url": "https://metrobank.avature.net/amazingcareers/SearchJobs"
+  },
+  {
+    "name": "METTLER TOLEDO",
+    "slug": "mt",
+    "url": "https://mt.avature.net"
+  },
+  {
+    "name": "Ministry of Justice",
+    "slug": "justicejobs",
+    "url": "https://justicejobs.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Missionpethealth",
+    "slug": "missionpethealth",
+    "url": "https://missionpethealth.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Monadelphous",
+    "slug": "monadelphous",
+    "url": "https://monadelphous.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Murphy-Hoffman Company",
+    "slug": "mhcta",
+    "url": "https://mhcta.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "NVA",
+    "slug": "nva",
+    "url": "https://nva.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "One Call",
+    "slug": "onecall",
+    "url": "https://onecall.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "One800Flowers",
+    "slug": "one800flowers",
+    "url": "https://one800flowers.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Optavise",
+    "slug": "optavise",
+    "url": "https://optavise.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Plantemoran",
+    "slug": "plantemoran",
+    "url": "https://plantemoran.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Pomerleau",
+    "slug": "pomerleau",
+    "url": "https://pomerleau.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Pontoon Solutions",
+    "slug": "pontoonsolutions",
+    "url": "https://pontoonsolutions.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Premium Retail Services",
+    "slug": "premium",
+    "url": "https://premium.avature.net/en_US/jobs/SearchJobsMaps"
+  },
+  {
+    "name": "Primero",
+    "slug": "primero",
+    "url": "https://primero.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Radiology Partners",
+    "slug": "radpartners",
+    "url": "https://radpartners.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Regis",
+    "slug": "regis",
+    "url": "https://regis.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "ResourceBank",
+    "slug": "resourcebank",
+    "url": "https://resourcebank.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Rohde & Schwarz",
+    "slug": "rohdeschwarz",
+    "url": "https://rohdeschwarz.avature.net"
+  },
+  {
+    "name": "Rosewood Hotel Group",
+    "slug": "rhg",
+    "url": "https://rhg.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Santos",
+    "slug": "santos",
+    "url": "https://santos.avature.net"
+  },
+  {
+    "name": "Siemens Healthineers",
+    "slug": "https://jobs.siemens-healthineers.com/en_US/searchjobs/SearchJobs",
+    "url": "https://jobs.siemens-healthineers.com/en_US/searchjobs/SearchJobs"
+  },
+  {
+    "name": "Skanska",
+    "slug": "skanska",
+    "url": "https://skanska.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Smurfit Westrock",
+    "slug": "smurfitwestrockta",
+    "url": "https://smurfitwestrockta.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Spark",
+    "slug": "sparknz",
+    "url": "https://sparknz.avature.net"
+  },
+  {
+    "name": "St. Jude",
+    "slug": "https://talent.stjude.org/careers/SearchJobs",
+    "url": "https://talent.stjude.org/careers/SearchJobs"
+  },
+  {
+    "name": "St. Luke's Health System",
+    "slug": "slhs",
+    "url": "https://slhs.avature.net/careersmarketplace/SearchJobs"
+  },
+  {
+    "name": "Synopsys",
+    "slug": "synopsys",
+    "url": "https://synopsys.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Tesco",
+    "slug": "tesco",
+    "url": "https://tesco.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Tesco Bank",
+    "slug": "tescoinsuranceandmoneyservices",
+    "url": "https://tescoinsuranceandmoneyservices.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "The a2 Milk Company",
+    "slug": "a2milkkf",
+    "url": "https://a2milkkf.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "TMF",
+    "slug": "tmf",
+    "url": "https://tmf.avature.net/careersmarketplace/SearchJobs"
+  },
+  {
+    "name": "Total Quality Logistics",
+    "slug": "tql",
+    "url": "https://tql.avature.net/en_US/TQLexternalcareers/SearchJobs"
+  },
+  {
+    "name": "Trader Joe's",
+    "slug": "traderjoes",
+    "url": "https://traderjoes.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Transcom",
+    "slug": "transcom",
+    "url": "https://transcom.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Travis Perkins",
+    "slug": "travisperkins",
+    "url": "https://travisperkins.avature.net"
+  },
+  {
+    "name": "UCLA Health",
+    "slug": "uclahealth",
+    "url": "https://uclahealth.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Unifi",
+    "slug": "unifi",
+    "url": "https://unifi.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "University of Colorado Boulder",
+    "slug": "colorado",
+    "url": "https://colorado.avature.net/jobs/SearchJobs"
+  },
+  {
+    "name": "UOP",
+    "slug": "uop",
+    "url": "https://uop.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Uskpmgats",
+    "slug": "uskpmgats",
+    "url": "https://uskpmgats.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Van Oord",
+    "slug": "vanoord",
+    "url": "https://vanoord.avature.net/en_US/careersmarketplace/SearchJobs"
+  },
+  {
+    "name": "Virgin Media O2",
+    "slug": "https://jobs.virginmediao2.co.uk/en_US/careersmarketplace/SearchJobs",
+    "url": "https://jobs.virginmediao2.co.uk/en_US/careersmarketplace/SearchJobs"
+  },
+  {
+    "name": "Voutiqueintegrations",
+    "slug": "voutiqueintegrations",
+    "url": "https://voutiqueintegrations.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Walmartsourcingeu",
+    "slug": "walmartsourcingeu",
+    "url": "https://walmartsourcingeu.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Wickes",
+    "slug": "wickes",
+    "url": "https://wickes.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "William Hill",
+    "slug": "amswh",
+    "url": "https://amswh.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Wilsonhcg",
+    "slug": "wilsonhcg",
+    "url": "https://wilsonhcg.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Xerox",
+    "slug": "xerox",
+    "url": "https://xerox.avature.net/careers/SearchJobs"
+  },
+  {
+    "name": "Zung Fu",
+    "slug": "zungfu",
+    "url": "https://zungfu.avature.net/en_US/careers/SearchJobs"
+  }
+]

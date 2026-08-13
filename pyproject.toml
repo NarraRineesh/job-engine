@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "job-engine"
+version = "0.1.0"
+description = "Fetch ATS jobs, enrich (python or Cursor), push to Supabase"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.6",
+    "httpx>=0.27",
+    "beautifulsoup4>=4.12",
+    "httpcloak>=1.6",
+    "cloakbrowser>=0.3",
+    "pycryptodome>=3.20",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.5",
+]
+cursor = [
+    "cursor-sdk>=1.0.24",
+]
+
+[project.scripts]
+job-engine = "job_engine.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/job_engine"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/job_engine", "data/lexicons", "data/companies", "README.md"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

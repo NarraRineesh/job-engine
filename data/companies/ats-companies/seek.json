@@ -1,0 +1,42 @@
+[
+  {
+    "name": "JobStreet Indonesia",
+    "slug": "id",
+    "url": "https://id.jobstreet.com"
+  },
+  {
+    "name": "JobStreet Malaysia",
+    "slug": "my",
+    "url": "https://my.jobstreet.com"
+  },
+  {
+    "name": "JobStreet Philippines",
+    "slug": "ph",
+    "url": "https://ph.jobstreet.com"
+  },
+  {
+    "name": "JobStreet Singapore",
+    "slug": "sg",
+    "url": "https://sg.jobstreet.com"
+  },
+  {
+    "name": "JobsDB Hong Kong",
+    "slug": "hk",
+    "url": "https://hk.jobsdb.com"
+  },
+  {
+    "name": "JobsDB Thailand",
+    "slug": "th",
+    "url": "https://th.jobsdb.com"
+  },
+  {
+    "name": "SEEK Australia",
+    "slug": "au",
+    "url": "https://www.seek.com.au"
+  },
+  {
+    "name": "SEEK New Zealand",
+    "slug": "nz",
+    "url": "https://www.seek.co.nz"
+  }
+]

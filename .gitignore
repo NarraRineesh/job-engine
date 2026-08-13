@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+out/
+out/push-state.json
+data/corpus/*.jsonl
+*.egg-info/
+dist/
+.env
+.DS_Store

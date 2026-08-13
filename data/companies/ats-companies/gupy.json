@@ -1,0 +1,2947 @@
+[
+  {
+    "name": "3C Services",
+    "slug": "3cservices",
+    "url": "https://3cservices.gupy.io"
+  },
+  {
+    "name": "3tentos",
+    "slug": "3tentos",
+    "url": "https://3tentos.gupy.io"
+  },
+  {
+    "name": "4MK Solutions",
+    "slug": "4mk",
+    "url": "https://4mk.gupy.io"
+  },
+  {
+    "name": "77Sol",
+    "slug": "77sol",
+    "url": "https://77sol.gupy.io"
+  },
+  {
+    "name": "A3 Consultoria",
+    "slug": "a3consultoria",
+    "url": "https://a3consultoria.gupy.io"
+  },
+  {
+    "name": "AACD",
+    "slug": "aacd",
+    "url": "https://aacd.gupy.io"
+  },
+  {
+    "name": "Abakids",
+    "slug": "abakids",
+    "url": "https://abakids.gupy.io"
+  },
+  {
+    "name": "Academia Wave",
+    "slug": "academiawave",
+    "url": "https://academiawave.gupy.io"
+  },
+  {
+    "name": "AD Promotora",
+    "slug": "adpromotora",
+    "url": "https://adpromotora.gupy.io"
+  },
+  {
+    "name": "ADAMA",
+    "slug": "adama",
+    "url": "https://adama.gupy.io"
+  },
+  {
+    "name": "Afinz",
+    "slug": "afinz",
+    "url": "https://afinz.gupy.io"
+  },
+  {
+    "name": "AFPESP",
+    "slug": "afpesp",
+    "url": "https://afpesp.gupy.io"
+  },
+  {
+    "name": "Afya",
+    "slug": "afya",
+    "url": "https://afya.gupy.io"
+  },
+  {
+    "name": "Ageplan",
+    "slug": "ageplan",
+    "url": "https://ageplan.gupy.io"
+  },
+  {
+    "name": "AGRIBRASIL",
+    "slug": "agribrasil",
+    "url": "https://agribrasil.gupy.io"
+  },
+  {
+    "name": "Agriness",
+    "slug": "agriness",
+    "url": "https://agriness.gupy.io"
+  },
+  {
+    "name": "Agrivalle",
+    "slug": "agrivalle",
+    "url": "https://agrivalle.gupy.io"
+  },
+  {
+    "name": "Agrofel",
+    "slug": "agrofel",
+    "url": "https://agrofel.gupy.io"
+  },
+  {
+    "name": "ALGAR",
+    "slug": "algar",
+    "url": "https://algar.gupy.io"
+  },
+  {
+    "name": "Aliare",
+    "slug": "aliare",
+    "url": "https://aliare.gupy.io"
+  },
+  {
+    "name": "Allcare Gestora de Saúde",
+    "slug": "allcare",
+    "url": "https://allcare.gupy.io"
+  },
+  {
+    "name": "Allrede Telecom",
+    "slug": "allrede",
+    "url": "https://allrede.gupy.io"
+  },
+  {
+    "name": "Alpargatas",
+    "slug": "alpargatas",
+    "url": "https://alpargatas.gupy.io"
+  },
+  {
+    "name": "Alphaville",
+    "slug": "alphaville",
+    "url": "https://alphaville.gupy.io"
+  },
+  {
+    "name": "Ambar Tech",
+    "slug": "ambartech",
+    "url": "https://ambartech.gupy.io"
+  },
+  {
+    "name": "Ambev",
+    "slug": "ambev",
+    "url": "https://ambev.gupy.io"
+  },
+  {
+    "name": "Ambev Tech",
+    "slug": "ambevtech",
+    "url": "https://ambevtech.gupy.io"
+  },
+  {
+    "name": "AME (Amigos Metroviários dos Excepcionais)",
+    "slug": "ame",
+    "url": "https://ame.gupy.io"
+  },
+  {
+    "name": "Americanas",
+    "slug": "americanas",
+    "url": "https://americanas.gupy.io"
+  },
+  {
+    "name": "Aprova",
+    "slug": "aprovadigital",
+    "url": "https://aprovadigital.gupy.io"
+  },
+  {
+    "name": "Araforros",
+    "slug": "araforros",
+    "url": "https://araforros.gupy.io"
+  },
+  {
+    "name": "Araguaia",
+    "slug": "araguaia",
+    "url": "https://araguaia.gupy.io"
+  },
+  {
+    "name": "Arcor do Brasil",
+    "slug": "arcor",
+    "url": "https://arcor.gupy.io"
+  },
+  {
+    "name": "Arizona",
+    "slug": "arizona",
+    "url": "https://arizona.gupy.io"
+  },
+  {
+    "name": "Armac",
+    "slug": "armac",
+    "url": "https://armac.gupy.io"
+  },
+  {
+    "name": "Asaas",
+    "slug": "asaas",
+    "url": "https://asaas.gupy.io"
+  },
+  {
+    "name": "Asia Shipping",
+    "slug": "asiashipping",
+    "url": "https://asiashipping.gupy.io"
+  },
+  {
+    "name": "Assaí Atacadista",
+    "slug": "assai",
+    "url": "https://assai.gupy.io"
+  },
+  {
+    "name": "Associação Nova Escola",
+    "slug": "novaescola",
+    "url": "https://novaescola.gupy.io"
+  },
+  {
+    "name": "Astral Pães e Massas",
+    "slug": "astralpaes",
+    "url": "https://astralpaes.gupy.io"
+  },
+  {
+    "name": "Atento",
+    "slug": "atento",
+    "url": "https://atento.gupy.io"
+  },
+  {
+    "name": "Auren Energia",
+    "slug": "aurenenergia",
+    "url": "https://aurenenergia.gupy.io"
+  },
+  {
+    "name": "Aurum",
+    "slug": "aurum",
+    "url": "https://aurum.gupy.io"
+  },
+  {
+    "name": "Autbank",
+    "slug": "autbank",
+    "url": "https://autbank.gupy.io"
+  },
+  {
+    "name": "Auto Avaliar",
+    "slug": "autoavaliar",
+    "url": "https://autoavaliar.gupy.io"
+  },
+  {
+    "name": "Auxiliadora Predial",
+    "slug": "auxiliadorapredial",
+    "url": "https://auxiliadorapredial.gupy.io"
+  },
+  {
+    "name": "Avantia",
+    "slug": "avantia",
+    "url": "https://avantia.gupy.io"
+  },
+  {
+    "name": "Aviator",
+    "slug": "aviator",
+    "url": "https://aviator.gupy.io"
+  },
+  {
+    "name": "Aviva Desenvolvimento Infantil",
+    "slug": "aviva",
+    "url": "https://aviva.gupy.io"
+  },
+  {
+    "name": "Avla Brasil",
+    "slug": "avla",
+    "url": "https://avla.gupy.io"
+  },
+  {
+    "name": "Azul Linhas Aéreas",
+    "slug": "voeazul",
+    "url": "https://voeazul.gupy.io"
+  },
+  {
+    "name": "B4A",
+    "slug": "b4a",
+    "url": "https://b4a.gupy.io"
+  },
+  {
+    "name": "BAGAGGIO",
+    "slug": "bagaggio",
+    "url": "https://bagaggio.gupy.io"
+  },
+  {
+    "name": "Banco ABC Brasil",
+    "slug": "abcbrasil",
+    "url": "https://abcbrasil.gupy.io"
+  },
+  {
+    "name": "Banco Fibra",
+    "slug": "bancofibra",
+    "url": "https://bancofibra.gupy.io"
+  },
+  {
+    "name": "Banco Sofisa",
+    "slug": "bancosofisa",
+    "url": "https://bancosofisa.gupy.io"
+  },
+  {
+    "name": "Banco Topázio",
+    "slug": "bancotopazio",
+    "url": "https://bancotopazio.gupy.io"
+  },
+  {
+    "name": "Barcelos",
+    "slug": "barcelos",
+    "url": "https://barcelos.gupy.io"
+  },
+  {
+    "name": "Bauducco #vemparaBauducco",
+    "slug": "bauducco",
+    "url": "https://bauducco.gupy.io"
+  },
+  {
+    "name": "BeFly",
+    "slug": "befly",
+    "url": "https://befly.gupy.io"
+  },
+  {
+    "name": "Bemobi",
+    "slug": "bemobi",
+    "url": "https://bemobi.gupy.io"
+  },
+  {
+    "name": "Betunel",
+    "slug": "betunel",
+    "url": "https://betunel.gupy.io"
+  },
+  {
+    "name": "BMC Hyundai",
+    "slug": "bmchyundai",
+    "url": "https://bmchyundai.gupy.io"
+  },
+  {
+    "name": "Boavista Tecnologia",
+    "slug": "boavista",
+    "url": "https://boavista.gupy.io"
+  },
+  {
+    "name": "Brado Logística",
+    "slug": "bradologistica",
+    "url": "https://bradologistica.gupy.io"
+  },
+  {
+    "name": "Brasilseg",
+    "slug": "brasilseg",
+    "url": "https://brasilseg.gupy.io"
+  },
+  {
+    "name": "Braveo",
+    "slug": "braveo",
+    "url": "https://braveo.gupy.io"
+  },
+  {
+    "name": "Bruning Tecnometal",
+    "slug": "bruning",
+    "url": "https://bruning.gupy.io"
+  },
+  {
+    "name": "BRZ ADVOGADOS",
+    "slug": "brz",
+    "url": "https://brz.gupy.io"
+  },
+  {
+    "name": "BTS",
+    "slug": "bts",
+    "url": "https://bts.gupy.io"
+  },
+  {
+    "name": "Bun/Buntech",
+    "slug": "buntech",
+    "url": "https://buntech.gupy.io"
+  },
+  {
+    "name": "Bunge",
+    "slug": "bunge",
+    "url": "https://bunge.gupy.io"
+  },
+  {
+    "name": "BYD Brasil",
+    "slug": "bydbrasil",
+    "url": "https://bydbrasil.gupy.io"
+  },
+  {
+    "name": "C&A Brasil",
+    "slug": "cea",
+    "url": "https://cea.gupy.io"
+  },
+  {
+    "name": "Cabral Motor Honda",
+    "slug": "cabralmotor",
+    "url": "https://cabralmotor.gupy.io"
+  },
+  {
+    "name": "Cadastra",
+    "slug": "cadastra",
+    "url": "https://cadastra.gupy.io"
+  },
+  {
+    "name": "Caedu",
+    "slug": "caedu",
+    "url": "https://caedu.gupy.io"
+  },
+  {
+    "name": "Caixa Residencial",
+    "slug": "caixaresidencial",
+    "url": "https://caixaresidencial.gupy.io"
+  },
+  {
+    "name": "Camed Microcrédito",
+    "slug": "camedmicrocredito",
+    "url": "https://camedmicrocredito.gupy.io"
+  },
+  {
+    "name": "CAPEMISA Seguradora e CAPEMISA Capitalização",
+    "slug": "capemisa",
+    "url": "https://capemisa.gupy.io"
+  },
+  {
+    "name": "Carbel Auto Group",
+    "slug": "grupocarbel",
+    "url": "https://grupocarbel.gupy.io"
+  },
+  {
+    "name": "Cargolift",
+    "slug": "cargolift",
+    "url": "https://cargolift.gupy.io"
+  },
+  {
+    "name": "Carreira Strattner",
+    "slug": "strattner",
+    "url": "https://strattner.gupy.io"
+  },
+  {
+    "name": "Casa do Celular",
+    "slug": "casadocelular",
+    "url": "https://casadocelular.gupy.io"
+  },
+  {
+    "name": "Casa do Fitness",
+    "slug": "casadofitness",
+    "url": "https://casadofitness.gupy.io"
+  },
+  {
+    "name": "Casa dos Ventos",
+    "slug": "casadosventos",
+    "url": "https://casadosventos.gupy.io"
+  },
+  {
+    "name": "Casar.com",
+    "slug": "casarcom",
+    "url": "https://casarcom.gupy.io"
+  },
+  {
+    "name": "Cascione Advogados",
+    "slug": "cascione",
+    "url": "https://cascione.gupy.io"
+  },
+  {
+    "name": "Cataguá Soluções Imobiliárias",
+    "slug": "catagua",
+    "url": "https://catagua.gupy.io"
+  },
+  {
+    "name": "Catharine Hill",
+    "slug": "catharinehill",
+    "url": "https://catharinehill.gupy.io"
+  },
+  {
+    "name": "CBA",
+    "slug": "cba",
+    "url": "https://cba.gupy.io"
+  },
+  {
+    "name": "CCB Construtora",
+    "slug": "ccbconstrutora",
+    "url": "https://ccbconstrutora.gupy.io"
+  },
+  {
+    "name": "CCEE",
+    "slug": "ccee",
+    "url": "https://ccee.gupy.io"
+  },
+  {
+    "name": "CCL Industries",
+    "slug": "ccl",
+    "url": "https://ccl.gupy.io"
+  },
+  {
+    "name": "Cebrace",
+    "slug": "cebrace",
+    "url": "https://cebrace.gupy.io"
+  },
+  {
+    "name": "Cedisa Central de Aço S/A",
+    "slug": "cedisa",
+    "url": "https://cedisa.gupy.io"
+  },
+  {
+    "name": "Cellera Farma - Somos gente que cuida de gente",
+    "slug": "cellerafarma",
+    "url": "https://cellerafarma.gupy.io"
+  },
+  {
+    "name": "Central Ailos",
+    "slug": "centralailos",
+    "url": "https://centralailos.gupy.io"
+  },
+  {
+    "name": "CentralAr.com",
+    "slug": "centralar",
+    "url": "https://centralar.gupy.io"
+  },
+  {
+    "name": "CEPEL",
+    "slug": "cepel",
+    "url": "https://cepel.gupy.io"
+  },
+  {
+    "name": "Cerpa Cervejaria Paraense S/A",
+    "slug": "cerpacervejaria",
+    "url": "https://cerpacervejaria.gupy.io"
+  },
+  {
+    "name": "Certisign",
+    "slug": "certisign",
+    "url": "https://certisign.gupy.io"
+  },
+  {
+    "name": "Check Up Hospital",
+    "slug": "checkuphospital",
+    "url": "https://checkuphospital.gupy.io"
+  },
+  {
+    "name": "CIEE - Centro de Integração Empresa-Escola",
+    "slug": "ciee",
+    "url": "https://ciee.gupy.io"
+  },
+  {
+    "name": "CIEE SC",
+    "slug": "cieesc",
+    "url": "https://cieesc.gupy.io"
+  },
+  {
+    "name": "Cinemark",
+    "slug": "cinemark",
+    "url": "https://cinemark.gupy.io"
+  },
+  {
+    "name": "Cinex Inovacão e Emoção",
+    "slug": "cinex",
+    "url": "https://cinex.gupy.io"
+  },
+  {
+    "name": "CLAMED Administrativo",
+    "slug": "clamed",
+    "url": "https://clamed.gupy.io"
+  },
+  {
+    "name": "Claro",
+    "slug": "vempraclaro",
+    "url": "https://vempraclaro.gupy.io"
+  },
+  {
+    "name": "ClickBus",
+    "slug": "clickbus",
+    "url": "https://clickbus.gupy.io"
+  },
+  {
+    "name": "Club Athletico Paranaense",
+    "slug": "athletico",
+    "url": "https://athletico.gupy.io"
+  },
+  {
+    "name": "Clube Moms",
+    "slug": "clubemoms",
+    "url": "https://clubemoms.gupy.io"
+  },
+  {
+    "name": "Clínica Florence",
+    "slug": "clinicaflorence",
+    "url": "https://clinicaflorence.gupy.io"
+  },
+  {
+    "name": "Clínica Rio de Janeiro",
+    "slug": "clinicariodejaneiro",
+    "url": "https://clinicariodejaneiro.gupy.io"
+  },
+  {
+    "name": "CMMM Sociedade de Advogados",
+    "slug": "cmmm",
+    "url": "https://cmmm.gupy.io"
+  },
+  {
+    "name": "CNA Idiomas",
+    "slug": "cnaidiomas",
+    "url": "https://cnaidiomas.gupy.io"
+  },
+  {
+    "name": "Coca-Cola Andina Brasil",
+    "slug": "koandina",
+    "url": "https://koandina.gupy.io"
+  },
+  {
+    "name": "Coca-Cola FEMSA (Temporárias)",
+    "slug": "vagastemporarias-cocacolafemsabr",
+    "url": "https://vagastemporarias-cocacolafemsabr.gupy.io"
+  },
+  {
+    "name": "Coca-Cola FEMSA - Jovens Aprendizes",
+    "slug": "jovemaprendiz-cocacolafemsabr",
+    "url": "https://jovemaprendiz-cocacolafemsabr.gupy.io"
+  },
+  {
+    "name": "Coca-Cola FEMSA Brasil",
+    "slug": "cocacolafemsabr",
+    "url": "https://cocacolafemsabr.gupy.io"
+  },
+  {
+    "name": "Cocal",
+    "slug": "cocal",
+    "url": "https://cocal.gupy.io"
+  },
+  {
+    "name": "Cocamar",
+    "slug": "cocamar",
+    "url": "https://cocamar.gupy.io"
+  },
+  {
+    "name": "Code n' App",
+    "slug": "codenapp",
+    "url": "https://codenapp.gupy.io"
+  },
+  {
+    "name": "Cogna Educação",
+    "slug": "cogna",
+    "url": "https://cogna.gupy.io"
+  },
+  {
+    "name": "Cognita Schools",
+    "slug": "cognita",
+    "url": "https://cognita.gupy.io"
+  },
+  {
+    "name": "Colliers",
+    "slug": "colliers",
+    "url": "https://colliers.gupy.io"
+  },
+  {
+    "name": "Comerc Energia",
+    "slug": "comerc",
+    "url": "https://comerc.gupy.io"
+  },
+  {
+    "name": "Conac",
+    "slug": "conac",
+    "url": "https://conac.gupy.io"
+  },
+  {
+    "name": "Concessionária Novo Litoral",
+    "slug": "concessionarianovolitoral",
+    "url": "https://concessionarianovolitoral.gupy.io"
+  },
+  {
+    "name": "Condor",
+    "slug": "condor",
+    "url": "https://condor.gupy.io"
+  },
+  {
+    "name": "ConectCar",
+    "slug": "conectcar",
+    "url": "https://conectcar.gupy.io"
+  },
+  {
+    "name": "Conexão Talento",
+    "slug": "conexaotalento",
+    "url": "https://conexaotalento.gupy.io"
+  },
+  {
+    "name": "Conquer Business School",
+    "slug": "conquer",
+    "url": "https://conquer.gupy.io"
+  },
+  {
+    "name": "Construtora Tenda",
+    "slug": "tenda",
+    "url": "https://tenda.gupy.io"
+  },
+  {
+    "name": "Conta Simples",
+    "slug": "contasimples",
+    "url": "https://contasimples.gupy.io"
+  },
+  {
+    "name": "Convenia",
+    "slug": "convenia",
+    "url": "https://convenia.gupy.io"
+  },
+  {
+    "name": "Cootravale",
+    "slug": "cootravale",
+    "url": "https://cootravale.gupy.io"
+  },
+  {
+    "name": "Copapel",
+    "slug": "copapel",
+    "url": "https://copapel.gupy.io"
+  },
+  {
+    "name": "COPASTUR VIAGENS E TURISMO",
+    "slug": "copastur",
+    "url": "https://copastur.gupy.io"
+  },
+  {
+    "name": "Copersucar",
+    "slug": "copersucar",
+    "url": "https://copersucar.gupy.io"
+  },
+  {
+    "name": "Coplana - Cooperativa Agroindustrial",
+    "slug": "coplana",
+    "url": "https://coplana.gupy.io"
+  },
+  {
+    "name": "Cosan",
+    "slug": "cosan",
+    "url": "https://cosan.gupy.io"
+  },
+  {
+    "name": "COTESA Engenharia",
+    "slug": "cotesa",
+    "url": "https://cotesa.gupy.io"
+  },
+  {
+    "name": "Covre Transportes e Logística",
+    "slug": "covre",
+    "url": "https://covre.gupy.io"
+  },
+  {
+    "name": "CQA - Centro de Qualidade Analítica",
+    "slug": "cqa",
+    "url": "https://cqa.gupy.io"
+  },
+  {
+    "name": "Craft Multimodal",
+    "slug": "craft",
+    "url": "https://craft.gupy.io"
+  },
+  {
+    "name": "Creditas",
+    "slug": "creditas",
+    "url": "https://creditas.gupy.io"
+  },
+  {
+    "name": "Cresol",
+    "slug": "cresolcarreiras",
+    "url": "https://cresolcarreiras.gupy.io"
+  },
+  {
+    "name": "CSN",
+    "slug": "csn",
+    "url": "https://csn.gupy.io"
+  },
+  {
+    "name": "CSU Digital",
+    "slug": "csu",
+    "url": "https://csu.gupy.io"
+  },
+  {
+    "name": "Cury Construtora",
+    "slug": "cury",
+    "url": "https://cury.gupy.io"
+  },
+  {
+    "name": "CVC Corp",
+    "slug": "cvccorp",
+    "url": "https://cvccorp.gupy.io"
+  },
+  {
+    "name": "Cyrela",
+    "slug": "cyrela",
+    "url": "https://cyrela.gupy.io"
+  },
+  {
+    "name": "Cyrela Plurall",
+    "slug": "pcdcyrela",
+    "url": "https://pcdcyrela.gupy.io"
+  },
+  {
+    "name": "Dafiti",
+    "slug": "dafiti",
+    "url": "https://dafiti.gupy.io"
+  },
+  {
+    "name": "Dannemann",
+    "slug": "dannemann",
+    "url": "https://dannemann.gupy.io"
+  },
+  {
+    "name": "Darede",
+    "slug": "darede",
+    "url": "https://darede.gupy.io"
+  },
+  {
+    "name": "Data Engenharia",
+    "slug": "dataengenharia",
+    "url": "https://dataengenharia.gupy.io"
+  },
+  {
+    "name": "Deliver IT",
+    "slug": "deliverit",
+    "url": "https://deliverit.gupy.io"
+  },
+  {
+    "name": "Demarest Advogados",
+    "slug": "demarest",
+    "url": "https://demarest.gupy.io"
+  },
+  {
+    "name": "Dexco",
+    "slug": "dexco",
+    "url": "https://dexco.gupy.io"
+  },
+  {
+    "name": "Disfer Distribuidora",
+    "slug": "disferdistribuidora",
+    "url": "https://disferdistribuidora.gupy.io"
+  },
+  {
+    "name": "Diálogo Engenharia",
+    "slug": "dialogo",
+    "url": "https://dialogo.gupy.io"
+  },
+  {
+    "name": "Dotz",
+    "slug": "dotz",
+    "url": "https://dotz.gupy.io"
+  },
+  {
+    "name": "Duty Cosméticos",
+    "slug": "dutycosmeticos",
+    "url": "https://dutycosmeticos.gupy.io"
+  },
+  {
+    "name": "Dê um match com o CIEE/PR",
+    "slug": "ciee-pr",
+    "url": "https://ciee-pr.gupy.io"
+  },
+  {
+    "name": "EcoRodovias",
+    "slug": "ecorodovias",
+    "url": "https://ecorodovias.gupy.io"
+  },
+  {
+    "name": "EDAG do Brasil",
+    "slug": "edag",
+    "url": "https://edag.gupy.io"
+  },
+  {
+    "name": "Effecti",
+    "slug": "effecti",
+    "url": "https://effecti.gupy.io"
+  },
+  {
+    "name": "Elgin",
+    "slug": "sejaelgin",
+    "url": "https://sejaelgin.gupy.io"
+  },
+  {
+    "name": "Eloware Participações",
+    "slug": "eloware",
+    "url": "https://eloware.gupy.io"
+  },
+  {
+    "name": "Embracon",
+    "slug": "embracon",
+    "url": "https://embracon.gupy.io"
+  },
+  {
+    "name": "Embrasil Segurança e Serviços",
+    "slug": "embrasil",
+    "url": "https://embrasil.gupy.io"
+  },
+  {
+    "name": "Equatorial Serviços",
+    "slug": "equatorialservicos",
+    "url": "https://equatorialservicos.gupy.io"
+  },
+  {
+    "name": "Equipe Juparanã",
+    "slug": "juparana",
+    "url": "https://juparana.gupy.io"
+  },
+  {
+    "name": "Escola Bahiana de Medicina e Saúde Pública",
+    "slug": "escolabahiana",
+    "url": "https://escolabahiana.gupy.io"
+  },
+  {
+    "name": "Escola Britânica de Artes Criativas & Tecnologia",
+    "slug": "ebac",
+    "url": "https://ebac.gupy.io"
+  },
+  {
+    "name": "Escola Mais",
+    "slug": "escolamais",
+    "url": "https://escolamais.gupy.io"
+  },
+  {
+    "name": "Escola Moppe",
+    "slug": "escolamoppe",
+    "url": "https://escolamoppe.gupy.io"
+  },
+  {
+    "name": "Espaçolaser",
+    "slug": "espacolaser",
+    "url": "https://espacolaser.gupy.io"
+  },
+  {
+    "name": "Euro Colchões",
+    "slug": "eurocolchoes",
+    "url": "https://eurocolchoes.gupy.io"
+  },
+  {
+    "name": "Eurobike",
+    "slug": "eurobike",
+    "url": "https://eurobike.gupy.io"
+  },
+  {
+    "name": "Eurofarma",
+    "slug": "eurofarma",
+    "url": "https://eurofarma.gupy.io"
+  },
+  {
+    "name": "Faber-Castell Brasil",
+    "slug": "fabercastell",
+    "url": "https://fabercastell.gupy.io"
+  },
+  {
+    "name": "Fadami - Software & Innovation",
+    "slug": "fadami",
+    "url": "https://fadami.gupy.io"
+  },
+  {
+    "name": "Fast Shop",
+    "slug": "fastshop",
+    "url": "https://fastshop.gupy.io"
+  },
+  {
+    "name": "Faça parte do time do Colégio Uirapuru",
+    "slug": "colegiouirapuru",
+    "url": "https://colegiouirapuru.gupy.io"
+  },
+  {
+    "name": "FCamara",
+    "slug": "fcamara",
+    "url": "https://fcamara.gupy.io"
+  },
+  {
+    "name": "FEBRACIS",
+    "slug": "febracis",
+    "url": "https://febracis.gupy.io"
+  },
+  {
+    "name": "FGM Dental Group",
+    "slug": "fgmdentalgroup",
+    "url": "https://fgmdentalgroup.gupy.io"
+  },
+  {
+    "name": "FIDI",
+    "slug": "fidi",
+    "url": "https://fidi.gupy.io"
+  },
+  {
+    "name": "Fin-X",
+    "slug": "finxapp",
+    "url": "https://finxapp.gupy.io"
+  },
+  {
+    "name": "Findes",
+    "slug": "findes",
+    "url": "https://findes.gupy.io"
+  },
+  {
+    "name": "Finx",
+    "slug": "finx",
+    "url": "https://finx.gupy.io"
+  },
+  {
+    "name": "Fiscaltech",
+    "slug": "fiscaltech",
+    "url": "https://fiscaltech.gupy.io"
+  },
+  {
+    "name": "Flash Global",
+    "slug": "flashglobal",
+    "url": "https://flashglobal.gupy.io"
+  },
+  {
+    "name": "Flora Cosméticos e Limpeza",
+    "slug": "flora",
+    "url": "https://flora.gupy.io"
+  },
+  {
+    "name": "Fluency",
+    "slug": "fluencyacademy",
+    "url": "https://fluencyacademy.gupy.io"
+  },
+  {
+    "name": "Fluxo Soluções Integradas",
+    "slug": "fluxo",
+    "url": "https://fluxo.gupy.io"
+  },
+  {
+    "name": "FMU FIAM FAAM",
+    "slug": "fmu",
+    "url": "https://fmu.gupy.io"
+  },
+  {
+    "name": "Forma Turismo",
+    "slug": "formaturismo",
+    "url": "https://formaturismo.gupy.io"
+  },
+  {
+    "name": "FRANQ",
+    "slug": "franq",
+    "url": "https://franq.gupy.io"
+  },
+  {
+    "name": "Freitas",
+    "slug": "freitas",
+    "url": "https://freitas.gupy.io"
+  },
+  {
+    "name": "Funcional Health Tech",
+    "slug": "funcionalhealthtech",
+    "url": "https://funcionalhealthtech.gupy.io"
+  },
+  {
+    "name": "Fundação Itaú",
+    "slug": "fundacaoitau",
+    "url": "https://fundacaoitau.gupy.io"
+  },
+  {
+    "name": "Gabardo e Terra Advogados Associados",
+    "slug": "gabardoeterra",
+    "url": "https://gabardoeterra.gupy.io"
+  },
+  {
+    "name": "Gafisa",
+    "slug": "gafisa",
+    "url": "https://gafisa.gupy.io"
+  },
+  {
+    "name": "Galapos",
+    "slug": "galapos",
+    "url": "https://galapos.gupy.io"
+  },
+  {
+    "name": "Gaudium",
+    "slug": "gaudium",
+    "url": "https://gaudium.gupy.io"
+  },
+  {
+    "name": "GBOEX",
+    "slug": "gboex",
+    "url": "https://gboex.gupy.io"
+  },
+  {
+    "name": "Gelita",
+    "slug": "gelita",
+    "url": "https://gelita.gupy.io"
+  },
+  {
+    "name": "Geração Cyrela",
+    "slug": "geracaocyrela",
+    "url": "https://geracaocyrela.gupy.io"
+  },
+  {
+    "name": "Gertec Brasil",
+    "slug": "gertec",
+    "url": "https://gertec.gupy.io"
+  },
+  {
+    "name": "GIRO.TECH",
+    "slug": "girotech",
+    "url": "https://girotech.gupy.io"
+  },
+  {
+    "name": "Globo",
+    "slug": "globo",
+    "url": "https://globo.gupy.io"
+  },
+  {
+    "name": "GMI Distribuidora",
+    "slug": "gmidistribuidora",
+    "url": "https://gmidistribuidora.gupy.io"
+  },
+  {
+    "name": "GnTech Exames",
+    "slug": "gntech",
+    "url": "https://gntech.gupy.io"
+  },
+  {
+    "name": "GOL Linhas Aéreas",
+    "slug": "golcarreiras",
+    "url": "https://golcarreiras.gupy.io"
+  },
+  {
+    "name": "GoodStorage",
+    "slug": "goodstorage",
+    "url": "https://goodstorage.gupy.io"
+  },
+  {
+    "name": "Governança Brasil",
+    "slug": "governancabrasil",
+    "url": "https://governancabrasil.gupy.io"
+  },
+  {
+    "name": "GPA",
+    "slug": "gpa",
+    "url": "https://gpa.gupy.io"
+  },
+  {
+    "name": "GPA - Estagiários e Aprendizes",
+    "slug": "estagiarioseaprendizesgpa",
+    "url": "https://estagiarioseaprendizesgpa.gupy.io"
+  },
+  {
+    "name": "GPA Corporação",
+    "slug": "corporacaogpa",
+    "url": "https://corporacaogpa.gupy.io"
+  },
+  {
+    "name": "Granado - Desde 1870",
+    "slug": "granado",
+    "url": "https://granado.gupy.io"
+  },
+  {
+    "name": "GRPCOM",
+    "slug": "grpcom",
+    "url": "https://grpcom.gupy.io"
+  },
+  {
+    "name": "Grupo 3corações",
+    "slug": "3coracoes",
+    "url": "https://3coracoes.gupy.io"
+  },
+  {
+    "name": "Grupo Alliance",
+    "slug": "alliance",
+    "url": "https://alliance.gupy.io"
+  },
+  {
+    "name": "Grupo Althaia",
+    "slug": "grupoalthaia",
+    "url": "https://grupoalthaia.gupy.io"
+  },
+  {
+    "name": "Grupo Boticário",
+    "slug": "grupoboticario",
+    "url": "https://grupoboticario.gupy.io"
+  },
+  {
+    "name": "Grupo Carburgo",
+    "slug": "carburgo",
+    "url": "https://carburgo.gupy.io"
+  },
+  {
+    "name": "Grupo Carmehil",
+    "slug": "carmehil",
+    "url": "https://carmehil.gupy.io"
+  },
+  {
+    "name": "Grupo CM",
+    "slug": "cmcorp",
+    "url": "https://cmcorp.gupy.io"
+  },
+  {
+    "name": "Grupo Diagonal",
+    "slug": "grupodiagonal",
+    "url": "https://grupodiagonal.gupy.io"
+  },
+  {
+    "name": "Grupo DX Soluções em EPI",
+    "slug": "grupodx",
+    "url": "https://grupodx.gupy.io"
+  },
+  {
+    "name": "Grupo EBEG",
+    "slug": "ebeg",
+    "url": "https://ebeg.gupy.io"
+  },
+  {
+    "name": "Grupo Ei Beleza",
+    "slug": "eibeleza",
+    "url": "https://eibeleza.gupy.io"
+  },
+  {
+    "name": "Grupo Elettromec",
+    "slug": "elettromec",
+    "url": "https://elettromec.gupy.io"
+  },
+  {
+    "name": "Grupo Equatorial",
+    "slug": "equatorialenergia",
+    "url": "https://equatorialenergia.gupy.io"
+  },
+  {
+    "name": "Grupo Iter",
+    "slug": "grupoiter",
+    "url": "https://grupoiter.gupy.io"
+  },
+  {
+    "name": "Grupo ITG",
+    "slug": "grupoitg",
+    "url": "https://grupoitg.gupy.io"
+  },
+  {
+    "name": "Grupo JRCA",
+    "slug": "jrca",
+    "url": "https://jrca.gupy.io"
+  },
+  {
+    "name": "Grupo MAG",
+    "slug": "grupomag",
+    "url": "https://grupomag.gupy.io"
+  },
+  {
+    "name": "Grupo NewChase",
+    "slug": "gruponewchase",
+    "url": "https://gruponewchase.gupy.io"
+  },
+  {
+    "name": "Grupo Nortène Plásticos",
+    "slug": "nortene",
+    "url": "https://nortene.gupy.io"
+  },
+  {
+    "name": "Grupo OVD",
+    "slug": "ovd",
+    "url": "https://ovd.gupy.io"
+  },
+  {
+    "name": "Grupo Piracanjuba",
+    "slug": "piracanjuba",
+    "url": "https://piracanjuba.gupy.io"
+  },
+  {
+    "name": "Grupo Positivo",
+    "slug": "positivo",
+    "url": "https://positivo.gupy.io"
+  },
+  {
+    "name": "Grupo Roma Brasil",
+    "slug": "gruporomabrasil",
+    "url": "https://gruporomabrasil.gupy.io"
+  },
+  {
+    "name": "Grupo Simões | #VemProTimeGS",
+    "slug": "gruposimoes",
+    "url": "https://gruposimoes.gupy.io"
+  },
+  {
+    "name": "Grupo Terral",
+    "slug": "grupoterral",
+    "url": "https://grupoterral.gupy.io"
+  },
+  {
+    "name": "Grupo Tigre",
+    "slug": "tigre",
+    "url": "https://tigre.gupy.io"
+  },
+  {
+    "name": "Grupo Tracan",
+    "slug": "grupotracan",
+    "url": "https://grupotracan.gupy.io"
+  },
+  {
+    "name": "Grupo Vigorito",
+    "slug": "grupovigorito",
+    "url": "https://grupovigorito.gupy.io"
+  },
+  {
+    "name": "Grupo Vila Nova",
+    "slug": "vilanova",
+    "url": "https://vilanova.gupy.io"
+  },
+  {
+    "name": "Grupo Vyas",
+    "slug": "vyas",
+    "url": "https://vyas.gupy.io"
+  },
+  {
+    "name": "Grupo WTorre",
+    "slug": "wtorre",
+    "url": "https://wtorre.gupy.io"
+  },
+  {
+    "name": "Grupo Yamaha Brasil",
+    "slug": "yamaha",
+    "url": "https://yamaha.gupy.io"
+  },
+  {
+    "name": "Hand Talk",
+    "slug": "handtalk",
+    "url": "https://handtalk.gupy.io"
+  },
+  {
+    "name": "Hapvida NotreDame Intermédica",
+    "slug": "hapvidandi",
+    "url": "https://hapvidandi.gupy.io"
+  },
+  {
+    "name": "Hayamax",
+    "slug": "hayamax",
+    "url": "https://hayamax.gupy.io"
+  },
+  {
+    "name": "Heringer",
+    "slug": "heringer",
+    "url": "https://heringer.gupy.io"
+  },
+  {
+    "name": "Hidrovias do Brasil",
+    "slug": "hidrovias",
+    "url": "https://hidrovias.gupy.io"
+  },
+  {
+    "name": "HM Engenharia",
+    "slug": "hmengenharia",
+    "url": "https://hmengenharia.gupy.io"
+  },
+  {
+    "name": "Hospital Adventista Manaus",
+    "slug": "hospitaladventistademanaus",
+    "url": "https://hospitaladventistademanaus.gupy.io"
+  },
+  {
+    "name": "Hospital Felício Rocho",
+    "slug": "hospitalfeliciorocho",
+    "url": "https://hospitalfeliciorocho.gupy.io"
+  },
+  {
+    "name": "Hospital Moinhos de Vento",
+    "slug": "hospitalmoinhos",
+    "url": "https://hospitalmoinhos.gupy.io"
+  },
+  {
+    "name": "Hospital Prontocardio",
+    "slug": "hospital-prontocardio",
+    "url": "https://hospital-prontocardio.gupy.io"
+  },
+  {
+    "name": "Hospital São Marcos",
+    "slug": "hospitalsaomarcos",
+    "url": "https://hospitalsaomarcos.gupy.io"
+  },
+  {
+    "name": "HPE Automotores do Brasil",
+    "slug": "hpe",
+    "url": "https://hpe.gupy.io"
+  },
+  {
+    "name": "Hypera Pharma",
+    "slug": "hyperapharma",
+    "url": "https://hyperapharma.gupy.io"
+  },
+  {
+    "name": "i4pro",
+    "slug": "i4pro",
+    "url": "https://i4pro.gupy.io"
+  },
+  {
+    "name": "Ibema",
+    "slug": "ibema",
+    "url": "https://ibema.gupy.io"
+  },
+  {
+    "name": "Ibitu Energia",
+    "slug": "ibitu",
+    "url": "https://ibitu.gupy.io"
+  },
+  {
+    "name": "Ibmec",
+    "slug": "ibmec",
+    "url": "https://ibmec.gupy.io"
+  },
+  {
+    "name": "Ibyte",
+    "slug": "ibyte",
+    "url": "https://ibyte.gupy.io"
+  },
+  {
+    "name": "IC Transportes",
+    "slug": "ictransportes",
+    "url": "https://ictransportes.gupy.io"
+  },
+  {
+    "name": "Icomm Group",
+    "slug": "icommgroup",
+    "url": "https://icommgroup.gupy.io"
+  },
+  {
+    "name": "IGC",
+    "slug": "igc",
+    "url": "https://igc.gupy.io"
+  },
+  {
+    "name": "IHARA - Agricultura é a nossa vida.",
+    "slug": "ihara",
+    "url": "https://ihara.gupy.io"
+  },
+  {
+    "name": "IMDEPA",
+    "slug": "imdepa",
+    "url": "https://imdepa.gupy.io"
+  },
+  {
+    "name": "InCompanny Consultoria Contábil",
+    "slug": "incompanny",
+    "url": "https://incompanny.gupy.io"
+  },
+  {
+    "name": "Indústria (Confidencial)",
+    "slug": "industria",
+    "url": "https://industria.gupy.io"
+  },
+  {
+    "name": "INEC",
+    "slug": "inec",
+    "url": "https://inec.gupy.io"
+  },
+  {
+    "name": "INFLOR - Evolução por Natureza",
+    "slug": "inflor",
+    "url": "https://inflor.gupy.io"
+  },
+  {
+    "name": "Instituto Ayrton Senna",
+    "slug": "institutoayrtonsenna",
+    "url": "https://institutoayrtonsenna.gupy.io"
+  },
+  {
+    "name": "Instituto Homem",
+    "slug": "institutohomem",
+    "url": "https://institutohomem.gupy.io"
+  },
+  {
+    "name": "Integra CSC",
+    "slug": "integracsc",
+    "url": "https://integracsc.gupy.io"
+  },
+  {
+    "name": "Invillia",
+    "slug": "invillia",
+    "url": "https://invillia.gupy.io"
+  },
+  {
+    "name": "ioasys",
+    "slug": "ioasys",
+    "url": "https://ioasys.gupy.io"
+  },
+  {
+    "name": "Ipiranga",
+    "slug": "ipiranga",
+    "url": "https://ipiranga.gupy.io"
+  },
+  {
+    "name": "Ipê Digital",
+    "slug": "ipedigital",
+    "url": "https://ipedigital.gupy.io"
+  },
+  {
+    "name": "ISH Tecnologia",
+    "slug": "ishtecnologia",
+    "url": "https://ishtecnologia.gupy.io"
+  },
+  {
+    "name": "IT Universe Tecnologia",
+    "slug": "ituniverse",
+    "url": "https://ituniverse.gupy.io"
+  },
+  {
+    "name": "Itaú Social",
+    "slug": "itausocial",
+    "url": "https://itausocial.gupy.io"
+  },
+  {
+    "name": "Itaú Unibanco",
+    "slug": "vemproitau",
+    "url": "https://vemproitau.gupy.io"
+  },
+  {
+    "name": "Ivan Negócios Imobiliários",
+    "slug": "ivannegocios",
+    "url": "https://ivannegocios.gupy.io"
+  },
+  {
+    "name": "Jazz Tech",
+    "slug": "jazztech",
+    "url": "https://jazztech.gupy.io"
+  },
+  {
+    "name": "JCDecaux Brasil",
+    "slug": "jcdecaux",
+    "url": "https://jcdecaux.gupy.io"
+  },
+  {
+    "name": "JDREL",
+    "slug": "jdrel",
+    "url": "https://jdrel.gupy.io"
+  },
+  {
+    "name": "Jirau Energia",
+    "slug": "jirauenergia",
+    "url": "https://jirauenergia.gupy.io"
+  },
+  {
+    "name": "Join | Creative Tech",
+    "slug": "jointecnologia",
+    "url": "https://jointecnologia.gupy.io"
+  },
+  {
+    "name": "JS PEÇAS",
+    "slug": "jspecas",
+    "url": "https://jspecas.gupy.io"
+  },
+  {
+    "name": "JSL",
+    "slug": "jsl",
+    "url": "https://jsl.gupy.io"
+  },
+  {
+    "name": "Junte-se a Evoltz e impulsione sua carreira",
+    "slug": "evoltz",
+    "url": "https://evoltz.gupy.io"
+  },
+  {
+    "name": "Junto Seguros",
+    "slug": "juntoseguros",
+    "url": "https://juntoseguros.gupy.io"
+  },
+  {
+    "name": "Kenlo",
+    "slug": "kenlo",
+    "url": "https://kenlo.gupy.io"
+  },
+  {
+    "name": "Kinross Brasil Mineração",
+    "slug": "kinross",
+    "url": "https://kinross.gupy.io"
+  },
+  {
+    "name": "KLA Advogados",
+    "slug": "kla",
+    "url": "https://kla.gupy.io"
+  },
+  {
+    "name": "Knewin",
+    "slug": "knewin",
+    "url": "https://knewin.gupy.io"
+  },
+  {
+    "name": "Konica Minolta Brasil",
+    "slug": "konicaminolta",
+    "url": "https://konicaminolta.gupy.io"
+  },
+  {
+    "name": "Kordsa",
+    "slug": "kordsa",
+    "url": "https://kordsa.gupy.io"
+  },
+  {
+    "name": "KOVI ❤️",
+    "slug": "kovi",
+    "url": "https://kovi.gupy.io"
+  },
+  {
+    "name": "KRYPTUS",
+    "slug": "kryptus",
+    "url": "https://kryptus.gupy.io"
+  },
+  {
+    "name": "La Moda",
+    "slug": "lamoda",
+    "url": "https://lamoda.gupy.io"
+  },
+  {
+    "name": "Laboratório Maricondi",
+    "slug": "laboratoriomaricondi",
+    "url": "https://laboratoriomaricondi.gupy.io"
+  },
+  {
+    "name": "Lazzo Secondment",
+    "slug": "lazzosecondment",
+    "url": "https://lazzosecondment.gupy.io"
+  },
+  {
+    "name": "LBR ENGENHARIA E CONSULTORIA LTDA",
+    "slug": "lbrengenharia",
+    "url": "https://lbrengenharia.gupy.io"
+  },
+  {
+    "name": "LCA Consultores",
+    "slug": "lcaconsultores",
+    "url": "https://lcaconsultores.gupy.io"
+  },
+  {
+    "name": "Leega Consultoria",
+    "slug": "leega",
+    "url": "https://leega.gupy.io"
+  },
+  {
+    "name": "Lefosse",
+    "slug": "lefosse",
+    "url": "https://lefosse.gupy.io"
+  },
+  {
+    "name": "Linea Alimentos",
+    "slug": "linea",
+    "url": "https://linea.gupy.io"
+  },
+  {
+    "name": "Livance",
+    "slug": "livance",
+    "url": "https://livance.gupy.io"
+  },
+  {
+    "name": "Localiza&Co",
+    "slug": "localiza",
+    "url": "https://localiza.gupy.io"
+  },
+  {
+    "name": "Log Lab - Trabalhe Conosco",
+    "slug": "loglabdigital",
+    "url": "https://loglabdigital.gupy.io"
+  },
+  {
+    "name": "Lojacorr Seguros 🚀",
+    "slug": "redelojacorr",
+    "url": "https://redelojacorr.gupy.io"
+  },
+  {
+    "name": "Lojas Renner",
+    "slug": "lojasrenner",
+    "url": "https://lojasrenner.gupy.io"
+  },
+  {
+    "name": "Lojas Renner",
+    "slug": "renner",
+    "url": "https://renner.gupy.io"
+  },
+  {
+    "name": "Lojas Renner - Encantech",
+    "slug": "encantech",
+    "url": "https://encantech.gupy.io"
+  },
+  {
+    "name": "Lojas Torra",
+    "slug": "lojastorra",
+    "url": "https://lojastorra.gupy.io"
+  },
+  {
+    "name": "Lojas Vivo",
+    "slug": "lojasvivo",
+    "url": "https://lojasvivo.gupy.io"
+  },
+  {
+    "name": "Loxam - A Geradora",
+    "slug": "ageradora",
+    "url": "https://ageradora.gupy.io"
+  },
+  {
+    "name": "Luft Logistics Healthcare",
+    "slug": "luftlogistics",
+    "url": "https://luftlogistics.gupy.io"
+  },
+  {
+    "name": "Lumini IT Solutions",
+    "slug": "luminiitsolutions",
+    "url": "https://luminiitsolutions.gupy.io"
+  },
+  {
+    "name": "Lumma Despachante",
+    "slug": "lummadespachante",
+    "url": "https://lummadespachante.gupy.io"
+  },
+  {
+    "name": "Lynx Process",
+    "slug": "lynx",
+    "url": "https://lynx.gupy.io"
+  },
+  {
+    "name": "M. Dias Branco",
+    "slug": "mdiasbranco",
+    "url": "https://mdiasbranco.gupy.io"
+  },
+  {
+    "name": "Machado Meyer Advogados",
+    "slug": "machadomeyer",
+    "url": "https://machadomeyer.gupy.io"
+  },
+  {
+    "name": "Makro Engenharia",
+    "slug": "makroengenharia",
+    "url": "https://makroengenharia.gupy.io"
+  },
+  {
+    "name": "Maqcampo",
+    "slug": "maqcampo",
+    "url": "https://maqcampo.gupy.io"
+  },
+  {
+    "name": "Mark Up",
+    "slug": "markup",
+    "url": "https://markup.gupy.io"
+  },
+  {
+    "name": "Marka Veículos",
+    "slug": "markaveiculos",
+    "url": "https://markaveiculos.gupy.io"
+  },
+  {
+    "name": "Mattos Filho",
+    "slug": "mattosfilho",
+    "url": "https://mattosfilho.gupy.io"
+  },
+  {
+    "name": "MCassab Institucional",
+    "slug": "mcassab",
+    "url": "https://mcassab.gupy.io"
+  },
+  {
+    "name": "Mercafacil",
+    "slug": "mercafacil",
+    "url": "https://mercafacil.gupy.io"
+  },
+  {
+    "name": "Mercos",
+    "slug": "mercos",
+    "url": "https://mercos.gupy.io"
+  },
+  {
+    "name": "MGITECH Carreiras",
+    "slug": "mgitech",
+    "url": "https://mgitech.gupy.io"
+  },
+  {
+    "name": "Mind Lab",
+    "slug": "mindlab",
+    "url": "https://mindlab.gupy.io"
+  },
+  {
+    "name": "Minerva Foods",
+    "slug": "minervafoods",
+    "url": "https://minervafoods.gupy.io"
+  },
+  {
+    "name": "Minha Biblioteca",
+    "slug": "minhabiblioteca",
+    "url": "https://minhabiblioteca.gupy.io"
+  },
+  {
+    "name": "Minsait",
+    "slug": "minsait",
+    "url": "https://minsait.gupy.io"
+  },
+  {
+    "name": "Mitre Realty",
+    "slug": "mitrerealty",
+    "url": "https://mitrerealty.gupy.io"
+  },
+  {
+    "name": "Mobit Tecnologia",
+    "slug": "mobit",
+    "url": "https://mobit.gupy.io"
+  },
+  {
+    "name": "Mondeléz Brasil",
+    "slug": "mondelez",
+    "url": "https://mondelez.gupy.io"
+  },
+  {
+    "name": "Monte Carlo Joias",
+    "slug": "montecarlo",
+    "url": "https://montecarlo.gupy.io"
+  },
+  {
+    "name": "Montreal | Tecnologia e Inovação",
+    "slug": "montreal",
+    "url": "https://montreal.gupy.io"
+  },
+  {
+    "name": "Motor Group Brasil",
+    "slug": "motorgroupbrasil",
+    "url": "https://motorgroupbrasil.gupy.io"
+  },
+  {
+    "name": "Movida",
+    "slug": "movida",
+    "url": "https://movida.gupy.io"
+  },
+  {
+    "name": "MPD Engenharia",
+    "slug": "mpdengenharia",
+    "url": "https://mpdengenharia.gupy.io"
+  },
+  {
+    "name": "Mulheres de Fibra (Vivo)",
+    "slug": "mulheresdefibra",
+    "url": "https://mulheresdefibra.gupy.io"
+  },
+  {
+    "name": "Méliuz",
+    "slug": "meliuz",
+    "url": "https://meliuz.gupy.io"
+  },
+  {
+    "name": "Método Grupo",
+    "slug": "metodo",
+    "url": "https://metodo.gupy.io"
+  },
+  {
+    "name": "Nasajon",
+    "slug": "nasajon",
+    "url": "https://nasajon.gupy.io"
+  },
+  {
+    "name": "Netshow.me",
+    "slug": "netshowme",
+    "url": "https://netshowme.gupy.io"
+  },
+  {
+    "name": "Nexa Tecnologia",
+    "slug": "nexatecnologia",
+    "url": "https://nexatecnologia.gupy.io"
+  },
+  {
+    "name": "Nitro",
+    "slug": "nitro",
+    "url": "https://nitro.gupy.io"
+  },
+  {
+    "name": "Nordica",
+    "slug": "nordica",
+    "url": "https://nordica.gupy.io"
+  },
+  {
+    "name": "Nortox",
+    "slug": "nortox",
+    "url": "https://nortox.gupy.io"
+  },
+  {
+    "name": "Nova Rota do Oeste",
+    "slug": "rotadooeste",
+    "url": "https://rotadooeste.gupy.io"
+  },
+  {
+    "name": "Núclea",
+    "slug": "nuclea",
+    "url": "https://nuclea.gupy.io"
+  },
+  {
+    "name": "NÚCLEO ENGENHARIA CONSULTIVA S.A.",
+    "slug": "nucleoengenharia",
+    "url": "https://nucleoengenharia.gupy.io"
+  },
+  {
+    "name": "Ogilvy",
+    "slug": "ogilvy",
+    "url": "https://ogilvy.gupy.io"
+  },
+  {
+    "name": "Olsen Indústria e Comércio",
+    "slug": "olsen",
+    "url": "https://olsen.gupy.io"
+  },
+  {
+    "name": "Omint - Trabalhe Conosco",
+    "slug": "omint",
+    "url": "https://omint.gupy.io"
+  },
+  {
+    "name": "Oncovit",
+    "slug": "oncovit",
+    "url": "https://oncovit.gupy.io"
+  },
+  {
+    "name": "OnSet",
+    "slug": "onset",
+    "url": "https://onset.gupy.io"
+  },
+  {
+    "name": "Open Labs",
+    "slug": "openlabs",
+    "url": "https://openlabs.gupy.io"
+  },
+  {
+    "name": "Oportunidades InBetta",
+    "slug": "inbetta",
+    "url": "https://inbetta.gupy.io"
+  },
+  {
+    "name": "Origem Energia",
+    "slug": "origemenergia",
+    "url": "https://origemenergia.gupy.io"
+  },
+  {
+    "name": "Ourofino Saúde Animal",
+    "slug": "ourofino",
+    "url": "https://ourofino.gupy.io"
+  },
+  {
+    "name": "Pacco",
+    "slug": "paccoby",
+    "url": "https://paccoby.gupy.io"
+  },
+  {
+    "name": "Padtec",
+    "slug": "padtec",
+    "url": "https://padtec.gupy.io"
+  },
+  {
+    "name": "Pagaleve",
+    "slug": "pagaleve",
+    "url": "https://pagaleve.gupy.io"
+  },
+  {
+    "name": "PagBank",
+    "slug": "pagseguro",
+    "url": "https://pagseguro.gupy.io"
+  },
+  {
+    "name": "Pavei Brands",
+    "slug": "pavei",
+    "url": "https://pavei.gupy.io"
+  },
+  {
+    "name": "Penso - Acesse nossas vagas",
+    "slug": "penso",
+    "url": "https://penso.gupy.io"
+  },
+  {
+    "name": "Petrobahia S.A.",
+    "slug": "petrobahia",
+    "url": "https://petrobahia.gupy.io"
+  },
+  {
+    "name": "Petros",
+    "slug": "petros",
+    "url": "https://petros.gupy.io"
+  },
+  {
+    "name": "Petz",
+    "slug": "petz",
+    "url": "https://petz.gupy.io"
+  },
+  {
+    "name": "Pharlab Indústria Farmacêutica",
+    "slug": "pharlab",
+    "url": "https://pharlab.gupy.io"
+  },
+  {
+    "name": "Planit Gerenciamento de Projetos",
+    "slug": "planit",
+    "url": "https://planit.gupy.io"
+  },
+  {
+    "name": "PLC Advogados",
+    "slug": "plcadvogados",
+    "url": "https://plcadvogados.gupy.io"
+  },
+  {
+    "name": "Plena Alimentos",
+    "slug": "plena",
+    "url": "https://plena.gupy.io"
+  },
+  {
+    "name": "Ploomes",
+    "slug": "ploomes",
+    "url": "https://ploomes.gupy.io"
+  },
+  {
+    "name": "Polirim do Brasil",
+    "slug": "polirim",
+    "url": "https://polirim.gupy.io"
+  },
+  {
+    "name": "Pollo Engenharia e Construções",
+    "slug": "polloengenharia",
+    "url": "https://polloengenharia.gupy.io"
+  },
+  {
+    "name": "Populos",
+    "slug": "populos",
+    "url": "https://populos.gupy.io"
+  },
+  {
+    "name": "Portal de Carreiras | market4u",
+    "slug": "market4u",
+    "url": "https://market4u.gupy.io"
+  },
+  {
+    "name": "Porto Seguro",
+    "slug": "porto",
+    "url": "https://porto.gupy.io"
+  },
+  {
+    "name": "Pradolux",
+    "slug": "pradolux",
+    "url": "https://pradolux.gupy.io"
+  },
+  {
+    "name": "PremieRpet®",
+    "slug": "premierpet",
+    "url": "https://premierpet.gupy.io"
+  },
+  {
+    "name": "Premix",
+    "slug": "premix",
+    "url": "https://premix.gupy.io"
+  },
+  {
+    "name": "Produttivo",
+    "slug": "produttivo",
+    "url": "https://produttivo.gupy.io"
+  },
+  {
+    "name": "Proxxima Telecom",
+    "slug": "proxxima",
+    "url": "https://proxxima.gupy.io"
+  },
+  {
+    "name": "PUC-SP",
+    "slug": "pucsp",
+    "url": "https://pucsp.gupy.io"
+  },
+  {
+    "name": "Página de Carreira - Home Agent",
+    "slug": "homeagent",
+    "url": "https://homeagent.gupy.io"
+  },
+  {
+    "name": "PÁPRICA COMUNICAÇÃO",
+    "slug": "paprica",
+    "url": "https://paprica.gupy.io"
+  },
+  {
+    "name": "Qualidados",
+    "slug": "qualidados",
+    "url": "https://qualidados.gupy.io"
+  },
+  {
+    "name": "Queima Diária",
+    "slug": "queimadiaria",
+    "url": "https://queimadiaria.gupy.io"
+  },
+  {
+    "name": "R Damásio",
+    "slug": "rdamasio",
+    "url": "https://rdamasio.gupy.io"
+  },
+  {
+    "name": "Raiz Educação",
+    "slug": "raizeducacao",
+    "url": "https://raizeducacao.gupy.io"
+  },
+  {
+    "name": "RBD Imagem",
+    "slug": "rbdimagem",
+    "url": "https://rbdimagem.gupy.io"
+  },
+  {
+    "name": "Realize CFI",
+    "slug": "realize",
+    "url": "https://realize.gupy.io"
+  },
+  {
+    "name": "Record TV",
+    "slug": "recordtv",
+    "url": "https://recordtv.gupy.io"
+  },
+  {
+    "name": "Red House International School",
+    "slug": "redhouse",
+    "url": "https://redhouse.gupy.io"
+  },
+  {
+    "name": "Rede Mais Saúde",
+    "slug": "redemaissaude",
+    "url": "https://redemaissaude.gupy.io"
+  },
+  {
+    "name": "Rede Uniforça",
+    "slug": "redeuniforca",
+    "url": "https://redeuniforca.gupy.io"
+  },
+  {
+    "name": "Reis Advogados",
+    "slug": "reisadvogados",
+    "url": "https://reisadvogados.gupy.io"
+  },
+  {
+    "name": "Rensz Calçados",
+    "slug": "rensz",
+    "url": "https://rensz.gupy.io"
+  },
+  {
+    "name": "Reservas Votorantim",
+    "slug": "reservasvotorantim",
+    "url": "https://reservasvotorantim.gupy.io"
+  },
+  {
+    "name": "Riachuelo",
+    "slug": "riachuelo",
+    "url": "https://riachuelo.gupy.io"
+  },
+  {
+    "name": "RNP",
+    "slug": "rnp",
+    "url": "https://rnp.gupy.io"
+  },
+  {
+    "name": "Roldão Atacadista",
+    "slug": "roldao",
+    "url": "https://roldao.gupy.io"
+  },
+  {
+    "name": "Rota System",
+    "slug": "rotasystem",
+    "url": "https://rotasystem.gupy.io"
+  },
+  {
+    "name": "Rottas Construtora e Incorporadora",
+    "slug": "rottas",
+    "url": "https://rottas.gupy.io"
+  },
+  {
+    "name": "Rubeus",
+    "slug": "rubeus",
+    "url": "https://rubeus.gupy.io"
+  },
+  {
+    "name": "Rumo Logística",
+    "slug": "rumolog",
+    "url": "https://rumolog.gupy.io"
+  },
+  {
+    "name": "Saber Educação",
+    "slug": "saber",
+    "url": "https://saber.gupy.io"
+  },
+  {
+    "name": "SAF BOTAFOGO",
+    "slug": "safbotafogo",
+    "url": "https://safbotafogo.gupy.io"
+  },
+  {
+    "name": "Saipos",
+    "slug": "saipos",
+    "url": "https://saipos.gupy.io"
+  },
+  {
+    "name": "Samtronic",
+    "slug": "samtronic",
+    "url": "https://samtronic.gupy.io"
+  },
+  {
+    "name": "Santa Casa de Porto Alegre",
+    "slug": "santacasa",
+    "url": "https://santacasa.gupy.io"
+  },
+  {
+    "name": "Santa Colomba",
+    "slug": "santacolomba",
+    "url": "https://santacolomba.gupy.io"
+  },
+  {
+    "name": "Santa Helena",
+    "slug": "santahelena",
+    "url": "https://santahelena.gupy.io"
+  },
+  {
+    "name": "Santa Massa",
+    "slug": "santamassa",
+    "url": "https://santamassa.gupy.io"
+  },
+  {
+    "name": "Saque e Pague",
+    "slug": "saqueepague",
+    "url": "https://saqueepague.gupy.io"
+  },
+  {
+    "name": "Savvi Marketing de Performance",
+    "slug": "savvi",
+    "url": "https://savvi.gupy.io"
+  },
+  {
+    "name": "SBT",
+    "slug": "sejasbt",
+    "url": "https://sejasbt.gupy.io"
+  },
+  {
+    "name": "Scania Latin America",
+    "slug": "scania",
+    "url": "https://scania.gupy.io"
+  },
+  {
+    "name": "ScanSource",
+    "slug": "scansource",
+    "url": "https://scansource.gupy.io"
+  },
+  {
+    "name": "Schumann",
+    "slug": "schumann",
+    "url": "https://schumann.gupy.io"
+  },
+  {
+    "name": "Sebrae RS",
+    "slug": "sebrae-rs",
+    "url": "https://sebrae-rs.gupy.io"
+  },
+  {
+    "name": "Segala's Alimentos",
+    "slug": "segalasalimentos",
+    "url": "https://segalasalimentos.gupy.io"
+  },
+  {
+    "name": "Sem Parar Corpay",
+    "slug": "semparar",
+    "url": "https://semparar.gupy.io"
+  },
+  {
+    "name": "Sementes Estrela",
+    "slug": "sementesestrela",
+    "url": "https://sementesestrela.gupy.io"
+  },
+  {
+    "name": "SENAI GO",
+    "slug": "senaigo",
+    "url": "https://senaigo.gupy.io"
+  },
+  {
+    "name": "Serhum Consultoria em RH",
+    "slug": "serhum",
+    "url": "https://serhum.gupy.io"
+  },
+  {
+    "name": "Serilon",
+    "slug": "serilon",
+    "url": "https://serilon.gupy.io"
+  },
+  {
+    "name": "Servimex Logística",
+    "slug": "servimexlogistica",
+    "url": "https://servimexlogistica.gupy.io"
+  },
+  {
+    "name": "SESI GO",
+    "slug": "sesigo",
+    "url": "https://sesigo.gupy.io"
+  },
+  {
+    "name": "SESI SENAI PA",
+    "slug": "sesisenaipa",
+    "url": "https://sesisenaipa.gupy.io"
+  },
+  {
+    "name": "Shift - Pulsa pela vida",
+    "slug": "shift",
+    "url": "https://shift.gupy.io"
+  },
+  {
+    "name": "Sicoob Coopecredi",
+    "slug": "sicoobcoopecredi",
+    "url": "https://sicoobcoopecredi.gupy.io"
+  },
+  {
+    "name": "Sicoob Cooplivre",
+    "slug": "sicoobcooplivre",
+    "url": "https://sicoobcooplivre.gupy.io"
+  },
+  {
+    "name": "Sicoob Crediceripa",
+    "slug": "crediceripa",
+    "url": "https://crediceripa.gupy.io"
+  },
+  {
+    "name": "Sicoob Crediguaçu",
+    "slug": "sicoobcrediguacu",
+    "url": "https://sicoobcrediguacu.gupy.io"
+  },
+  {
+    "name": "Sicoob Credimota",
+    "slug": "sicoobcredimota",
+    "url": "https://sicoobcredimota.gupy.io"
+  },
+  {
+    "name": "Sicoob Nosso",
+    "slug": "sicoobnosso",
+    "url": "https://sicoobnosso.gupy.io"
+  },
+  {
+    "name": "Sicoob Sul",
+    "slug": "sicoobsul",
+    "url": "https://sicoobsul.gupy.io"
+  },
+  {
+    "name": "Sicredi",
+    "slug": "sicredi",
+    "url": "https://sicredi.gupy.io"
+  },
+  {
+    "name": "SiDi",
+    "slug": "sidi",
+    "url": "https://sidi.gupy.io"
+  },
+  {
+    "name": "SIGVARIS GROUP Brasil",
+    "slug": "sigvaris",
+    "url": "https://sigvaris.gupy.io"
+  },
+  {
+    "name": "Silva Gym",
+    "slug": "silvagym",
+    "url": "https://silvagym.gupy.io"
+  },
+  {
+    "name": "Silveiro Advogados",
+    "slug": "silveiroadvogados",
+    "url": "https://silveiroadvogados.gupy.io"
+  },
+  {
+    "name": "SIMPAR",
+    "slug": "simpar",
+    "url": "https://simpar.gupy.io"
+  },
+  {
+    "name": "Sinergia Educação",
+    "slug": "sinergiaeducacao",
+    "url": "https://sinergiaeducacao.gupy.io"
+  },
+  {
+    "name": "Sistema Fiemt",
+    "slug": "sistemafiemt",
+    "url": "https://sistemafiemt.gupy.io"
+  },
+  {
+    "name": "SJ Imóveis",
+    "slug": "sjimoveis",
+    "url": "https://sjimoveis.gupy.io"
+  },
+  {
+    "name": "SLC Agrícola",
+    "slug": "slcagricola",
+    "url": "https://slcagricola.gupy.io"
+  },
+  {
+    "name": "SLC Máquinas",
+    "slug": "slcmaquinas",
+    "url": "https://slcmaquinas.gupy.io"
+  },
+  {
+    "name": "Smart NX",
+    "slug": "smartnx",
+    "url": "https://smartnx.gupy.io"
+  },
+  {
+    "name": "Smarthis",
+    "slug": "smarthis",
+    "url": "https://smarthis.gupy.io"
+  },
+  {
+    "name": "SoftDesign",
+    "slug": "softdesign",
+    "url": "https://softdesign.gupy.io"
+  },
+  {
+    "name": "Softex",
+    "slug": "softex",
+    "url": "https://softex.gupy.io"
+  },
+  {
+    "name": "SoftExpert",
+    "slug": "softexpert",
+    "url": "https://softexpert.gupy.io"
+  },
+  {
+    "name": "Softplan",
+    "slug": "softplan",
+    "url": "https://softplan.gupy.io"
+  },
+  {
+    "name": "Software.com.br",
+    "slug": "software",
+    "url": "https://software.gupy.io"
+  },
+  {
+    "name": "Solar Coca-Cola",
+    "slug": "solarcocacola",
+    "url": "https://solarcocacola.gupy.io"
+  },
+  {
+    "name": "Somos BHS 💙",
+    "slug": "bhs",
+    "url": "https://bhs.gupy.io"
+  },
+  {
+    "name": "Souto Correa Advogados",
+    "slug": "soutocorrea",
+    "url": "https://soutocorrea.gupy.io"
+  },
+  {
+    "name": "Spani Atacadista",
+    "slug": "spani",
+    "url": "https://spani.gupy.io"
+  },
+  {
+    "name": "SPDM/PAIS",
+    "slug": "spdmpais",
+    "url": "https://spdmpais.gupy.io"
+  },
+  {
+    "name": "Spread Tecnologia",
+    "slug": "spread",
+    "url": "https://spread.gupy.io"
+  },
+  {
+    "name": "SPX Imagem",
+    "slug": "spx",
+    "url": "https://spx.gupy.io"
+  },
+  {
+    "name": "Stefanini",
+    "slug": "stefanini",
+    "url": "https://stefanini.gupy.io"
+  },
+  {
+    "name": "Stefanini Latam",
+    "slug": "stefaninilatam",
+    "url": "https://stefaninilatam.gupy.io"
+  },
+  {
+    "name": "STEMAC",
+    "slug": "stemac",
+    "url": "https://stemac.gupy.io"
+  },
+  {
+    "name": "Stocche Forbes Advogados",
+    "slug": "stoccheforbes",
+    "url": "https://stoccheforbes.gupy.io"
+  },
+  {
+    "name": "Stormx",
+    "slug": "stormx",
+    "url": "https://stormx.gupy.io"
+  },
+  {
+    "name": "STRATA ENGENHARIA",
+    "slug": "strata",
+    "url": "https://strata.gupy.io"
+  },
+  {
+    "name": "Studio Z",
+    "slug": "studioz",
+    "url": "https://studioz.gupy.io"
+  },
+  {
+    "name": "Sua Carreira na Ecovias Imigrantes 💚",
+    "slug": "ecovias",
+    "url": "https://ecovias.gupy.io"
+  },
+  {
+    "name": "Suhai Seguradora",
+    "slug": "suhaiseguradora",
+    "url": "https://suhaiseguradora.gupy.io"
+  },
+  {
+    "name": "Supergasbras",
+    "slug": "supergasbras",
+    "url": "https://supergasbras.gupy.io"
+  },
+  {
+    "name": "Suzano",
+    "slug": "suzano",
+    "url": "https://suzano.gupy.io"
+  },
+  {
+    "name": "Synvia",
+    "slug": "synvia",
+    "url": "https://synvia.gupy.io"
+  },
+  {
+    "name": "Sítio da Serra",
+    "slug": "sitiodaserra",
+    "url": "https://sitiodaserra.gupy.io"
+  },
+  {
+    "name": "Tahto",
+    "slug": "tahto",
+    "url": "https://tahto.gupy.io"
+  },
+  {
+    "name": "Talentos AlmapBBDO",
+    "slug": "almapbbdo",
+    "url": "https://almapbbdo.gupy.io"
+  },
+  {
+    "name": "TALENTOS SMART",
+    "slug": "smart",
+    "url": "https://smart.gupy.io"
+  },
+  {
+    "name": "TAM Aviação Executiva",
+    "slug": "tamaviacaoexecutiva",
+    "url": "https://tamaviacaoexecutiva.gupy.io"
+  },
+  {
+    "name": "TANAC",
+    "slug": "tanac",
+    "url": "https://tanac.gupy.io"
+  },
+  {
+    "name": "Tania Bulhões",
+    "slug": "tania-bulhoes",
+    "url": "https://tania-bulhoes.gupy.io"
+  },
+  {
+    "name": "Target Sistemas",
+    "slug": "targetsistemas",
+    "url": "https://targetsistemas.gupy.io"
+  },
+  {
+    "name": "Tecban",
+    "slug": "tecban",
+    "url": "https://tecban.gupy.io"
+  },
+  {
+    "name": "Techne",
+    "slug": "techne",
+    "url": "https://techne.gupy.io"
+  },
+  {
+    "name": "Technogym Brasil",
+    "slug": "technogym",
+    "url": "https://technogym.gupy.io"
+  },
+  {
+    "name": "Tecnobank 🔒",
+    "slug": "tecnobank",
+    "url": "https://tecnobank.gupy.io"
+  },
+  {
+    "name": "Tecnofit",
+    "slug": "tecnofit",
+    "url": "https://tecnofit.gupy.io"
+  },
+  {
+    "name": "Tecverde S.A.",
+    "slug": "tecverde",
+    "url": "https://tecverde.gupy.io"
+  },
+  {
+    "name": "Tegma Gestão Logística",
+    "slug": "tegma",
+    "url": "https://tegma.gupy.io"
+  },
+  {
+    "name": "Tegra Incorporadora",
+    "slug": "tegraincorporadora",
+    "url": "https://tegraincorporadora.gupy.io"
+  },
+  {
+    "name": "Telefónica Tech",
+    "slug": "ttech",
+    "url": "https://ttech.gupy.io"
+  },
+  {
+    "name": "Teltec Solutions",
+    "slug": "teltecsolutions",
+    "url": "https://teltecsolutions.gupy.io"
+  },
+  {
+    "name": "Terra",
+    "slug": "terra",
+    "url": "https://terra.gupy.io"
+  },
+  {
+    "name": "Terral Shopping Centers",
+    "slug": "terral",
+    "url": "https://terral.gupy.io"
+  },
+  {
+    "name": "Terraverde Agro",
+    "slug": "terraverde",
+    "url": "https://terraverde.gupy.io"
+  },
+  {
+    "name": "teya✱",
+    "slug": "teya",
+    "url": "https://teya.gupy.io"
+  },
+  {
+    "name": "TIM Brasil",
+    "slug": "vemprotime",
+    "url": "https://vemprotime.gupy.io"
+  },
+  {
+    "name": "Tintas Kokar",
+    "slug": "kokar",
+    "url": "https://kokar.gupy.io"
+  },
+  {
+    "name": "Tirolez",
+    "slug": "tirolez",
+    "url": "https://tirolez.gupy.io"
+  },
+  {
+    "name": "Tokio Marine Seguradora",
+    "slug": "tokiomarine",
+    "url": "https://tokiomarine.gupy.io"
+  },
+  {
+    "name": "Topaz LATAM",
+    "slug": "topaz",
+    "url": "https://topaz.gupy.io"
+  },
+  {
+    "name": "Total Express",
+    "slug": "totalexpress",
+    "url": "https://totalexpress.gupy.io"
+  },
+  {
+    "name": "TPC Logística Inteligente",
+    "slug": "tpc",
+    "url": "https://tpc.gupy.io"
+  },
+  {
+    "name": "Trakto",
+    "slug": "trakto",
+    "url": "https://trakto.gupy.io"
+  },
+  {
+    "name": "TRANSFEERA",
+    "slug": "transfeera",
+    "url": "https://transfeera.gupy.io"
+  },
+  {
+    "name": "Unicred - Núcleo Geração",
+    "slug": "unicred",
+    "url": "https://unicred.gupy.io"
+  },
+  {
+    "name": "Unidas",
+    "slug": "unidas",
+    "url": "https://unidas.gupy.io"
+  },
+  {
+    "name": "Unifeob",
+    "slug": "unifeob",
+    "url": "https://unifeob.gupy.io"
+  },
+  {
+    "name": "Unimed Amparo",
+    "slug": "unimed-amparo",
+    "url": "https://unimed-amparo.gupy.io"
+  },
+  {
+    "name": "Unimed Belém",
+    "slug": "unimedbelem",
+    "url": "https://unimedbelem.gupy.io"
+  },
+  {
+    "name": "Unimed Campinas",
+    "slug": "unimedcampinas",
+    "url": "https://unimedcampinas.gupy.io"
+  },
+  {
+    "name": "Unimed Ferj",
+    "slug": "unimedhospitalferj",
+    "url": "https://unimedhospitalferj.gupy.io"
+  },
+  {
+    "name": "Unimed Fortaleza",
+    "slug": "unimedfortaleza",
+    "url": "https://unimedfortaleza.gupy.io"
+  },
+  {
+    "name": "Unimed Goiânia",
+    "slug": "unimedgoiania",
+    "url": "https://unimedgoiania.gupy.io"
+  },
+  {
+    "name": "Unimed Juiz de Fora",
+    "slug": "unimedjf",
+    "url": "https://unimedjf.gupy.io"
+  },
+  {
+    "name": "Unimed Maceió",
+    "slug": "unimedmaceio",
+    "url": "https://unimedmaceio.gupy.io"
+  },
+  {
+    "name": "Unimed Piracicaba",
+    "slug": "unimedpiracicaba",
+    "url": "https://unimedpiracicaba.gupy.io"
+  },
+  {
+    "name": "Unimed Porto Alegre",
+    "slug": "unimedpoa",
+    "url": "https://unimedpoa.gupy.io"
+  },
+  {
+    "name": "Unimed Sul Capixaba",
+    "slug": "unimedsulcapixaba",
+    "url": "https://unimedsulcapixaba.gupy.io"
+  },
+  {
+    "name": "Unimed São José dos Campos",
+    "slug": "unimedsjc",
+    "url": "https://unimedsjc.gupy.io"
+  },
+  {
+    "name": "Unimed Teresina",
+    "slug": "unimedteresina",
+    "url": "https://unimedteresina.gupy.io"
+  },
+  {
+    "name": "Unimed Vale do Caí",
+    "slug": "unimedvaledocai",
+    "url": "https://unimedvaledocai.gupy.io"
+  },
+  {
+    "name": "Universidade Cidade de S. Paulo - UNICID",
+    "slug": "unicid",
+    "url": "https://unicid.gupy.io"
+  },
+  {
+    "name": "Urbitec Construções",
+    "slug": "urbitec",
+    "url": "https://urbitec.gupy.io"
+  },
+  {
+    "name": "Usiminas",
+    "slug": "usiminas",
+    "url": "https://usiminas.gupy.io"
+  },
+  {
+    "name": "Usina Santa Adélia",
+    "slug": "usinasantaadelia",
+    "url": "https://usinasantaadelia.gupy.io"
+  },
+  {
+    "name": "Usina Santa Terezinha",
+    "slug": "usinasantaterezinha",
+    "url": "https://usinasantaterezinha.gupy.io"
+  },
+  {
+    "name": "V.tal | o futuro passa por aqui",
+    "slug": "vtal",
+    "url": "https://vtal.gupy.io"
+  },
+  {
+    "name": "Valid",
+    "slug": "valid",
+    "url": "https://valid.gupy.io"
+  },
+  {
+    "name": "Vast Infraestrutura",
+    "slug": "vastinfraestrutura",
+    "url": "https://vastinfraestrutura.gupy.io"
+  },
+  {
+    "name": "Vem ser Teknisa",
+    "slug": "teknisa",
+    "url": "https://teknisa.gupy.io"
+  },
+  {
+    "name": "Verity",
+    "slug": "verity",
+    "url": "https://verity.gupy.io"
+  },
+  {
+    "name": "VERO",
+    "slug": "vero",
+    "url": "https://vero.gupy.io"
+  },
+  {
+    "name": "VERT Capital",
+    "slug": "vert-capital",
+    "url": "https://vert-capital.gupy.io"
+  },
+  {
+    "name": "VExpenses",
+    "slug": "vexpenses",
+    "url": "https://vexpenses.gupy.io"
+  },
+  {
+    "name": "Viapol",
+    "slug": "viapol",
+    "url": "https://viapol.gupy.io"
+  },
+  {
+    "name": "VIASOFT",
+    "slug": "viasoft",
+    "url": "https://viasoft.gupy.io"
+  },
+  {
+    "name": "Vibra Energia",
+    "slug": "vibra",
+    "url": "https://vibra.gupy.io"
+  },
+  {
+    "name": "Vibra Energia",
+    "slug": "vibraenergia",
+    "url": "https://vibraenergia.gupy.io"
+  },
+  {
+    "name": "Viemar Automotive",
+    "slug": "viemar",
+    "url": "https://viemar.gupy.io"
+  },
+  {
+    "name": "Visagio",
+    "slug": "visagio",
+    "url": "https://visagio.gupy.io"
+  },
+  {
+    "name": "Vital Work",
+    "slug": "vitalwork",
+    "url": "https://vitalwork.gupy.io"
+  },
+  {
+    "name": "Vivara",
+    "slug": "vivara",
+    "url": "https://vivara.gupy.io"
+  },
+  {
+    "name": "Viveo",
+    "slug": "viveo",
+    "url": "https://viveo.gupy.io"
+  },
+  {
+    "name": "Vivo",
+    "slug": "vivo",
+    "url": "https://vivo.gupy.io"
+  },
+  {
+    "name": "Vivo - Áreas Técnicas",
+    "slug": "areastecnicasvivo",
+    "url": "https://areastecnicasvivo.gupy.io"
+  },
+  {
+    "name": "Vivo Atendimento",
+    "slug": "atendimentovivo",
+    "url": "https://atendimentovivo.gupy.io"
+  },
+  {
+    "name": "Vivo Digital",
+    "slug": "vivodigital",
+    "url": "https://vivodigital.gupy.io"
+  },
+  {
+    "name": "VLI Logística",
+    "slug": "vli-vagas-externas",
+    "url": "https://vli-vagas-externas.gupy.io"
+  },
+  {
+    "name": "Volkswagen Caminhões e Ônibus",
+    "slug": "vwco",
+    "url": "https://vwco.gupy.io"
+  },
+  {
+    "name": "Volkswagen Group Services South America",
+    "slug": "vwgs-sam",
+    "url": "https://vwgs-sam.gupy.io"
+  },
+  {
+    "name": "Voltz Motors",
+    "slug": "voltz",
+    "url": "https://voltz.gupy.io"
+  },
+  {
+    "name": "Votorantim Cimentos",
+    "slug": "votorantimcimentos",
+    "url": "https://votorantimcimentos.gupy.io"
+  },
+  {
+    "name": "Vsoft Tecnologia",
+    "slug": "vsoft",
+    "url": "https://vsoft.gupy.io"
+  },
+  {
+    "name": "Vyttra",
+    "slug": "vyttra",
+    "url": "https://vyttra.gupy.io"
+  },
+  {
+    "name": "Víncula",
+    "slug": "vincula",
+    "url": "https://vincula.gupy.io"
+  },
+  {
+    "name": "WayCarbon",
+    "slug": "waycarbon",
+    "url": "https://waycarbon.gupy.io"
+  },
+  {
+    "name": "Webedia Brasil",
+    "slug": "webedia",
+    "url": "https://webedia.gupy.io"
+  },
+  {
+    "name": "Webmotors",
+    "slug": "webmotors",
+    "url": "https://webmotors.gupy.io"
+  },
+  {
+    "name": "WEG",
+    "slug": "weg",
+    "url": "https://weg.gupy.io"
+  },
+  {
+    "name": "Wiz Co",
+    "slug": "wiz",
+    "url": "https://wiz.gupy.io"
+  },
+  {
+    "name": "Wurth Industry",
+    "slug": "wurthindustry",
+    "url": "https://wurthindustry.gupy.io"
+  },
+  {
+    "name": "YDUQS",
+    "slug": "yduqs",
+    "url": "https://yduqs.gupy.io"
+  },
+  {
+    "name": "Yooga",
+    "slug": "yooga",
+    "url": "https://yooga.gupy.io"
+  },
+  {
+    "name": "Youcom",
+    "slug": "youcom",
+    "url": "https://youcom.gupy.io"
+  },
+  {
+    "name": "Zanardo Válvulas Industriais",
+    "slug": "zanardo",
+    "url": "https://zanardo.gupy.io"
+  },
+  {
+    "name": "Zanini Renk",
+    "slug": "zanini",
+    "url": "https://zanini.gupy.io"
+  },
+  {
+    "name": "Âncora Group",
+    "slug": "ancoragroup",
+    "url": "https://ancoragroup.gupy.io"
+  }
+]

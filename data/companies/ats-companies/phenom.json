@@ -1,0 +1,688 @@
+[
+  {
+    "url": "https://jobs.bell.ca",
+    "name": "Bell Canada",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.gehealthcare.com",
+    "name": "GE HealthCare",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.roche.com",
+    "name": "Roche",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://www.careers.philips.com",
+    "name": "Philips",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "www"
+  },
+  {
+    "url": "https://careers.southwestair.com",
+    "name": "Southwest Airlines",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.ucb.com",
+    "name": "UCB Pharma",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.thecignagroup.com",
+    "name": "Cigna Group",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.chenmed.com",
+    "name": "ChenMed",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.fisglobal.com",
+    "name": "FIS",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.allianz.com",
+    "name": "Allianz",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.abb",
+    "name": "ABB",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.dhl.com",
+    "name": "DHL",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.thalesgroup.com",
+    "name": "Thales Group",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.hpe.com",
+    "name": "HPE",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.bcg.com",
+    "name": "BCG",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.wbd.com",
+    "name": "Warner Bros Discovery",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.regions.com",
+    "name": "Regions Bank",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.mastercard.com",
+    "name": "Mastercard",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.baesystems.com",
+    "name": "BAE Systems",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.united.com",
+    "name": "United Airlines",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.merckgroup.com",
+    "name": "Merck Group",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.bmo.com",
+    "name": "BMO",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.dutchbros.com",
+    "name": "Dutch Bros Coffee",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.usbank.com",
+    "name": "U.S. Bank",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.usventure.com",
+    "name": "U.S. Venture",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.pnc.com",
+    "name": "PNC",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.hilton.com",
+    "name": "Hilton",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.radian.com",
+    "name": "Radian",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.mars.com",
+    "name": "Mars",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.foxrehab.org",
+    "name": "Fox Rehabilitation",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.michaels.com",
+    "name": "Michaels",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.aspendental.com",
+    "name": "Aspen Dental",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.bonsecours.com",
+    "name": "Bon Secours",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.omnicable.com",
+    "name": "OmniCable",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.cisco.com",
+    "name": "Cisco",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.itw.com",
+    "name": "ITW",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.dupont.com",
+    "name": "DuPont",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.ppg.com",
+    "name": "PPG",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.applied.com",
+    "name": "Applied Industrial Technologies",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://jobs.danaher.com",
+    "name": "Danaher",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.snowflake.com",
+    "name": "Snowflake",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.adobe.com",
+    "name": "Adobe",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.mcafee.com",
+    "name": "McAfee",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.fiserv.com",
+    "name": "Fiserv",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.statestreet.com",
+    "name": "State Street",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.msd.com",
+    "name": "MSD",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.labcorp.com",
+    "name": "Labcorp",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.fortrea.com",
+    "name": "Fortrea",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.catalent.com",
+    "name": "Catalent",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.zimmerbiomet.com",
+    "name": "Zimmer Biomet",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.dollartree.com",
+    "name": "Dollar Tree",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.merck.com",
+    "name": "Merck",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.frostbank.com",
+    "name": "Frost Bank",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.truist.com",
+    "name": "Truist",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.unum.com",
+    "name": "Unum",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.wexinc.com",
+    "name": "WEX",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.cboe.com",
+    "name": "CBOE",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.marsh.com",
+    "name": "Marsh",
+    "locale": "en_global",
+    "country": "global",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.morningstar.com",
+    "name": "Morningstar",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.thermofisher.com",
+    "name": "Thermo Fisher",
+    "locale": "en_global",
+    "country": "global",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.alight.com",
+    "name": "Alight",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.hugoboss.com",
+    "name": "Hugo Boss",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.honda.com",
+    "name": "Honda",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.humana.com",
+    "name": "Humana",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.omers.com",
+    "name": "OMERS",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.tdsynnex.com",
+    "name": "TD SYNNEX",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.seic.com",
+    "name": "SEI",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.toyota.com",
+    "name": "Toyota",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.zelis.com",
+    "name": "Zelis",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.cvshealth.com",
+    "name": "CVS Health",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://jobs.kuehne-nagel.com",
+    "name": "Kuehne+Nagel",
+    "locale": "en_global",
+    "country": "global",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://winncompanies.phenompeople.net",
+    "name": "WinnCompanies",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "winncompanies"
+  },
+  {
+    "url": "https://careers.brp.com",
+    "name": "BRP",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.bsmhealth.org",
+    "name": "Bon Secours Mercy Health",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.cencora.com",
+    "name": "Cencora",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.dukehealth.org",
+    "name": "Duke Health",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.kbr.com",
+    "name": "KBR",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.geaerospace.com",
+    "name": "GE Aerospace",
+    "locale": "en_global",
+    "country": "global",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.king.com",
+    "name": "King",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.mercy.com",
+    "name": "Mercy",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.stanfordhealthcare.org",
+    "name": "Stanford Health Care",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.advanceautoparts.com",
+    "name": "Advance Auto Parts",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://jobs.ascension.org",
+    "name": "Ascension",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://jobs.tjx.com",
+    "name": "TJX",
+    "locale": "en_global",
+    "country": "global",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://jobs.virginia.edu",
+    "name": "University of Virginia",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://career.electroluxgroup.com",
+    "name": "Electrolux Group",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "career"
+  },
+  {
+    "url": "https://careers.molsoncoors.com",
+    "name": "Molson Coors",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.avantorsciences.com",
+    "name": "Avantor",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.landolakesinc.com",
+    "name": "Land O'Lakes",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.organon.com",
+    "name": "Organon",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.icf.com",
+    "name": "ICF",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://careers.ace.aaa.com",
+    "name": "AAA - Auto Club Enterprises",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://workwithus.circlek.com",
+    "name": "Circle K",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "workwithus"
+  },
+  {
+    "url": "https://jobs.sutterhealth.org",
+    "name": "Sutter Health",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.baptisthealth.net",
+    "name": "Baptist Health",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.ecolab.com",
+    "name": "Ecolab",
+    "locale": "en_global",
+    "country": "global",
+    "slug": "jobs"
+  },
+  {
+    "url": "https://careers.lilly.com",
+    "name": "Lilly",
+    "locale": "en_us",
+    "country": "us",
+    "slug": "careers"
+  },
+  {
+    "url": "https://jobs.veralto.com",
+    "name": "Veralto",
+    "locale": "en_global",
+    "country": "global",
+    "slug": "jobs"
+  }
+]

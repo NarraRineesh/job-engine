@@ -1,0 +1,105 @@
+name: stream
+
+on:
+  workflow_dispatch:
+    inputs:
+      ats:
+        description: "Comma-separated ATS allowlist (empty = all registered)"
+        required: false
+      chunk_size:
+        description: "Tenants per matrix chunk"
+        required: false
+        default: "50"
+      country:
+        description: "Country filter (empty = no filter)"
+        required: false
+      enrich:
+        description: "python | cursor | both"
+        required: false
+        default: "both"
+      concurrency:
+        description: "Per-runner company concurrency"
+        required: false
+        default: "8"
+  schedule:
+    # Daily 02:30 UTC
+    - cron: "30 2 * * *"
+
+concurrency:
+  group: stream
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Sync
+        run: uv sync
+
+      - name: Build chunk matrix
+        id: matrix
+        env:
+          ATS: ${{ github.event.inputs.ats }}
+          CHUNK_SIZE: ${{ github.event.inputs.chunk_size || '50' }}
+        run: |
+          set -euo pipefail
+          MATRIX=$(uv run job-engine plan-chunks --ats "$ATS" --chunk-size "$CHUNK_SIZE")
+          echo "matrix<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$MATRIX" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          echo "Planned matrix: $MATRIX"
+
+  stream:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        include: ${{ fromJson(needs.plan.outputs.matrix) }}
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+      COUNTRY: ${{ github.event.inputs.country }}
+      CONCURRENCY: ${{ github.event.inputs.concurrency || '8' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Sync
+        run: uv sync
+
+      - name: Stream chunk
+        if: ${{ matrix.tenant_count > 0 }}
+        run: |
+          set -euo pipefail
+          mkdir -p out data/corpus
+          uv run job-engine run \
+            --ats "${{ matrix.ats }}" \
+            --chunk-index "${{ matrix.chunk }}" \
+            --chunk-size "${{ matrix.chunk_size }}" \
+            ${COUNTRY:+--country "$COUNTRY"} \
+            --concurrency "$CONCURRENCY" \
+            --enrich "${{ github.event.inputs.enrich || 'python' }}" \
+            --write-concurrency 2 \
+            --state out/push-state.json \
+            --track out/track.json
+
+      - name: Skip empty chunk
+        if: ${{ matrix.tenant_count == 0 }}
+        run: echo "No tenants for ${{ matrix.ats }} chunk ${{ matrix.chunk }}"
