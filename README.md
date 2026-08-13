@@ -67,6 +67,7 @@ Inventories: `data/companies/ats-companies/{ats}.json`.
 
 `.github/workflows/stream.yml` — ATS × tenant chunks (`max-parallel: 8`).  
 Empty `ats` = all registered; empty `country` = no filter.  
+GitHub allows 256 matrix jobs; `plan-chunks` raises `--chunk-size` if needed so a full run fits.  
 Secrets: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`. Optional: `CURSOR_API_KEY` for `--enrich both`.
 
 ## Layout

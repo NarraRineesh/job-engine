@@ -55,6 +55,12 @@ def main(argv: list[str] | None = None) -> int:
     p_plan = sub.add_parser("plan-chunks", help="Print GHA matrix JSON for ATS tenant chunks")
     p_plan.add_argument("--ats", type=str, default="", help="Comma list; empty=all registered")
     p_plan.add_argument("--chunk-size", type=int, default=50)
+    p_plan.add_argument(
+        "--max-jobs",
+        type=int,
+        default=256,
+        help="Cap matrix length (GitHub limit is 256; 0 = unlimited)",
+    )
 
     args = parser.parse_args(argv)
 
@@ -62,7 +68,7 @@ def main(argv: list[str] | None = None) -> int:
         from job_engine.companies import list_registered_ats, plan_chunks
 
         only = [a.strip() for a in args.ats.split(",") if a.strip()] or list_registered_ats()
-        print(json.dumps(plan_chunks(only, chunk_size=args.chunk_size)))
+        print(json.dumps(plan_chunks(only, chunk_size=args.chunk_size, max_jobs=args.max_jobs)))
         return 0
 
     if args.cmd == "run":

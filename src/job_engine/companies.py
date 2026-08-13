@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -208,29 +209,78 @@ def chunk_tenants(
     return tenants[start : start + chunk_size]
 
 
+def _chunk_job_count(tenant_counts: list[int], chunk_size: int) -> int:
+    total = 0
+    for n in tenant_counts:
+        total += 1 if n == 0 else (n + chunk_size - 1) // chunk_size
+    return total
+
+
+def _chunk_size_for_max_jobs(
+    tenant_counts: list[int],
+    *,
+    chunk_size: int,
+    max_jobs: int,
+) -> int:
+    """Smallest chunk_size >= requested that yields <= max_jobs matrix rows."""
+    if max_jobs <= 0:
+        return chunk_size
+    if _chunk_job_count(tenant_counts, chunk_size) <= max_jobs:
+        return chunk_size
+    hi = max(tenant_counts, default=chunk_size)
+    if _chunk_job_count(tenant_counts, hi) > max_jobs:
+        raise ValueError(
+            f"Cannot fit {len(tenant_counts)} ATS into {max_jobs} GitHub matrix jobs "
+            "(limit is 256). Pass a smaller --ats allowlist."
+        )
+    lo = chunk_size
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if _chunk_job_count(tenant_counts, mid) <= max_jobs:
+            hi = mid
+        else:
+            lo = mid + 1
+    return lo
+
+
 def plan_chunks(
     ats_list: list[str],
     *,
     chunk_size: int = 50,
+    max_jobs: int = 256,
 ) -> list[dict[str, Any]]:
-    """Build GHA matrix entries: {ats, chunk, chunk_size, tenant_count}."""
+    """Build GHA matrix entries: {ats, chunk, chunk_size, tenant_count}.
+
+    GitHub Actions allows at most 256 matrix configurations. When the requested
+    chunk_size would exceed that, chunk_size is raised just enough to fit.
+    """
     if chunk_size <= 0:
         raise ValueError("chunk_size must be positive")
+    sizes = {ats: len(load_tenants(ats)) for ats in ats_list}
+    size = _chunk_size_for_max_jobs(
+        list(sizes.values()), chunk_size=chunk_size, max_jobs=max_jobs
+    )
+    if size != chunk_size:
+        n_before = _chunk_job_count(list(sizes.values()), chunk_size)
+        print(
+            f"[plan-chunks] raised chunk_size {chunk_size} → {size} "
+            f"to fit {max_jobs} GitHub matrix jobs (was {n_before})",
+            file=sys.stderr,
+        )
     matrix: list[dict[str, Any]] = []
     for ats in ats_list:
-        tenants = load_tenants(ats)
-        n = len(tenants)
+        n = sizes[ats]
         if n == 0:
-            matrix.append({"ats": ats, "chunk": 0, "chunk_size": chunk_size, "tenant_count": 0})
+            matrix.append({"ats": ats, "chunk": 0, "chunk_size": size, "tenant_count": 0})
             continue
-        n_chunks = (n + chunk_size - 1) // chunk_size
+        n_chunks = (n + size - 1) // size
         for i in range(n_chunks):
             matrix.append(
                 {
                     "ats": ats,
                     "chunk": i,
-                    "chunk_size": chunk_size,
-                    "tenant_count": min(chunk_size, n - i * chunk_size),
+                    "chunk_size": size,
+                    "tenant_count": min(size, n - i * size),
                 }
             )
     return matrix

@@ -52,11 +52,16 @@ jobs:
           CHUNK_SIZE: ${{ github.event.inputs.chunk_size || '50' }}
         run: |
           set -euo pipefail
-          MATRIX=$(uv run job-engine plan-chunks --ats "$ATS" --chunk-size "$CHUNK_SIZE")
+          MATRIX=$(uv run job-engine plan-chunks --ats "$ATS" --chunk-size "$CHUNK_SIZE" --max-jobs 256)
+          COUNT=$(uv run python -c 'import json,sys; print(len(json.loads(sys.stdin.read())))' <<<"$MATRIX")
+          echo "Planned matrix jobs: $COUNT"
+          if [ "$COUNT" -gt 256 ]; then
+            echo "ERROR: matrix has $COUNT jobs (GitHub max is 256)" >&2
+            exit 1
+          fi
           echo "matrix<<EOF" >> "$GITHUB_OUTPUT"
           echo "$MATRIX" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
-          echo "Planned matrix: $MATRIX"
 
   stream:
     needs: plan
