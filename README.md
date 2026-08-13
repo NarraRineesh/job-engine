@@ -18,10 +18,19 @@ All ATS scrapers stay under `fetch/scrapers/`. Each ATS has a dedicated parser u
 uv sync --extra dev
 # optional Cursor enrich:
 uv sync --extra cursor
-export CURSOR_API_KEY=...
 ```
 
-## Run
+Put secrets in repo-root `.env` (gitignored). See [`.env.example`](.env.example):
+
+```bash
+SUPABASE_URL=...
+SUPABASE_PUBLISHABLE_KEY=...
+SUPABASE_SECRET_KEY=...
+SUPABASE_JWKS_URL=...
+TYPESENSE_API_KEY=xyz
+```
+
+## Run (Python scrape)
 
 ```bash
 # Python enrich only (default)
@@ -40,12 +49,39 @@ uv run job-engine run --ats keka --enrich cursor
 uv run job-engine run --ats keka --max-tenants 3 --skip-push
 ```
 
-Supabase:
+## API (JavaScript + Typesense)
+
+Read APIs live under [`api/`](api/). Jobs / companies / skills **search** go through Typesense. Analytics, trending, and company-trend series use Supabase RPCs.
 
 ```bash
-export SUPABASE_URL=...
-export SUPABASE_SERVICE_ROLE_KEY=...
+# 1. Start Typesense (Docker Desktop must be running)
+docker compose up -d
+
+# 2. Install + sync index from Supabase
+cd api
+npm install
+npm run index
+
+# 3. Serve HTTP API
+npm run dev   # http://localhost:8787/v1/jobs
 ```
+
+Useful routes:
+
+| Method | Path | Backend |
+|--------|------|---------|
+| GET | `/v1/jobs?q=engineer` | Typesense |
+| GET | `/v1/jobs/:id` | Typesense + analytics |
+| GET | `/v1/companies` | Typesense |
+| GET | `/v1/skills` | Typesense |
+| GET | `/v1/jobs/trending` | Supabase RPC |
+| GET | `/v1/skills/trending` | Supabase RPC |
+| GET | `/v1/trends/companies` | Supabase RPC |
+| GET | `/v1/companies/:slug/trends` | Supabase RPC |
+| GET/POST | `/v1/jobs/:id/analytics` | Supabase |
+| GET | `/v1/stats` | Typesense counts |
+
+Re-run `npm run index` after a stream so Typesense stays current.
 
 ## Tracking
 
@@ -75,14 +111,10 @@ Secrets: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`. Optional: `CURSOR_API_KEY`
 ## Layout
 
 ```text
-src/job_engine/
-  fetch/scrapers/   # all ATS scrapers
-  parsers/          # per-ATS python enrich
-  enrich/           # python + optional Cursor SDK
-  pipeline/         # run_stream only
-  push/             # Supabase upsert
-  track.py          # per-tenant progress
-  companies.py / cli.py
+src/job_engine/         # Python scrape → enrich → push
+api/                    # JavaScript read API (Typesense + Supabase)
+docker-compose.yml      # local Typesense :8108
+supabase/migrations/    # schema + RPCs
 ```
 
 CLI surface: `run` | `plan-chunks`.
