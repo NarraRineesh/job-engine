@@ -1,0 +1,20 @@
+{
+  "name": "job-engine-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=../.env src/index.js",
+    "start": "node --env-file=../.env src/index.js",
+    "index": "node --env-file=../.env scripts/index.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.1",
+    "@supabase/supabase-js": "^2.49.4",
+    "hono": "^4.7.8",
+    "typesense": "^2.0.3"
+  }
+}

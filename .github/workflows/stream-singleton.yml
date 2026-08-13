@@ -1,10 +1,10 @@
-name: stream-multi
+name: stream-singleton
 
 on:
   workflow_dispatch:
     inputs:
       ats:
-        description: "Comma-separated multi-tenant ATS (empty = all multi_tenant)"
+        description: "Comma-separated singleton ATS (empty = all singleton)"
         required: false
       country:
         description: "Country filter (empty = no filter)"
@@ -13,16 +13,12 @@ on:
         description: "python | cursor | both (python = lexicon skills; both = Cursor gaps)"
         required: false
         default: "python"
-      concurrency:
-        description: "Per-runner company concurrency"
-        required: false
-        default: "8"
   schedule:
-    # Weekly Monday 02:30 UTC
-    - cron: "30 2 * * 1"
+    # Weekly Tuesday 02:30 UTC (day after multi-tenant)
+    - cron: "30 2 * * 2"
 
 concurrency:
-  group: stream-multi
+  group: stream-singleton
   cancel-in-progress: true
 
 jobs:
@@ -47,7 +43,7 @@ jobs:
           ATS: ${{ github.event.inputs.ats }}
         run: |
           set -euo pipefail
-          MATRIX=$(uv run job-engine plan-chunks --mode multi_tenant --ats "$ATS" --max-jobs 256)
+          MATRIX=$(uv run job-engine plan-chunks --mode singleton --ats "$ATS" --max-jobs 256)
           COUNT=$(uv run python -c 'import json,sys; print(len(json.loads(sys.stdin.read())))' <<<"$MATRIX")
           echo "Planned matrix jobs: $COUNT"
           if [ "$COUNT" -gt 256 ]; then
@@ -64,7 +60,7 @@ jobs:
     timeout-minutes: 360
     strategy:
       fail-fast: false
-      max-parallel: 8
+      max-parallel: 4
       matrix:
         include: ${{ fromJson(needs.plan.outputs.matrix) }}
     env:
@@ -72,7 +68,6 @@ jobs:
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
       CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
       COUNTRY: ${{ github.event.inputs.country }}
-      CONCURRENCY: ${{ github.event.inputs.concurrency || '8' }}
       PYTHONUNBUFFERED: "1"
     steps:
       - uses: actions/checkout@v4
@@ -95,7 +90,7 @@ jobs:
             --chunk-index "${{ matrix.chunk }}" \
             --chunk-size "${{ matrix.chunk_size }}" \
             ${COUNTRY:+--country "$COUNTRY"} \
-            --concurrency "$CONCURRENCY" \
+            --concurrency 1 \
             --enrich "${{ github.event.inputs.enrich || 'python' }}" \
             --write-concurrency 2 \
             --state out/push-state.json \

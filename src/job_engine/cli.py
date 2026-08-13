@@ -24,6 +24,12 @@ def main(argv: list[str] | None = None) -> int:
 
     p_run = sub.add_parser("run", help="Fetch → enrich → push per company")
     p_run.add_argument("--ats", type=str, default="", help="Comma list; empty=all registered")
+    p_run.add_argument(
+        "--mode",
+        choices=("multi_tenant", "singleton"),
+        default="",
+        help="When --ats is empty, limit to this registry mode",
+    )
     p_run.add_argument("--slug", action="append", default=[], help="Limit to board slug(s)")
     p_run.add_argument(
         "--corpus",
@@ -33,7 +39,12 @@ def main(argv: list[str] | None = None) -> int:
     )
     p_run.add_argument("--max-tenants", type=int, default=None)
     p_run.add_argument("--chunk-index", type=int, default=0)
-    p_run.add_argument("--chunk-size", type=int, default=50)
+    p_run.add_argument(
+        "--chunk-size",
+        type=int,
+        default=None,
+        help="Limit to this many tenants (default: all for the ATS)",
+    )
     p_run.add_argument("--concurrency", type=int, default=None)
     p_run.add_argument("--write-concurrency", type=int, default=2)
     p_run.add_argument("--timeout", type=float, default=None)
@@ -56,9 +67,14 @@ def main(argv: list[str] | None = None) -> int:
     p_run.add_argument("--state", type=Path, default=DEFAULT_PUSH_STATE, help="Job content-hash state")
     p_run.add_argument("--track", type=Path, default=DEFAULT_TRACK, help="Per-tenant progress file")
 
-    p_plan = sub.add_parser("plan-chunks", help="Print GHA matrix JSON for ATS tenant chunks")
+    p_plan = sub.add_parser("plan-chunks", help="Print GHA matrix JSON (one job per ATS)")
     p_plan.add_argument("--ats", type=str, default="", help="Comma list; empty=all registered")
-    p_plan.add_argument("--chunk-size", type=int, default=50)
+    p_plan.add_argument(
+        "--mode",
+        choices=("multi_tenant", "singleton"),
+        default="",
+        help="Limit to multi_tenant or singleton ATS",
+    )
     p_plan.add_argument(
         "--max-jobs",
         type=int,
@@ -72,15 +88,26 @@ def main(argv: list[str] | None = None) -> int:
         from job_engine.companies import list_registered_ats, plan_chunks
         from job_engine.fetch.scrapers import ScraperRegistry
 
-        only = [a.strip() for a in args.ats.split(",") if a.strip()] or list_registered_ats()
+        mode = args.mode or None
+        only = [a.strip() for a in args.ats.split(",") if a.strip()] or list_registered_ats(mode=mode)
+        if mode and args.ats.strip():
+            allowed = set(list_registered_ats(mode=mode, include_opt_out=True))
+            only = [a for a in only if a in allowed]
         only = [a for a in only if ScraperRegistry.has_scraper(a)]
-        print(json.dumps(plan_chunks(only, chunk_size=args.chunk_size, max_jobs=args.max_jobs)))
+        print(json.dumps(plan_chunks(only, max_jobs=args.max_jobs)))
         return 0
 
     if args.cmd == "run":
+        from job_engine.companies import list_registered_ats
         from job_engine.pipeline.run_stream import stream_ats
 
+        mode = args.mode or None
         only = [a.strip() for a in args.ats.split(",") if a.strip()] or None
+        if only is None and mode:
+            only = list_registered_ats(mode=mode)
+        elif only and mode:
+            allowed = set(list_registered_ats(mode=mode, include_opt_out=True))
+            only = [a for a in only if a in allowed]
         summary = stream_ats(
             only,
             corpus_dir=args.corpus,

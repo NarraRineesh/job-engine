@@ -159,7 +159,8 @@
     },
     "bundesagentur": {
       "mode": "singleton",
-      "slug": "bundesagentur"
+      "slug": "bundesagentur",
+      "stream": false
     },
     "bytedance": {
       "mode": "singleton",
@@ -167,7 +168,8 @@
     },
     "eures": {
       "mode": "singleton",
-      "slug": "eures"
+      "slug": "eures",
+      "stream": false
     },
     "getonbrd": {
       "mode": "singleton",

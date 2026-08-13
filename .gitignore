@@ -10,3 +10,6 @@ data/corpus/*.jsonl
 dist/
 .env
 .DS_Store
+node_modules/
+api/node_modules/
+api/dist/
