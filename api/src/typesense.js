@@ -67,11 +67,21 @@ export const SKILLS_SCHEMA = {
   default_sorting_field: "active_job_count",
 };
 
-export async function ensureCollections(client) {
+export async function ensureCollections(client, { recreate = false } = {}) {
   for (const schema of [JOBS_SCHEMA, COMPANIES_SCHEMA, SKILLS_SCHEMA]) {
+    let exists = false;
     try {
       await client.collections(schema.name).retrieve();
+      exists = true;
     } catch {
+      exists = false;
+    }
+    if (exists && recreate) {
+      await client.collections(schema.name).delete();
+      exists = false;
+      console.log(`[typesense] dropped collection ${schema.name}`);
+    }
+    if (!exists) {
       await client.collections().create(schema);
       console.log(`[typesense] created collection ${schema.name}`);
     }

@@ -66,20 +66,69 @@ npm run index
 npm run dev   # http://localhost:8787/v1/jobs
 ```
 
-Useful routes:
+Base URL: `http://localhost:8787`. Pagination on list/search: `limit` (1–100, default 20) and `page` (default 1).
 
-| Method | Path | Backend |
-|--------|------|---------|
-| GET | `/v1/jobs?q=engineer` | Typesense |
-| GET | `/v1/jobs/:id` | Typesense + analytics |
-| GET | `/v1/companies` | Typesense |
-| GET | `/v1/skills` | Typesense |
-| GET | `/v1/jobs/trending` | Supabase RPC |
-| GET | `/v1/skills/trending` | Supabase RPC |
-| GET | `/v1/trends/companies` | Supabase RPC |
-| GET | `/v1/companies/:slug/trends` | Supabase RPC |
-| GET/POST | `/v1/jobs/:id/analytics` | Supabase |
-| GET | `/v1/stats` | Typesense counts |
+### Health
+
+| Method | Path | Backend | Notes |
+|--------|------|---------|--------|
+| GET | `/health` | — | `{ "ok": true }` |
+
+### Jobs
+
+| Method | Path | Backend | Query / body |
+|--------|------|---------|----------------|
+| GET | `/v1/jobs` | Typesense | `q` (default `*`), `status` (default `active`), `ats`, `work_mode`, `company` (slug), `country`, `skill`, `limit`, `page` |
+| GET | `/v1/jobs/featured` | Supabase `featured_jobs` | `limit` |
+| GET | `/v1/jobs/trending` | Supabase `trending_jobs` | `days` (default 14), `limit` |
+| GET | `/v1/jobs/:id` | Typesense + `job_analytics` | Job document plus analytics row |
+| GET | `/v1/jobs/:id/similar` | Typesense | `limit` — similar by title + shared skills |
+| GET | `/v1/jobs/:id/analytics` | Supabase | `{ job_id, views, clicks, applications, saved }` |
+| POST | `/v1/jobs/:id/analytics` | Supabase `increment_job_analytics` | JSON `{ "metric": "views" \| "clicks" \| "applications" \| "saved" }` |
+
+### Companies
+
+| Method | Path | Backend | Query / body |
+|--------|------|---------|----------------|
+| GET | `/v1/companies` | Typesense | `q` (name/slug/industry), `limit`, `page` |
+| GET | `/v1/companies/:slug` | Typesense | Company document |
+| GET | `/v1/companies/:slug/jobs` | Typesense | `q`, `limit`, `page` — active jobs for that slug |
+| GET | `/v1/companies/:slug/trends` | Supabase `company_trends_live` | `months` (1–24, default 6) |
+
+### Skills
+
+| Method | Path | Backend | Query / body |
+|--------|------|---------|----------------|
+| GET | `/v1/skills` | Typesense | `q` (name), `limit`, `page` |
+| GET | `/v1/skills/trending` | Supabase `trending_skills_by_window` | `days` (default 30), `limit` |
+| GET | `/v1/skills/:name` | Typesense | Skill by `normalized_name` |
+| GET | `/v1/skills/:name/jobs` | Typesense | `q`, `limit`, `page` — jobs tagged with that skill |
+
+### Trends + stats
+
+| Method | Path | Backend | Query / body |
+|--------|------|---------|----------------|
+| GET | `/v1/trends/jobs` | Supabase `trending_jobs` | `days` (default 14), `limit` |
+| GET | `/v1/trends/skills` | Supabase `trending_skills_by_window` | `days` (default 30), `limit` |
+| GET | `/v1/trends/companies` | Typesense | `limit`, `page` — ranked by `active_job_count` |
+| GET | `/v1/stats` | Typesense | `{ total_jobs, active_jobs, companies, skills, source }` |
+
+Examples:
+
+```bash
+curl http://localhost:8787/health
+curl 'http://localhost:8787/v1/jobs?q=engineer&country=United%20States&limit=5'
+curl http://localhost:8787/v1/jobs/ashby:docker:abc123
+curl -X POST http://localhost:8787/v1/jobs/ashby:docker:abc123/analytics \
+  -H 'content-type: application/json' \
+  -d '{"metric":"views"}'
+curl 'http://localhost:8787/v1/companies?q=stripe'
+curl http://localhost:8787/v1/companies/ashby:stripe/trends
+curl 'http://localhost:8787/v1/skills?q=python'
+curl http://localhost:8787/v1/skills/trending
+curl http://localhost:8787/v1/trends/companies
+curl http://localhost:8787/v1/stats
+```
 
 Re-run `npm run index` after a stream so Typesense stays current.
 
