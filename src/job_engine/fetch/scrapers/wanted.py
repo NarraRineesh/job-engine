@@ -60,6 +60,7 @@ class WantedScraper(BaseScraper):
     """
 
     ats = ATSType.WANTED
+    fetch_escalate: ClassVar[bool] = True
     default_headers: ClassVar[dict[str, str]] = {
         "User-Agent": "Mozilla/5.0",
         "Accept": "application/json",

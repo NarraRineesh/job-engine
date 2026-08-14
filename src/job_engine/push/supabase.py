@@ -152,12 +152,12 @@ def map_job(job: dict[str, Any]) -> dict[str, Any] | None:
         },
         "location": {
             "location_key": location_key(loc),
-            "country": loc.get("country"),
-            "state": loc.get("state"),
-            "city": loc.get("city"),
-            "formatted": loc.get("formatted"),
-            "latitude": loc.get("latitude"),
-            "longitude": loc.get("longitude"),
+            "country": _as_text(loc.get("country"), 120),
+            "state": _as_text(loc.get("state"), 120),
+            "city": _as_text(loc.get("city"), 200),
+            "formatted": _as_text(loc.get("formatted"), 500),
+            "latitude": _coord(loc.get("latitude"), 90),
+            "longitude": _coord(loc.get("longitude"), 180),
         },
         "job": {
             # description/summary stay local for skill extract; not stored in Supabase
@@ -263,25 +263,71 @@ def upsert_locations(
 ) -> dict[str, int]:
     by_key: dict[str, dict[str, Any]] = {}
     for loc in locations:
-        key = loc.get("location_key")
-        if key and key not in by_key:
-            by_key[key] = _omit_none(dict(loc))
+        row = _location_row(loc)
+        if row and row["location_key"] not in by_key:
+            by_key[row["location_key"]] = row
     rows = list(by_key.values())
     id_by_key: dict[str, int] = {}
+    url = f"{base}/rest/v1/locations?on_conflict=location_key"
     for i in range(0, len(rows), chunk):
-        batch = rows[i : i + chunk]
-        r = client.post(
-            f"{base}/rest/v1/locations?on_conflict=location_key",
-            headers={"Prefer": "resolution=merge-duplicates,return=representation"},
-            json=batch,
-        )
-        _raise_http(r, "locations")
-        for row in r.json() or []:
-            id_by_key[row["location_key"]] = row["id"]
+        _upsert_location_chunk(client, url, rows[i : i + chunk], id_by_key)
         print(f"[push] locations: {min(i + chunk, len(rows))}/{len(rows)}")
     missing = [r["location_key"] for r in rows if r["location_key"] not in id_by_key]
     _fill_ids(client, base, "locations", "location_key", missing, id_by_key)
     return id_by_key
+
+
+def _location_row(loc: dict[str, Any]) -> dict[str, Any] | None:
+    """One locations-table row with a *fixed* key set.
+
+    PostgREST bulk insert 400s when objects in the same payload have
+    different keys (``_omit_none`` dropped lat/lon on some rows). Always
+    send the same columns; use JSON nulls.
+    """
+    key = str(loc.get("location_key") or "").strip()
+    if not key:
+        return None
+    return {
+        "location_key": key[:500],
+        "country": _as_text(loc.get("country"), 120),
+        "state": _as_text(loc.get("state"), 120),
+        "city": _as_text(loc.get("city"), 200),
+        "formatted": _as_text(loc.get("formatted"), 500),
+        "latitude": _coord(loc.get("latitude"), 90),
+        "longitude": _coord(loc.get("longitude"), 180),
+    }
+
+
+def _upsert_location_chunk(
+    client: httpx.Client,
+    url: str,
+    batch: list[dict[str, Any]],
+    id_by_key: dict[str, int],
+) -> None:
+    if not batch:
+        return
+    r = client.post(
+        url,
+        headers={"Prefer": "resolution=merge-duplicates,return=representation"},
+        json=batch,
+    )
+    if r.is_success:
+        for row in r.json() or []:
+            id_by_key[row["location_key"]] = row["id"]
+        return
+    detail = (r.text or "")[:1500]
+    if r.status_code == 400 and len(batch) > 1:
+        print(f"[push] locations 400 on {len(batch)} rows, splitting: {detail}")
+        mid = max(1, len(batch) // 2)
+        _upsert_location_chunk(client, url, batch[:mid], id_by_key)
+        _upsert_location_chunk(client, url, batch[mid:], id_by_key)
+        return
+    if r.status_code == 400:
+        key = batch[0].get("location_key") or "?"
+        print(f"[push] skip location {key}: 400 {detail}")
+        return
+    print(f"[push] locations {r.status_code}: {detail}")
+    r.raise_for_status()
 
 
 def upsert_jobs(
@@ -478,6 +524,31 @@ def _raise_http(response: httpx.Response, label: str) -> None:
 
 def _omit_none(row: dict[str, Any]) -> dict[str, Any]:
     return {k: v for k, v in row.items() if v is not None}
+
+
+def _as_text(value: object, max_len: int) -> str | None:
+    if value is None or isinstance(value, bool):
+        return None
+    if isinstance(value, dict):
+        return None
+    if isinstance(value, (list, tuple)):
+        parts = [_as_text(v, max_len) for v in value]
+        joined = ", ".join(p for p in parts if p)
+        return joined[:max_len] if joined else None
+    s = str(value).strip()
+    return s[:max_len] if s else None
+
+
+def _coord(value: object, limit: float) -> float | None:
+    if value is None or value == "":
+        return None
+    try:
+        v = float(value)  # type: ignore[arg-type]
+    except (TypeError, ValueError):
+        return None
+    if not math.isfinite(v) or abs(v) > limit:
+        return None
+    return v
 
 
 def _enum_or_none(value: int | None, lo: int, hi: int) -> int | None:
