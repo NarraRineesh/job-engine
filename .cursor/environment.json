@@ -1,0 +1,20 @@
+{
+  "name": "job-engine",
+  "install": "bash .cursor/install.sh",
+  "ports": [
+    { "name": "typesense", "port": 8108 },
+    { "name": "api", "port": 8787 }
+  ],
+  "terminals": [
+    {
+      "name": "typesense",
+      "description": "Local Typesense search server on :8108 (backs the read API). Data dir: $HOME/.typesense/data.",
+      "command": "export PATH=\"$HOME/.local/bin:$PATH\"; mkdir -p \"$HOME/.typesense/data\"; exec typesense-server --data-dir \"$HOME/.typesense/data\" --api-key \"${TYPESENSE_API_KEY:-xyz}\" --api-port \"${TYPESENSE_PORT:-8108}\" --enable-cors"
+    },
+    {
+      "name": "api",
+      "description": "Node/Hono read API on :8787 (npm run dev). Waits for Typesense health first. Populate data with `cd api && npm run index` once Supabase secrets are set.",
+      "command": "cd api; echo 'waiting for typesense on :'\"${TYPESENSE_PORT:-8108}\"; for i in $(seq 1 60); do curl -sf \"http://localhost:${TYPESENSE_PORT:-8108}/health\" >/dev/null 2>&1 && break; sleep 1; done; exec npm run dev"
+    }
+  ]
+}
