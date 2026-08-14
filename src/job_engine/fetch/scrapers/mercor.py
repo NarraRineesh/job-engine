@@ -18,6 +18,7 @@ headers are required (the API checks them).
 
 from __future__ import annotations
 
+import uuid
 import re
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, ClassVar
@@ -45,6 +46,7 @@ _HEADERS = {
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/143.0.0.0 Safari/537.36"
     ),
+    "X-Client-IP": "true",
     "X-Client-Ip": "true",
 }
 
@@ -65,17 +67,30 @@ class MercorScraper(BaseScraper):
     endpoint is global (one feed of contract listings across all companies)."""
 
     ats = ATSType.MERCOR
+    fetch_escalate: ClassVar[bool] = True
 
     default_headers: ClassVar[dict[str, str]] = _HEADERS
 
     async def afetch(self) -> list[Job]:
+        headers = {
+            **_HEADERS,
+            # SPA sends a per-request ``rid`` (``KZ("w")``). GitHub
+            # runner IPs have been observed 401-ing without it.
+            "rid": f"w{uuid.uuid4().hex}",
+        }
         async with self.make_fetcher() as fetch:
-            response = await fetch.request("GET", API_URL)
+            response = await fetch.request("GET", API_URL, headers=headers)
         try:
             payload = response.json()
         except ValueError as exc:
             raise ScraperError(f"Mercor returned malformed JSON: {exc}") from exc
-        listings = payload.get("listings") or []
+        listings = (
+            payload.get("listings")
+            or payload.get("data")
+            or []
+        )
+        if isinstance(listings, dict):
+            listings = listings.get("listings") or []
         seen: set[str] = set()
         jobs: list[Job] = []
         for item in listings:

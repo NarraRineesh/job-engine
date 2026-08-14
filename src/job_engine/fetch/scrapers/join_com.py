@@ -1,14 +1,15 @@
 """Join.com scraper.
 
-Two-step API: resolve slug → company_id, then fetch company jobs.
+Two-step fetch: resolve slug → company_id from the public company page,
+then list jobs via the candidate GraphQL API the board SPA uses:
 
-    GET https://join.com/companies/{slug}        # returns metadata with id
-    GET https://join.com/api/public/companies/{id}/jobs
+    GET  https://join.com/companies/{slug}
+    POST https://join.com/candidate-api/graphql   # PublicJobsList
 
-After the listing pass we enrich each job with the schema.org JSON-LD
-JobPosting block on its detail page (description body, baseSalary,
-jobLocationType). Detail fetches run in a small thread pool so a tenant
-with 50 open positions still finishes in a few seconds.
+The older REST ``GET /api/public/companies/{id}/jobs`` now 422s on
+``pageSize`` (the SPA abandoned it for GraphQL). After the listing pass
+we enrich each job with the schema.org JSON-LD JobPosting block on its
+detail page (description body, baseSalary, jobLocationType).
 """
 
 from __future__ import annotations
@@ -30,8 +31,32 @@ if TYPE_CHECKING:
     from job_engine.fetch.fetch import Fetcher
 
 BASE_URL = "https://join.com"
-API_BASE = f"{BASE_URL}/api/public"
+GRAPHQL_URL = f"{BASE_URL}/candidate-api/graphql"
+PAGE_SIZE = 20
 DETAIL_CONCURRENCY = 8
+
+PUBLIC_JOBS_QUERY = """
+query PublicJobsList($input: PublicJobsQueryInput!) {
+  publicJobs(input: $input) {
+    items {
+      idParam
+      company { id name domain }
+      companyId
+      id
+      title
+      createdAt
+      updatedAt
+      city { cityName countryName countryCode regionName }
+      country { iso3166 name }
+      remoteType
+      workplaceType
+      category { name }
+      employmentType { name }
+    }
+    pageInfo { page pageCount pageSize rowCount }
+  }
+}
+"""
 
 # Per-job JSON-LD detail fetches are best-effort — any error keeps the
 # listing-derived row, so error statuses come back unmapped.
@@ -72,20 +97,33 @@ class JoinComScraper(BaseScraper):
             company_id = await self._resolve_company_id(fetch)
             page = 1
             while True:
-                params = {
-                    "locale": "en-us",
-                    "page": page,
-                    "pageSize": 100,
-                    "withAggregations": "true",
-                    "sort": "+title",
-                }
-                payload = await fetch.get_json(
-                    f"{API_BASE}/companies/{company_id}/jobs", params=params
+                payload = await fetch.post_json(
+                    GRAPHQL_URL,
+                    json={
+                        "query": PUBLIC_JOBS_QUERY,
+                        "variables": {
+                            "input": {
+                                "companyId": int(company_id),
+                                "paginationPage": {
+                                    "page": page,
+                                    "pageSize": PAGE_SIZE,
+                                },
+                            }
+                        },
+                    },
+                    headers={
+                        "Content-Type": "application/json",
+                        "Origin": BASE_URL,
+                        "Referer": f"{BASE_URL}/companies/{self.company_slug}",
+                    },
                 )
-                items = payload.get("items") or []
-                all_jobs.extend(self._parse_job(item) for item in items)
-                pagination = payload.get("pagination") or {}
-                if page >= pagination.get("totalPages", page):
+                items, page_count = _public_jobs_page(payload, self.company_slug)
+                all_jobs.extend(
+                    self._parse_job(item)
+                    for item in items
+                    if isinstance(item, dict) and item.get("id") and item.get("title")
+                )
+                if page >= page_count:
                     break
                 page += 1
 
@@ -178,7 +216,8 @@ class JoinComScraper(BaseScraper):
     def _parse_job(self, item: dict[str, Any]) -> Job:
         raw: dict[str, Any] = {}
         for k in ("department", "category", "industry", "skills",
-                  "language", "employmentType", "remoteWork", "workplaceType"):
+                  "language", "employmentType", "remoteWork", "workplaceType",
+                  "remoteType"):
             v = item.get(k)
             if v:
                 raw[k] = v
@@ -188,7 +227,10 @@ class JoinComScraper(BaseScraper):
         # ``department`` are similarly structured; fall through to None
         # when they aren't a plain string.
         location = _flatten_location(item.get("location"), item.get("city"))
-        department = _name_or_none(item.get("department"))
+        department = (
+            _name_or_none(item.get("department"))
+            or _name_or_none(item.get("category"))
+        )
         employment_type = _name_or_none(item.get("employmentType"))
 
         # The browser-visible URL uses the slug-style ``idParam``, not the
@@ -208,10 +250,55 @@ class JoinComScraper(BaseScraper):
             location=location,
             department=department,
             commitment=employment_type,
-            posted_at=_parse_iso(item.get("publishedAt") or item.get("createdAt")),
+            is_remote=_is_remote(item),
+            posted_at=_parse_iso(
+                item.get("publishedAt") or item.get("createdAt")
+            ),
             fetched_at=datetime.now(UTC),
             raw=raw or None,
         )
+
+
+def _public_jobs_page(payload: object, slug: str) -> tuple[list[dict], int]:
+    """Return ``(items, page_count)`` from a PublicJobsList GraphQL response.
+
+    An empty board comes back as ``pageCount: 0`` with ``items: []`` —
+    treat that as a finished listing, not an error.
+    """
+    if not isinstance(payload, dict):
+        raise ScraperError(f"join.com GraphQL for {slug} returned a non-object")
+    errors = payload.get("errors")
+    if errors:
+        first = errors[0]
+        msg = first.get("message") if isinstance(first, dict) else first
+        raise ScraperError(f"join.com GraphQL for {slug}: {msg}")
+    data = (payload.get("data") or {}).get("publicJobs") or {}
+    items = data.get("items") or []
+    if not isinstance(items, list):
+        items = []
+    page_info = data.get("pageInfo") or {}
+    raw_count = page_info.get("pageCount")
+    try:
+        page_count = int(raw_count) if raw_count is not None else 1
+    except (TypeError, ValueError):
+        page_count = 1
+    if page_count <= 0:
+        page_count = 1 if items else 0
+    return items, page_count
+
+
+def _is_remote(item: dict) -> bool | None:
+    workplace = item.get("workplaceType")
+    if isinstance(workplace, str):
+        key = workplace.strip().upper().replace("-", "_")
+        if key in {"REMOTE", "TELECOMMUTE"}:
+            return True
+        if key in {"ONSITE", "ON_SITE", "HYBRID"}:
+            return False
+    remote = item.get("remoteType")
+    if isinstance(remote, str) and remote.strip():
+        return True
+    return None
 
 
 def _apply_jsonld_to_job(job: Job, html_text: str) -> None:
