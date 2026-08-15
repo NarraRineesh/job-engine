@@ -64,8 +64,7 @@ jobs:
       matrix:
         include: ${{ fromJson(needs.plan.outputs.matrix) }}
     env:
-      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      MONGODB_URI: ${{ secrets.MONGODB_URI }}
       CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
       COUNTRY: ${{ github.event.inputs.country }}
       PYTHONUNBUFFERED: "1"
@@ -79,6 +78,13 @@ jobs:
 
       - name: Sync
         run: uv sync --extra cursor
+
+      - name: SSH tunnel to Mongo
+        uses: ./.github/actions/ssh-mongo-tunnel
+        with:
+          ssh_key: ${{ secrets.HETZNER_SSH_KEY }}
+          host: ${{ secrets.HETZNER_HOST }}
+          user: ${{ secrets.HETZNER_USER }}
 
       - name: Stream chunk
         if: ${{ matrix.tenant_count > 0 }}

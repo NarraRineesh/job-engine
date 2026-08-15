@@ -1,4 +1,4 @@
-"""job-engine — scrape + regex enrich + nested job schema + Supabase push."""
+"""job-engine — scrape + regex enrich + nested jobs + MongoDB push."""
 
 from job_engine._version import __version__
 

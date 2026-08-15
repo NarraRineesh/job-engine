@@ -1,23 +1,24 @@
 /**
- * Sync Supabase jobs / companies / skills into Typesense.
+ * Sync MongoDB jobs / companies / skills into Typesense.
  *
  * Usage: npm run index
  * Env:
- *   INDEX_RECREATE=1  drop+recreate collections (default 1 on first clean run; set 0 to resume)
- *   INDEX_SKIP_JOBS=1 only refresh companies/skills (reuse existing jobs docs)
+ *   INDEX_RECREATE=1  drop+recreate collections (default 0)
+ *   INDEX_PAGE=80     jobs per batch
+ *   INDEX_AFTER_ID=   resume after this job _id (exclusive)
  */
-import { getSupabaseIndexer } from "../src/supabase.js";
+import { getDb } from "../src/mongodb.js";
 import {
   COLLECTIONS,
   ensureCollections,
   getTypesense,
 } from "../src/typesense.js";
 
-const PAGE = 200;
+const PAGE = Math.min(500, Math.max(20, Number(process.env.INDEX_PAGE) || 80));
 
-function toUnix(iso) {
-  if (!iso) return 0;
-  const ms = Date.parse(iso);
+function toUnix(value) {
+  if (!value) return 0;
+  const ms = value instanceof Date ? value.getTime() : Date.parse(value);
   return Number.isFinite(ms) ? Math.floor(ms / 1000) : 0;
 }
 
@@ -29,87 +30,38 @@ function omitNull(obj) {
   return out;
 }
 
-async function pageOrdered(sb, table, select, onRows) {
-  let lastId = null;
+async function indexJobs(db, ts, skillCounts, companyCounts) {
   let total = 0;
+  let lastId = process.env.INDEX_AFTER_ID || null;
+  const coll = db.collection("jobs");
   for (;;) {
-    let q = sb.from(table).select(select).order("id", { ascending: true }).limit(PAGE);
-    if (lastId != null) q = q.gt("id", lastId);
-    const { data, error } = await q;
-    if (error) throw new Error(`${table}: ${error.message}`);
-    if (!data?.length) break;
-    await onRows(data);
-    total += data.length;
-    lastId = data[data.length - 1].id;
-    if (data.length < PAGE) break;
-  }
-  return total;
-}
-
-async function fetchAllJobSkillNames(sb) {
-  /** @type {Map<string, string[]>} */
-  const byJob = new Map();
-  let from = 0;
-  for (;;) {
-    const { data, error } = await sb
-      .from("job_skills")
-      .select("job_id,skill_id,skills(normalized_name,name)")
-      .order("job_id", { ascending: true })
-      .order("skill_id", { ascending: true })
-      .range(from, from + PAGE - 1);
-    if (error) throw new Error(`job_skills: ${error.message}`);
-    if (!data?.length) break;
-    for (const row of data) {
-      const name = row.skills?.normalized_name || row.skills?.name || null;
-      if (!name) continue;
-      const list = byJob.get(row.job_id) || [];
-      list.push(String(name).toLowerCase());
-      byJob.set(row.job_id, list);
-    }
-    if (data.length < PAGE) break;
-    from += PAGE;
-  }
-  for (const [jid, list] of byJob) {
-    byJob.set(jid, [...new Set(list)]);
-  }
-  return byJob;
-}
-
-async function indexJobs(sb, ts, skillMap, companyCounts) {
-  let total = 0;
-  let lastId = null;
-  for (;;) {
-    let q = sb
-      .from("jobs")
-      .select(
-        "id,title,normalized_title,department,team,ats,employment_type,work_mode,seniority,status,posted_at,apply_url,company_id,companies(slug,name),locations(country,state,city)",
-      )
-      .order("id", { ascending: true })
-      .limit(PAGE);
-    if (lastId != null) q = q.gt("id", lastId);
-    const { data, error } = await q;
-    if (error) throw new Error(`jobs: ${error.message}`);
-    if (!data?.length) break;
+    const filter = lastId != null ? { _id: { $gt: lastId } } : {};
+    const data = await coll.find(filter).sort({ _id: 1 }).limit(PAGE).toArray();
+    if (!data.length) break;
 
     const docs = data.map((j) => {
-      const slug = j.companies?.slug || `company:${j.company_id || "unknown"}`;
+      const slug = j.company?.slug || "unknown";
       if (j.status === 1) {
         companyCounts.set(slug, (companyCounts.get(slug) || 0) + 1);
       }
+      const skills = Array.isArray(j.skills) ? j.skills : [];
+      for (const n of skills) {
+        skillCounts.set(n, (skillCounts.get(n) || 0) + 1);
+      }
       return omitNull({
-        id: j.id,
+        id: j._id,
         title: j.title || "",
         normalized_title: j.normalized_title || "",
         company_slug: slug,
-        company_name: j.companies?.name || null,
+        company_name: j.company?.name || null,
         ats: j.ats ?? null,
         employment_type: j.employment_type ?? null,
         work_mode: j.work_mode ?? null,
         seniority: j.seniority ?? null,
-        country: j.locations?.country || null,
-        state: j.locations?.state || null,
-        city: j.locations?.city || null,
-        skills: skillMap.get(j.id) || [],
+        country: j.location?.country || null,
+        state: j.location?.state || null,
+        city: j.location?.city || null,
+        skills,
         status: j.status ?? 1,
         posted_at: toUnix(j.posted_at),
         apply_url: j.apply_url || null,
@@ -128,27 +80,32 @@ async function indexJobs(sb, ts, skillMap, companyCounts) {
     }
 
     total += docs.length;
-    lastId = data[data.length - 1].id;
-    if (total % 2000 === 0 || data.length < PAGE) {
-      console.log(`[index] jobs ${total}`);
+    lastId = data[data.length - 1]._id;
+    if (total % 400 === 0 || data.length < PAGE) {
+      console.log(`[index] jobs ${total} last=${lastId}`);
     }
     if (data.length < PAGE) break;
   }
   return total;
 }
 
-async function indexCompanies(sb, ts, companyCounts) {
+async function indexCompanies(db, ts, companyCounts) {
   let total = 0;
-  await pageOrdered(sb, "companies", "id,slug,name,industry,website,logo", async (rows) => {
+  let lastId = null;
+  const coll = db.collection("companies");
+  for (;;) {
+    const filter = lastId != null ? { _id: { $gt: lastId } } : {};
+    const rows = await coll.find(filter).sort({ _id: 1 }).limit(PAGE).toArray();
+    if (!rows.length) break;
     const docs = rows.map((c) =>
       omitNull({
-        id: c.slug,
-        slug: c.slug,
-        name: c.name || c.slug,
+        id: c.slug || c._id,
+        slug: c.slug || c._id,
+        name: c.name || c.slug || c._id,
         industry: c.industry || null,
         website: c.website || null,
         logo: c.logo || null,
-        active_job_count: companyCounts.get(c.slug) || 0,
+        active_job_count: companyCounts.get(c.slug || c._id) || 0,
       }),
     );
     try {
@@ -159,28 +116,28 @@ async function indexCompanies(sb, ts, companyCounts) {
       console.warn(`[index] companies import:`, err.message);
     }
     total += docs.length;
-  });
+    lastId = rows[rows.length - 1]._id;
+    if (rows.length < PAGE) break;
+  }
   console.log(`[index] companies ${total}`);
   return total;
 }
 
-async function indexSkills(sb, ts, skillMap) {
-  const counts = new Map();
-  for (const names of skillMap.values()) {
-    for (const n of names) {
-      counts.set(n, (counts.get(n) || 0) + 1);
-    }
-  }
-
+async function indexSkills(db, ts, skillCounts) {
   let total = 0;
-  await pageOrdered(sb, "skills", "id,name,normalized_name", async (rows) => {
+  let lastId = null;
+  const coll = db.collection("skills");
+  for (;;) {
+    const filter = lastId != null ? { _id: { $gt: lastId } } : {};
+    const rows = await coll.find(filter).sort({ _id: 1 }).limit(PAGE).toArray();
+    if (!rows.length) break;
     const docs = rows.map((s) => {
-      const normalized = (s.normalized_name || s.name || "").toLowerCase();
+      const normalized = (s.normalized_name || s.name || s._id || "").toLowerCase();
       return {
         id: normalized,
         name: s.name || normalized,
         normalized_name: normalized,
-        active_job_count: counts.get(normalized) || 0,
+        active_job_count: skillCounts.get(normalized) || 0,
       };
     });
     try {
@@ -191,7 +148,9 @@ async function indexSkills(sb, ts, skillMap) {
       console.warn(`[index] skills import:`, err.message);
     }
     total += docs.length;
-  });
+    lastId = rows[rows.length - 1]._id;
+    if (rows.length < PAGE) break;
+  }
   console.log(`[index] skills ${total}`);
   return total;
 }
@@ -217,32 +176,30 @@ async function companyCountsFromTypesense(ts) {
 }
 
 async function main() {
-  const sb = getSupabaseIndexer();
+  const db = await getDb();
   const ts = getTypesense();
-  const recreate = process.env.INDEX_RECREATE !== "0";
+  const recreate = process.env.INDEX_RECREATE === "1";
   const skipJobs = process.env.INDEX_SKIP_JOBS === "1";
 
   await ensureCollections(ts, { recreate: recreate && !skipJobs });
 
-  console.log("[index] loading job_skills…");
-  const skillMap = await fetchAllJobSkillNames(sb);
-  console.log(`[index] jobs with skills: ${skillMap.size}`);
-
-  /** @type {Map<string, number>} */
   let companyCounts = new Map();
+  const skillCounts = new Map();
   let jobs = 0;
   if (skipJobs) {
     companyCounts = await companyCountsFromTypesense(ts);
   } else {
-    jobs = await indexJobs(sb, ts, skillMap, companyCounts);
+    console.log(`[index] paging jobs (page=${PAGE})…`);
+    jobs = await indexJobs(db, ts, skillCounts, companyCounts);
   }
 
-  const companies = await indexCompanies(sb, ts, companyCounts);
-  const skills = await indexSkills(sb, ts, skillMap);
+  const companies = await indexCompanies(db, ts, companyCounts);
+  const skills = await indexSkills(db, ts, skillCounts);
 
   console.log(
     `[index] done jobs=${jobs} companies=${companies} skills=${skills}`,
   );
+  process.exit(0);
 }
 
 main().catch((err) => {

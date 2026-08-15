@@ -16,7 +16,7 @@ export function getTypesense() {
   return new Typesense.Client({
     nodes: [{ host, port, protocol }],
     apiKey,
-    connectionTimeoutSeconds: 10,
+    connectionTimeoutSeconds: 60,
   });
 }
 
