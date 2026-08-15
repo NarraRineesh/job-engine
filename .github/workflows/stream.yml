@@ -12,7 +12,7 @@ on:
       enrich:
         description: "python | cursor | both (python = lexicon skills; both = Cursor gaps)"
         required: false
-        default: "python"
+        default: "both"
       concurrency:
         description: "Per-runner company concurrency"
         required: false
@@ -84,6 +84,11 @@ jobs:
       - name: Sync
         run: uv sync --extra cursor
 
+      - name: Install Cursor CLI
+        run: |
+          curl https://cursor.com/install -fsS | bash
+          echo "$HOME/.cursor/bin" >> "$GITHUB_PATH"
+
       - name: SSH tunnel to Mongo
         uses: ./.github/actions/ssh-mongo-tunnel
         with:
@@ -102,7 +107,7 @@ jobs:
             --chunk-size "${{ matrix.chunk_size }}" \
             ${COUNTRY:+--country "$COUNTRY"} \
             --concurrency "$CONCURRENCY" \
-            --enrich "${{ github.event.inputs.enrich || 'python' }}" \
+            --enrich "${{ github.event.inputs.enrich || 'both' }}" \
             --write-concurrency 2 \
             --state out/push-state.json \
             --track out/track.json

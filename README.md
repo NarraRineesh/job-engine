@@ -160,10 +160,10 @@ Both also run on demand. Retriggering a workflow cancels only **that** workflowâ
 - Inside an ATS job, **8 company boards at a time** (pipelined: when one finishes, the next starts).
 - Weekly singleton **skips EURES and Bundesagentur** (`"stream": false`). Run them on purpose: `uv run job-engine run --ats eures`.
 
-Empty `ats` = streamable ATS of that mode; empty `country` = no filter. Default enrich is `python`.  
+Empty `ats` = streamable ATS of that mode; empty `country` = no filter. Default enrich in Actions is `both` (Python parsers + Cursor gaps).  
 Local: `uv run job-engine plan-chunks --mode multi_tenant`.  
 Push writes companies, jobs (embedded location + skills), job_analytics, and skills. Job **summary** and **description** are not stored (used only locally to extract skills).  
-Secrets: `MONGODB_URI` (localhost URI; Actions SSH-tunnels to the CX33), `HETZNER_HOST` (`157.180.95.193`), `HETZNER_SSH_KEY` (private key `hetzner_cx33_gha`), optional `HETZNER_USER` (`root`). Optional: `CURSOR_API_KEY` for `--enrich both`. One-shot copy: `uv run job-engine migrate-postgres`.
+Secrets: `MONGODB_URI` (localhost URI; Actions SSH-tunnels to the CX33), `HETZNER_HOST` (`157.180.95.193`), `HETZNER_SSH_KEY` (private key `hetzner_cx33_gha`), optional `HETZNER_USER` (`root`). `CURSOR_API_KEY` is required for Cursor gap-fill. One-shot copy: `uv run job-engine migrate-postgres`.
 
 ## Layout
 
