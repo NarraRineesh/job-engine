@@ -5,7 +5,12 @@ import {
   getTypesense,
   pagination,
 } from "../typesense.js";
-import { getSupabase } from "../supabase.js";
+import {
+  featuredJobs,
+  getAnalytics,
+  incrementAnalytics,
+  trendingJobs,
+} from "../mongodb.js";
 import {
   labelAts,
   labelEmployment,
@@ -71,22 +76,15 @@ function buildJobFilter(query) {
 
 jobs.get("/featured", async (c) => {
   const limit = Math.min(100, Math.max(1, Number(c.req.query("limit")) || 20));
-  const sb = getSupabase();
-  const { data, error } = await sb.rpc("featured_jobs", { p_limit: limit });
-  if (error) throw new Error(error.message);
-  return c.json({ items: data || [] });
+  const items = await featuredJobs(limit);
+  return c.json({ items });
 });
 
 jobs.get("/trending", async (c) => {
   const limit = Math.min(100, Math.max(1, Number(c.req.query("limit")) || 20));
   const days = Math.max(1, Number(c.req.query("days")) || 14);
-  const sb = getSupabase();
-  const { data, error } = await sb.rpc("trending_jobs", {
-    p_days: days,
-    p_limit: limit,
-  });
-  if (error) throw new Error(error.message);
-  return c.json({ items: data || [], days });
+  const items = await trendingJobs(days, limit);
+  return c.json({ items, days });
 });
 
 jobs.get("/", async (c) => {
@@ -123,21 +121,17 @@ jobs.get("/:id", async (c) => {
     throw err;
   }
 
-  const sb = getSupabase();
-  const { data: analytics } = await sb
-    .from("job_analytics")
-    .select("job_id,views,clicks,applications,saved,updated_at")
-    .eq("job_id", id)
-    .maybeSingle();
+  const analytics = await getAnalytics(id);
 
   return c.json({
     job: mapJobHit(doc),
-    analytics: analytics || {
-      job_id: id,
-      views: 0,
-      clicks: 0,
-      applications: 0,
-      saved: 0,
+    analytics: {
+      job_id: analytics.job_id || analytics._id || id,
+      views: analytics.views || 0,
+      clicks: analytics.clicks || 0,
+      applications: analytics.applications || 0,
+      saved: analytics.saved || 0,
+      updated_at: analytics.updated_at || null,
     },
   });
 });
@@ -181,16 +175,15 @@ jobs.get("/:id/similar", async (c) => {
 
 jobs.get("/:id/analytics", async (c) => {
   const id = c.req.param("id");
-  const sb = getSupabase();
-  const { data, error } = await sb
-    .from("job_analytics")
-    .select("job_id,views,clicks,applications,saved,updated_at")
-    .eq("job_id", id)
-    .maybeSingle();
-  if (error) throw new Error(error.message);
-  return c.json(
-    data || { job_id: id, views: 0, clicks: 0, applications: 0, saved: 0 },
-  );
+  const data = await getAnalytics(id);
+  return c.json({
+    job_id: data.job_id || data._id || id,
+    views: data.views || 0,
+    clicks: data.clicks || 0,
+    applications: data.applications || 0,
+    saved: data.saved || 0,
+    updated_at: data.updated_at || null,
+  });
 });
 
 jobs.post("/:id/analytics", async (c) => {
@@ -203,16 +196,13 @@ jobs.post("/:id/analytics", async (c) => {
       400,
     );
   }
-  const sb = getSupabase();
-  const { error } = await sb.rpc("increment_job_analytics", {
-    p_job_id: id,
-    p_metric: metric,
+  const data = await incrementAnalytics(id, metric);
+  return c.json({
+    job_id: data.job_id || data._id || id,
+    views: data.views || 0,
+    clicks: data.clicks || 0,
+    applications: data.applications || 0,
+    saved: data.saved || 0,
+    updated_at: data.updated_at || null,
   });
-  if (error) throw new Error(error.message);
-  const { data } = await sb
-    .from("job_analytics")
-    .select("job_id,views,clicks,applications,saved,updated_at")
-    .eq("job_id", id)
-    .maybeSingle();
-  return c.json(data || { job_id: id, [metric]: 1 });
 });

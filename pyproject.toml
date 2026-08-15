@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "job-engine"
 version = "0.1.0"
-description = "Fetch ATS jobs, enrich (python or Cursor), push to Supabase"
+description = "Fetch ATS jobs, enrich (python or Cursor), push to MongoDB"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -15,6 +15,8 @@ dependencies = [
     "httpcloak>=1.6",
     "cloakbrowser>=0.3",
     "pycryptodome>=3.20",
+    "pymongo>=4.10",
+    "psycopg[binary]>=3.2",
 ]
 
 [project.optional-dependencies]

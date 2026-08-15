@@ -1,6 +1,6 @@
-"""CLI: run | plan-chunks
+"""CLI: run | plan-chunks | migrate-postgres
 
-Simple loop: fetch → enrich (python|cursor) → push Supabase → track.
+Simple loop: fetch → enrich (python|cursor) → push MongoDB → track.
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ DEFAULT_TRACK = ROOT / "out" / "track.json"
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="job-engine",
-        description="Fetch ATS jobs → enrich → push Supabase (with tracking).",
+        description="Fetch ATS jobs → enrich → push MongoDB (with tracking).",
     )
     sub = parser.add_subparsers(dest="cmd", required=True)
 
@@ -67,6 +67,11 @@ def main(argv: list[str] | None = None) -> int:
     p_run.add_argument("--state", type=Path, default=DEFAULT_PUSH_STATE, help="Job content-hash state")
     p_run.add_argument("--track", type=Path, default=DEFAULT_TRACK, help="Per-tenant progress file")
 
+    p_pg = sub.add_parser(
+        "migrate-postgres",
+        help="One-shot copy Postgres DATABASE_URL → MongoDB",
+    )
+
     p_plan = sub.add_parser("plan-chunks", help="Print GHA matrix JSON (one job per ATS)")
     p_plan.add_argument("--ats", type=str, default="", help="Comma list; empty=all registered")
     p_plan.add_argument(
@@ -83,6 +88,12 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     args = parser.parse_args(argv)
+
+    if args.cmd == "migrate-postgres":
+        from job_engine.push.migrate_postgres import migrate
+
+        migrate()
+        return 0
 
     if args.cmd == "plan-chunks":
         from job_engine.companies import list_registered_ats, plan_chunks

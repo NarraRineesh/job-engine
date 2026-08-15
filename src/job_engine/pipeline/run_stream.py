@@ -262,7 +262,7 @@ def _push_sync(
     push_skills: bool,
     state_path: Path,
 ) -> int:
-    from job_engine.push.supabase import push_nested_jobs
+    from job_engine.push.mongo import push_nested_jobs
 
     return push_nested_jobs(
         jobs,

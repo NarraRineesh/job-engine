@@ -1,31 +1,21 @@
 import { Hono } from "hono";
-import { getSupabase } from "../supabase.js";
 import { COLLECTIONS, getTypesense, pagination } from "../typesense.js";
+import { trendingJobs, trendingSkills } from "../mongodb.js";
 
 export const trends = new Hono();
 
 trends.get("/jobs", async (c) => {
   const limit = Math.min(100, Math.max(1, Number(c.req.query("limit")) || 20));
   const days = Math.max(1, Number(c.req.query("days")) || 14);
-  const sb = getSupabase();
-  const { data, error } = await sb.rpc("trending_jobs", {
-    p_days: days,
-    p_limit: limit,
-  });
-  if (error) throw new Error(error.message);
-  return c.json({ items: data || [], days });
+  const items = await trendingJobs(days, limit);
+  return c.json({ items, days });
 });
 
 trends.get("/skills", async (c) => {
   const limit = Math.min(100, Math.max(1, Number(c.req.query("limit")) || 20));
   const days = Math.max(1, Number(c.req.query("days")) || 30);
-  const sb = getSupabase();
-  const { data, error } = await sb.rpc("trending_skills_by_window", {
-    p_days: days,
-    p_limit: limit,
-  });
-  if (error) throw new Error(error.message);
-  return c.json({ items: data || [], days });
+  const items = await trendingSkills(days, limit);
+  return c.json({ items, days });
 });
 
 /** Ranked companies by active_job_count (from Typesense index). */

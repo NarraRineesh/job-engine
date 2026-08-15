@@ -5,7 +5,7 @@ import {
   getTypesense,
   pagination,
 } from "../typesense.js";
-import { getSupabase } from "../supabase.js";
+import { companyTrends } from "../mongodb.js";
 
 export const companies = new Hono();
 
@@ -83,11 +83,6 @@ companies.get("/:slug/jobs", async (c) => {
 companies.get("/:slug/trends", async (c) => {
   const slug = c.req.param("slug");
   const months = Math.min(24, Math.max(1, Number(c.req.query("months")) || 6));
-  const sb = getSupabase();
-  const { data, error } = await sb.rpc("company_trends_live", {
-    p_slug: slug,
-    p_months: months,
-  });
-  if (error) throw new Error(error.message);
-  return c.json({ items: data || [], slug, months });
+  const items = await companyTrends(slug, months);
+  return c.json({ items, slug, months });
 });

@@ -1,0 +1,33 @@
+name: index-typesense
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [stream-multi, stream-singleton]
+    types: [completed]
+
+concurrency:
+  group: index-typesense
+  cancel-in-progress: true
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    steps:
+      - name: Index Typesense on CX33
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+          HETZNER_HOST: ${{ secrets.HETZNER_HOST }}
+          HETZNER_USER: ${{ secrets.HETZNER_USER }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          printf '%s\n' "$HETZNER_SSH_KEY" > ~/.ssh/hetzner
+          chmod 600 ~/.ssh/hetzner
+          USERNAME="${HETZNER_USER:-}"
+          USERNAME="${USERNAME:-root}"
+          ssh-keyscan -H "$HETZNER_HOST" >> ~/.ssh/known_hosts
+          ssh -i ~/.ssh/hetzner -o StrictHostKeyChecking=yes "${USERNAME}@${HETZNER_HOST}" \
+            'cd /opt/job-engine/api && INDEX_RECREATE=0 INDEX_PAGE=200 NODE_OPTIONS=--max-old-space-size=2048 /usr/bin/npm run index'

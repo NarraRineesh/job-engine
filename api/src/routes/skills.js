@@ -5,7 +5,7 @@ import {
   getTypesense,
   pagination,
 } from "../typesense.js";
-import { getSupabase } from "../supabase.js";
+import { trendingSkills } from "../mongodb.js";
 
 export const skills = new Hono();
 
@@ -22,13 +22,8 @@ function mapSkill(doc) {
 skills.get("/trending", async (c) => {
   const limit = Math.min(100, Math.max(1, Number(c.req.query("limit")) || 20));
   const days = Math.max(1, Number(c.req.query("days")) || 30);
-  const sb = getSupabase();
-  const { data, error } = await sb.rpc("trending_skills_by_window", {
-    p_days: days,
-    p_limit: limit,
-  });
-  if (error) throw new Error(error.message);
-  return c.json({ items: data || [], days });
+  const items = await trendingSkills(days, limit);
+  return c.json({ items, days });
 });
 
 skills.get("/", async (c) => {

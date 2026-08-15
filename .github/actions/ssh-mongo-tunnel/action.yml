@@ -1,0 +1,32 @@
+name: ssh-mongo-tunnel
+description: Forward localhost:27017 to CX33 Mongo
+inputs:
+  ssh_key:
+    required: true
+  host:
+    required: true
+  user:
+    required: false
+    default: root
+runs:
+  using: composite
+  steps:
+    - name: Start SSH tunnel
+      shell: bash
+      env:
+        HETZNER_SSH_KEY: ${{ inputs.ssh_key }}
+        HETZNER_HOST: ${{ inputs.host }}
+        HETZNER_USER: ${{ inputs.user }}
+      run: |
+        set -euo pipefail
+        mkdir -p ~/.ssh
+        printf '%s\n' "$HETZNER_SSH_KEY" > ~/.ssh/hetzner
+        chmod 600 ~/.ssh/hetzner
+        USERNAME="${HETZNER_USER:-}"
+        USERNAME="${USERNAME:-root}"
+        ssh-keyscan -H "$HETZNER_HOST" >> ~/.ssh/known_hosts
+        ssh -f -N -L 27017:127.0.0.1:27017 \
+          -i ~/.ssh/hetzner \
+          -o ExitOnForwardFailure=yes \
+          -o StrictHostKeyChecking=yes \
+          "${USERNAME}@${HETZNER_HOST}"

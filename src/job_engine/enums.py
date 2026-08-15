@@ -1,4 +1,4 @@
-"""SMALLINT enum maps for Supabase job / company / skill rows."""
+"""SMALLINT enum maps for job / company / skill rows."""
 
 from __future__ import annotations
 
