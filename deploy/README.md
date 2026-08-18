@@ -23,16 +23,21 @@ Scraping stays in GitHub Actions. This box holds Mongo (source of truth) and Typ
 ssh -i ~/.ssh/hetzner_cx33 root@157.180.95.193
 ```
 
-GitHub Actions scrape on `ubuntu-latest`, then SSH-tunnels to this box and writes Mongo (`MONGODB_URI` must use `127.0.0.1`). After a successful stream, `index-typesense.yml` SSHs and runs `npm run index`.
+GitHub Actions scrape on `ubuntu-latest`, then SSH-tunnels to this box and writes Mongo (`MONGODB_URI` must use `127.0.0.1`). Weekly Typesense reindex is `index-typesense.yml` (Wednesday 02:30 UTC): it `POST`s `https://api.glowminds.in/v1/index` with `INDEX_API_KEY`.
 
 Repo secrets: `HETZNER_HOST=157.180.95.193`, `HETZNER_USER=root`, `HETZNER_SSH_KEY` (private OpenSSH key whose pubkey is in `/root/.ssh/authorized_keys`), `MONGODB_URI` (same localhost URI as `/opt/job-engine/.env`).
 
-## Index (manual, after migrate-postgres finishes)
+## Index
 
 ```bash
-cd /opt/job-engine/api
-INDEX_RECREATE=0 INDEX_PAGE=200 NODE_OPTIONS=--max-old-space-size=2048 npm run index
+curl -sS -X POST https://api.glowminds.in/v1/index \
+  -H "Authorization: Bearer $INDEX_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"recreate":false}'
+curl -sS https://api.glowminds.in/v1/index -H "Authorization: Bearer $INDEX_API_KEY"
 ```
+
+CLI still works on the box: `cd /opt/job-engine/api && npm run index`.
 
 One-shot copy from Postgres: `uv run job-engine migrate-postgres` (`DATABASE_URL` in `.env`).
 

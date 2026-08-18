@@ -9,6 +9,7 @@ User=root
 WorkingDirectory=/opt/job-engine/api
 Environment=NODE_ENV=production
 Environment=PATH=/usr/local/bin:/usr/bin
+Environment=NODE_OPTIONS=--max-old-space-size=2048
 ExecStart=/usr/bin/npm start
 Restart=always
 RestartSec=3

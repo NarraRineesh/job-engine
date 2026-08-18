@@ -47,7 +47,7 @@ jobs:
           ATS: ${{ github.event.inputs.ats }}
         run: |
           set -euo pipefail
-          MATRIX=$(uv run job-engine plan-chunks --mode multi_tenant --ats "$ATS" --max-jobs 256)
+          MATRIX=$(uv run job-engine plan-chunks --mode multi_tenant --ats "$ATS" --max-jobs 256 --max-tenants-per-job 2000)
           COUNT=$(uv run python -c 'import json,sys; print(len(json.loads(sys.stdin.read())))' <<<"$MATRIX")
           echo "Planned matrix jobs: $COUNT"
           if [ "$COUNT" -gt 256 ]; then

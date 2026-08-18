@@ -25,8 +25,19 @@ runs:
         USERNAME="${HETZNER_USER:-}"
         USERNAME="${USERNAME:-root}"
         ssh-keyscan -H "$HETZNER_HOST" >> ~/.ssh/known_hosts
-        ssh -f -N -L 27017:127.0.0.1:27017 \
-          -i ~/.ssh/hetzner \
-          -o ExitOnForwardFailure=yes \
-          -o StrictHostKeyChecking=yes \
-          "${USERNAME}@${HETZNER_HOST}"
+        for attempt in 1 2 3 4 5; do
+          if ssh -f -N -L 27017:127.0.0.1:27017 \
+            -i ~/.ssh/hetzner \
+            -o ExitOnForwardFailure=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ServerAliveInterval=30 \
+            -o ServerAliveCountMax=12 \
+            -o ConnectTimeout=15 \
+            "${USERNAME}@${HETZNER_HOST}"; then
+            exit 0
+          fi
+          echo "SSH tunnel attempt ${attempt} failed; retrying…" >&2
+          sleep $((attempt * 4))
+        done
+        echo "SSH tunnel failed after 5 attempts" >&2
+        exit 1

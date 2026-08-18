@@ -86,6 +86,12 @@ def main(argv: list[str] | None = None) -> int:
         default=256,
         help="Cap matrix length (GitHub limit is 256; 0 = unlimited)",
     )
+    p_plan.add_argument(
+        "--max-tenants-per-job",
+        type=int,
+        default=0,
+        help="Split large ATS across matrix jobs (0 = one job per ATS)",
+    )
 
     args = parser.parse_args(argv)
 
@@ -105,7 +111,15 @@ def main(argv: list[str] | None = None) -> int:
             allowed = set(list_registered_ats(mode=mode, include_opt_out=True))
             only = [a for a in only if a in allowed]
         only = [a for a in only if ScraperRegistry.has_scraper(a)]
-        print(json.dumps(plan_chunks(only, max_jobs=args.max_jobs)))
+        print(
+            json.dumps(
+                plan_chunks(
+                    only,
+                    max_jobs=args.max_jobs,
+                    max_tenants_per_job=args.max_tenants_per_job,
+                )
+            )
+        )
         return 0
 
     if args.cmd == "run":

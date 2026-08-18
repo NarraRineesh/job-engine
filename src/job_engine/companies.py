@@ -226,22 +226,34 @@ def plan_chunks(
     ats_list: list[str],
     *,
     max_jobs: int = 256,
+    max_tenants_per_job: int = 0,
 ) -> list[dict[str, Any]]:
-    """One GHA matrix row per ATS (all companies), in ``ats_list`` order."""
+    """GHA matrix rows in ``ats_list`` order.
+
+    Default is one row per ATS (all tenants). ``max_tenants_per_job`` splits
+    large ATS so a single GitHub job cannot run past the 6h runner cap.
+    """
     sizes = {ats: n for ats in ats_list if (n := len(load_tenants(ats))) > 0}
     if not sizes:
         return [{"ats": "_none", "chunk": 0, "chunk_size": 1, "tenant_count": 0}]
-    if max_jobs > 0 and len(sizes) > max_jobs:
+    rows: list[dict[str, Any]] = []
+    for ats, n in sizes.items():
+        size = n if max_tenants_per_job <= 0 else min(n, max_tenants_per_job)
+        n_chunks = (n + size - 1) // size
+        for chunk in range(n_chunks):
+            start = chunk * size
+            rows.append(
+                {
+                    "ats": ats,
+                    "chunk": chunk,
+                    "chunk_size": size,
+                    "tenant_count": min(size, n - start),
+                }
+            )
+    if max_jobs > 0 and len(rows) > max_jobs:
         raise ValueError(
-            f"Cannot fit {len(sizes)} ATS into {max_jobs} GitHub matrix jobs "
-            "(limit is 256). Pass a smaller --ats allowlist."
+            f"Cannot fit {len(rows)} matrix jobs into {max_jobs} "
+            "(GitHub limit is 256). Pass a smaller --ats allowlist or a "
+            "larger --max-tenants-per-job."
         )
-    return [
-        {
-            "ats": ats,
-            "chunk": 0,
-            "chunk_size": n,
-            "tenant_count": n,
-        }
-        for ats, n in sizes.items()
-    ]
+    return rows

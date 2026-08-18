@@ -153,17 +153,18 @@ Two workflows, separate concurrency groups (one does not cancel the other):
 |----------|------|------|----------|
 | `stream-multi` | `.github/workflows/stream.yml` | Company boards (Ashby, Greenhouse, …) | Monday 02:30 UTC |
 | `stream-singleton` | `.github/workflows/stream-singleton.yml` | One-board sources (EURES, Apple, Amazon, …) | Tuesday 02:30 UTC |
+| `index-typesense` | `.github/workflows/index-typesense.yml` | `POST /v1/index` on `api.glowminds.in` | Wednesday 02:30 UTC |
 
 Both also run on demand. Retriggering a workflow cancels only **that** workflow’s in-progress run.
 
-- **One GitHub job per ATS** (registry order: ADP → Ashby → …). Up to 8 ATS jobs in parallel for multi, 4 for singleton.
+- **One GitHub job per ATS** (registry order: ADP → Ashby → …), split every 2000 tenants so Workday/iCIMS stay under the 6h runner cap. Up to 16 ATS jobs in parallel for multi, 4 for singleton.
 - Inside an ATS job, **8 company boards at a time** (pipelined: when one finishes, the next starts).
 - Weekly singleton **skips EURES and Bundesagentur** (`"stream": false`). Run them on purpose: `uv run job-engine run --ats eures`.
 
 Empty `ats` = streamable ATS of that mode; empty `country` = no filter. Default enrich in Actions is `both` (Python parsers + Cursor gaps).  
 Local: `uv run job-engine plan-chunks --mode multi_tenant`.  
 Push writes companies, jobs (embedded location + skills), job_analytics, and skills. Job **summary** and **description** are not stored (used only locally to extract skills).  
-Secrets: `MONGODB_URI` (localhost URI; Actions SSH-tunnels to the CX33), `HETZNER_HOST` (`157.180.95.193`), `HETZNER_SSH_KEY` (private key `hetzner_cx33_gha`), optional `HETZNER_USER` (`root`). `CURSOR_API_KEY` is required for Cursor gap-fill. One-shot copy: `uv run job-engine migrate-postgres`.
+Secrets: `MONGODB_URI` (localhost URI; Actions SSH-tunnels to the CX33), `HETZNER_HOST` (`157.180.95.193`), `HETZNER_SSH_KEY` (private key `hetzner_cx33_gha`), optional `HETZNER_USER` (`root`). `CURSOR_API_KEY` for Cursor gap-fill. `INDEX_API_KEY` for `POST /v1/index`. One-shot copy: `uv run job-engine migrate-postgres`.
 
 ## Layout
 

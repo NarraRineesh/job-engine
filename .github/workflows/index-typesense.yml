@@ -2,9 +2,9 @@ name: index-typesense
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: [stream-multi, stream-singleton]
-    types: [completed]
+  schedule:
+    # Wednesday 02:30 UTC — after Monday multi + Tuesday singleton
+    - cron: "30 2 * * 3"
 
 concurrency:
   group: index-typesense
@@ -14,20 +14,44 @@ jobs:
   index:
     runs-on: ubuntu-latest
     timeout-minutes: 180
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    env:
+      API_URL: https://api.glowminds.in
+      INDEX_API_KEY: ${{ secrets.INDEX_API_KEY }}
     steps:
-      - name: Index Typesense on CX33
-        env:
-          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
-          HETZNER_HOST: ${{ secrets.HETZNER_HOST }}
-          HETZNER_USER: ${{ secrets.HETZNER_USER }}
+      - name: Trigger Typesense index
         run: |
           set -euo pipefail
-          mkdir -p ~/.ssh
-          printf '%s\n' "$HETZNER_SSH_KEY" > ~/.ssh/hetzner
-          chmod 600 ~/.ssh/hetzner
-          USERNAME="${HETZNER_USER:-}"
-          USERNAME="${USERNAME:-root}"
-          ssh-keyscan -H "$HETZNER_HOST" >> ~/.ssh/known_hosts
-          ssh -i ~/.ssh/hetzner -o StrictHostKeyChecking=yes "${USERNAME}@${HETZNER_HOST}" \
-            'cd /opt/job-engine/api && INDEX_RECREATE=0 INDEX_PAGE=200 NODE_OPTIONS=--max-old-space-size=2048 /usr/bin/npm run index'
+          if [ -z "${INDEX_API_KEY:-}" ]; then
+            echo "INDEX_API_KEY secret is missing" >&2
+            exit 1
+          fi
+          CODE=$(curl -sS -o /tmp/index.json -w "%{http_code}" -X POST "$API_URL/v1/index" \
+            -H "Authorization: Bearer $INDEX_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"recreate":false}')
+          cat /tmp/index.json
+          echo
+          if [ "$CODE" != "202" ] && [ "$CODE" != "409" ]; then
+            echo "unexpected HTTP $CODE" >&2
+            exit 1
+          fi
+
+      - name: Wait until index finishes
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 360); do
+            curl -sS -o /tmp/index.json "$API_URL/v1/index" \
+              -H "Authorization: Bearer $INDEX_API_KEY"
+            cat /tmp/index.json
+            echo
+            STATUS=$(python3 -c 'import json; print(json.load(open("/tmp/index.json")).get("status",""))')
+            if [ "$STATUS" = "done" ]; then
+              exit 0
+            fi
+            if [ "$STATUS" = "error" ]; then
+              exit 1
+            fi
+            sleep 30
+          done
+          echo "index did not finish in time" >&2
+          exit 1

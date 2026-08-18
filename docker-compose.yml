@@ -6,6 +6,10 @@ services:
       - "127.0.0.1:8108:8108"
     volumes:
       - typesense-data:/data
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
     environment:
       TYPESENSE_DATA_DIR: /data
       TYPESENSE_API_KEY: ${TYPESENSE_API_KEY:-xyz}

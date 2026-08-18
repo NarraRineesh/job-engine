@@ -66,6 +66,8 @@ jobs:
     env:
       MONGODB_URI: ${{ secrets.MONGODB_URI }}
       CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+      PROXY: ${{ secrets.PROXY }}
       COUNTRY: ${{ github.event.inputs.country }}
       PYTHONUNBUFFERED: "1"
     steps:
